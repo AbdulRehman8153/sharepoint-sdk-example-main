@@ -75,9 +75,9 @@ $client->authenticate($auth);
 //     echo $response;
 
 
-// $response = $client
-// ->drive('b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches')
-// ->deleteItem('react.txt'); 
+$response = $client
+->drive('b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches')
+->deleteItem('react.txt'); 
 
 
 
