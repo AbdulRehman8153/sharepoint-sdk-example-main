@@ -1,0 +1,26 @@
+{
+    "name": "tagmydoc/sharepoint-sdk-example",
+    "type": "project",
+    "repositories": [
+        {
+            "url": "https://github.com/tagmydoc/Sharepoint-SDK.git",
+            "type": "git"
+        }
+    ],
+
+    "require": {
+        "tagmydoc/sharepoint-sdk-php": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Convoflo\\SharepointSdkExample\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexandre Demers",
+            "email": "alex.demers@convoflo.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
