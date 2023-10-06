@@ -53,10 +53,11 @@
     $tokendelta =  @file_get_contents(__DIR__ . '/../storage/deltaToken') ?: null;
 
     if ($tokendelta === null) {
-        //delta($client, $driveId);
+        delta($client, $driveId);
     } else {
         deltaByToken($client, $driveId, $tokendelta);
     }
+
 
     //First Time Delta Call
     function delta($client, $driveId)
@@ -77,7 +78,7 @@
             $response = $client->drive($driveId)->delta($tokendelta);
             $data = json_decode($response, true);
 
-            //echo $response;
+            echo $response;
             //if new item has created/upload
 
             // Check if the 'value' array exists in the JSON data
@@ -297,6 +298,7 @@
             // }
         }
     }
+
 
     //Modification After Recursively
     function downloadItemById($client, $driveId, $itemname, $itemId, $localDirectory)
@@ -780,7 +782,7 @@
 
 
     //Upload Item on SharePoint to Root and Download in Local Directory By Id
-    function uploadItem($client, $driveId, $itemName, $parentId)
+    function uploadItem($client, $driveId, $itemName, $parentId,$localDirectory)
     {
         try {
             $response = $client->drive($driveId)->uploadItem($itemName, $itemName, $parentId);
@@ -795,7 +797,7 @@
         }
         //getItemById($client, $driveId, $itemid);
         //getItemByPath($client, $driveId, $itemname);
-        downloadItemById($client, $driveId, $itemname, $itemid);
+        //downloadItemById($client, $driveId, $itemname, $itemid);
         //downloadItemByPath($client, $driveId, $itemname);
         //createFolder($client, $driveId, $itemname);
         //createFolder($client, $driveId, $itemName,$localDirectory);
@@ -803,7 +805,7 @@
     }
 
     //Upload Item to Specific Path on SharePoint By Path(Name) and Download in Local Directory by Id
-    function uploadItemtoPath($client, $driveId, $itemName, $parentName)
+    function uploadItemtoPath($client, $driveId, $itemName, $parentName,$localDirectory)
     {
         try {
             $response = $client->drive($driveId)->uploadItemToPath($itemName, $itemName, $parentName);
@@ -831,7 +833,7 @@
         }
         // getItemById($client, $driveId, $itemid);
         //getItemByPath($client, $driveId, $itemname);
-        downloadItemById($client, $driveId, $itemname, $itemid);
+        downloadItemById($client, $driveId, $itemname, $itemid,$localDirectory);
         //downloadItemByPath($client, $driveId, $itemname);
         //createFolder($client, $driveId, $itemname);
         //createFolder($client, $driveId, $itemName,$localDirectory);
@@ -853,13 +855,13 @@
 
     //$itemid = 'Newfolder(3)';
     //$parentId = '01FJOJ76F6Y2GOVW7725BZO354PWSELRRZ';
-    //$parentName = 'folderfolder33';
-    //$itemName = 'folder.txt';
-    // $itemname='folderfolder55';
+    //$parentName = 'folder789';
+    //$itemName = 'upload123.txt';
+     $itemname='4000.txt';
 
-
+     //01FJOJ76EIEB2ZRHWCNBCIFAZHAOSPHPTK
     //$itemname='test.txt';
-    //$itemId = '01FJOJ76GSXOZS4SXMURB2TEQQ6NDPK3H6';
+    $itemId = '01FJOJ76EIEB2ZRHWCNBCIFAZHAOSPHPTK';
 
     //delta($client, $driveId);
     //deltaByToken($client, $driveId, $tokendelta);
@@ -870,12 +872,12 @@
     //createFolder($client, $driveId, $itemname,$localDirectory);
     //downloadItemByPath($client, $driveId, $itemName);
     //uploadItem($client, $driveId, $itemName,$parentId);
-    //uploadItemtoPath($client, $driveId, $itemName,$parentName);
+    //uploadItemtoPath($client, $driveId, $itemName,$parentName,$localDirectory);
     //deleteItem($client, $driveId, $itemid,$localDirectory);
     ///listItemById($client, $driveId, $itemId);
     //listItemByPath($client, $driveId, $itemPath);
     //listItems($client, $driveId);
-    //updateItem($client, $driveId, $itemId, $itemname);
+   // updateItem($client, $driveId, $itemId, $itemname,$localDirectory);
     //getItemById($client, $driveId, $itemId);
     //getItems($client, $driveId);
     //updateItem($client, $driveId, $itemId, $itemname, $localPath);
