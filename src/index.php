@@ -53,7 +53,7 @@
     $tokendelta =  @file_get_contents(__DIR__ . '/../storage/deltaToken') ?: null;
 
     if ($tokendelta === null) {
-        delta($client, $driveId);
+        //delta($client, $driveId);
     } else {
         deltaByToken($client, $driveId, $tokendelta);
     }
@@ -69,6 +69,7 @@
     }
 
 
+
     //Delta By Token
     function deltaByToken($client, $driveId, $tokendelta)
     {
@@ -76,33 +77,33 @@
             $response = $client->drive($driveId)->delta($tokendelta);
             $data = json_decode($response, true);
 
-            echo $response;
+            //echo $response;
             //if new item has created/upload
 
             // Check if the 'value' array exists in the JSON data
-            // if (isset($data['value']) && is_array($data['value'])) {
-            //     // Start iterating from the second element (index 1)
-            //     for ($i = 1; $i < count($data['value']); $i++) {
-            //         $item = $data['value'][$i];
+            if (isset($data['value']) && is_array($data['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($i = 1; $i < count($data['value']); $i++) {
+                    $item = $data['value'][$i];
 
-            //         // Check if 'id' and 'name' keys exist in the current item
-            //         if (isset($item['id']) && isset($item['name'])) {
-            //             $itemid = $item['id'];
-            //             $itemname = $item['name'];
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($item['id']) && isset($item['name'])) {
+                        $itemid = $item['id'];
+                        $itemname = $item['name'];
 
-            //             // If the operation was successful, display a success message
-            //             //echo "Delta successfully for item: $itemname (id: $itemid)\n";
-            //             $localDirectory = __DIR__ . '/../src/LocalDrive';
-            //             // Call the downloadItemById function with extracted values
-            //            // downloadItemByPath($client, $driveId, $itemname, $itemid);
-            //             downloadItemById($client, $driveId, $itemname, $itemid);
-            //         } else {
-            //             echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-            //         }
-            //     }
-            // } else {
-            //     echo "Error: 'value' array not found in the JSON response.\n";
-            // }
+                        // If the operation was successful, display a success message
+                        //echo "Delta successfully for item: $itemname (id: $itemid)\n";
+                        $localDirectory = __DIR__ . '/../src/LocalDrive';
+                        // Call the downloadItemById function with extracted values
+                       // downloadItemByPath($client, $driveId, $itemname, $itemid);
+                        downloadItemById($client, $driveId, $itemname, $itemid,$localDirectory);
+                    } else {
+                        echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
 
 
             //if item has changed
@@ -297,83 +298,81 @@
         }
     }
 
-    //Download Item on Local Directory By Id
-    function downloadItemById($client, $driveId, $itemname, $itemId)
+    //Modification After Recursively
+    function downloadItemById($client, $driveId, $itemname, $itemId, $localDirectory)
     {
-
-        // Define the local directory where you want to save the item
-        $localDirectory = __DIR__ . '/../src/LocalDrive';
-
         // Define the local file/folder path
-        $localFilePath = $localDirectory . DIRECTORY_SEPARATOR . $itemname;
-
+        $localFilePath = $localDirectory . '/' . $itemname;
+    
+        //echo $localFilePath;
+    
         // Check if the item (file or folder) already exists locally
         if (file_exists($localFilePath)) {
             echo "Item already exists at: $localFilePath\n";
         } else {
             // Get information about the item
             $itemInfo = $client->drive($driveId)->getItemById($itemId);
-
-            //if ($itemInfo !== false) {
-            $data = json_decode($itemInfo, true);
-            $Name= $data['name'];
-            $ID= $data['id'];
-            if ($data['folder']) {
-                $Folder='Folder';
-                echo "Item Name: $Name\n";
-                echo "Item Content: $Name\n";
-                echo "Item Type: $Folder\n";
-                echo "SharePoint ID: $ID\n";
-            }
-            else{
-                $File='File';
-                 echo "Item Name: $Name\n";
-                 echo "Item Content: $Name\n";
-                 echo "Item Type: $File\n";
-                 echo "SharePoint ID: $ID\n";
-            }
-          
-
-
-            if ($data['folder']) {
-                // If the item is a folder, create the local folder
-                if (mkdir($localFilePath, 0777, true)) {
-                    echo "Folder created successfully at: $localFilePath\n";
-                } else {
-                    echo "Failed to create folder at: $localFilePath\n";
-                }
-
-                // Recursively download the contents of the folder
-                $children = $client->drive($driveId)->listById($itemId);
-
-                foreach ($children as $child) {
-                    downloadItemById($client, $driveId, $child['name'], $child['id']);
-                }
-            } else {
-                // If the item is a file, download and save it
-                $response = $client->drive($driveId)->downloadItemById($itemId);
-                if ($response !== false) {
-                    if (file_put_contents($localFilePath, $response) !== false) {
-                        echo "File saved successfully to $localFilePath\n";
+    
+            if ($itemInfo !== false) {
+                $data = json_decode($itemInfo, true);
+                $Name = $data['name'];
+                $ID = $data['id'];
+    
+                if ($data['folder']) {
+                    // If the item is a folder, create the local folder
+                    if (mkdir($localFilePath, 0777, true)) {
+                        echo "Folder created successfully at: $localFilePath\n";
+    
+                        // Recursively download the contents of the folder
+                        $children = $client->drive($driveId)->listById($itemId);
+                        $data = json_decode($children, true);
+                         // echo $children;
+                        if (isset($data['value']) && is_array($data['value'])) {
+                            // Iterate through the children items
+                            foreach ($data['value'] as $child) {
+                                downloadItemById($client, $driveId, $child['name'], $child['id'], $localFilePath);
+                                // Add a condition to check if the child's parent ID matches the current folder's ID
+                                // if ($child['parentReference']['id'] === $itemId) {
+                                //     downloadItemById($client, $driveId, $child['name'], $child['id'], $localFilePath);
+                                // }
+                            }
+                        } else {
+                            echo "Error: 'value' array not found in the JSON response.\n";
+                        }
                     } else {
-                        echo "Failed to save the file to $localFilePath\n";
+                        echo "Failed to create folder at: $localFilePath\n";
                     }
                 } else {
-                    echo "Failed to download the file.\n";
+                    // If the item is a file, download and save it
+                    $response = $client->drive($driveId)->downloadItemById($itemId);
+                    if ($response !== false) {
+                        if (file_put_contents($localFilePath, $response) !== false) {
+                            echo "File saved successfully to $localFilePath\n";
+                        } else {
+                            echo "Failed to save the file to $localFilePath\n";
+                        }
+                    } else {
+                        echo "Failed to download the file.\n";
+                    }
                 }
+            } else {
+                echo "Failed to get item information.\n";
             }
-
-            //}
-            //}
-            // else {
-            //     echo "Failed to get item information.\n";
-            // }
         }
     }
+    
 
 
+
+   
+    
+
+   
+    //Original WIthout Recursively
+    //Download Item on Local Directory By Id
     // function downloadItemById($client, $driveId, $itemname, $itemId)
     // {
+
     //     // Define the local directory where you want to save the item
     //     $localDirectory = __DIR__ . '/../src/LocalDrive';
 
@@ -384,43 +383,70 @@
     //     if (file_exists($localFilePath)) {
     //         echo "Item already exists at: $localFilePath\n";
     //     } else {
-    //         // Download the item from SharePoint
-    //         $response = $client->drive($driveId)->downloadItemById($itemId);
+    //         // Get information about the item
+    //         $itemInfo = $client->drive($driveId)->getItemById($itemId);
 
-    //         if ($response !== false) {
-    //             // Save the item to the local directory
-    //             if (file_put_contents($localFilePath, $response) !== false) {
-    //                 echo "Item saved successfully to $localFilePath\n";
+    //         //if ($itemInfo !== false) {
+    //         $data = json_decode($itemInfo, true);
+    //         $Name= $data['name'];
+    //         $ID= $data['id'];
+    //         if ($data['folder']) {
+    //             $Folder='Folder';
+    //             echo "Item Name: $Name\n";
+    //             echo "Item Content: $Name\n";
+    //             echo "Item Type: $Folder\n";
+    //             echo "SharePoint ID: $ID\n";
+    //         }
+    //         else{
+    //             $File='File';
+    //              echo "Item Name: $Name\n";
+    //              echo "Item Content: $Name\n";
+    //              echo "Item Type: $File\n";
+    //              echo "SharePoint ID: $ID\n";
+    //         }
+          
+
+
+    //         if ($data['folder']) {
+    //             // If the item is a folder, create the local folder
+    //             if (mkdir($localFilePath, 0777, true)) {
+    //                 echo "Folder created successfully at: $localFilePath\n";
     //             } else {
-    //                 echo "Failed to save the item.\n";
+    //                 echo "Failed to create folder at: $localFilePath\n";
+    //             }
+
+    //             // Recursively download the contents of the folder
+    //             $children = $client->drive($driveId)->listById($itemId);
+
+
+    //             foreach ($children as $child) {
+    //                 downloadItemById($client, $driveId, $child['name'], $child['id']);
+
     //             }
     //         } else {
-    //             echo "Failed to download the item.\n";
+    //             // If the item is a file, download and save it
+    //             $response = $client->drive($driveId)->downloadItemById($itemId);
+    //             if ($response !== false) {
+    //                 if (file_put_contents($localFilePath, $response) !== false) {
+    //                     echo "File saved successfully to $localFilePath\n";
+    //                 } else {
+    //                     echo "Failed to save the file to $localFilePath\n";
+    //                 }
+    //             } else {
+    //                 echo "Failed to download the file.\n";
+    //             }
     //         }
+
+    //         //}
+    //         //}
+    //         // else {
+    //         //     echo "Failed to get item information.\n";
+    //         // }
     //     }
     // }
 
 
-    //Download Item By Id
-    // function downloadItemById($client, $driveId, $itemname, $itemId)
-    // {
-    //     $response = $client
-    //         ->drive($driveId)
-    //         ->downloadItemById($itemId);
 
-    //     //Define the local directory where you want to save the Item
-    //     $localDirectory = __DIR__ . '/../src/LocalDrive';
-
-    //     $imageContent = $response;
-    //     $localFilePath = $localDirectory . DIRECTORY_SEPARATOR . $itemname;
-    //     file_put_contents($localFilePath, $imageContent);
-
-    //     if (file_put_contents($localFilePath, $imageContent) !== false) {
-    //         echo 'Item saved successfully to ' . $localFilePath;
-    //     } else {
-    //         echo 'Failed to save the Item.';
-    //     }
-    // }
 
     //Get Item By Id from SharePoint Directory
     function getItemById($client, $driveId, $itemId)
@@ -435,7 +461,7 @@
         }
     }
 
-    //Get Item By Path from SharePoint Directory
+    //Get Item By Path(Name) from SharePoint Directory
     function getItemByPath($client, $driveId, $itemPath)
     {
         try {
@@ -571,7 +597,7 @@
     // }
 
 
-    //Delete Item from LOcal Directory By Path
+    //Delete Item from LOcal Directory By Path(Name)
     function deleteItemlocally($client, $driveId, $itemId, $itemName, $localDirectory)
     {
 
@@ -611,17 +637,17 @@
 
     //Copy Item (First Upload a item and then use its id and parent id from
     //where you want to copy a item)
-    // function copyItem($client, $driveId, $itemId, $parentId)
-    // {
-    //     try {
-    //         $response = $client->drive($driveId)->copyItem($itemId, $parentId);
-    //         // If the operation was successful, display a success message
-    //         echo "Item Copied successfully: " . $response;
-    //     } catch (Exception $e) {
-    //         // If there was an error, display an error message
-    //         echo "Error: " . $e->getMessage();
-    //     }
-    // }
+    function copyItem($client, $driveId, $itemId, $parentId)
+    {
+        try {
+            $response = $client->drive($driveId)->copyItem($itemId, $parentId);
+            // If the operation was successful, display a success message
+            echo "Item Copied successfully: " . $response;
+        } catch (Exception $e) {
+            // If there was an error, display an error message
+            echo "Error: " . $e->getMessage();
+        }
+    }
 
 
     //Update Item on SharePoint and Local Directory
@@ -695,7 +721,7 @@
     }
 
 
-    //List Items By Path
+    //List Items By Path(Name)
     function listItemByPath($client, $driveId, $itemPath)
     {
         try {
@@ -776,7 +802,7 @@
         //deleteItem($client, $driveId, $itemid);
     }
 
-    //Upload Item to Path on SharePoint By Path and Download in Local Directory by Id
+    //Upload Item to Specific Path on SharePoint By Path(Name) and Download in Local Directory by Id
     function uploadItemtoPath($client, $driveId, $itemName, $parentName)
     {
         try {
@@ -828,12 +854,12 @@
     //$itemid = 'Newfolder(3)';
     //$parentId = '01FJOJ76F6Y2GOVW7725BZO354PWSELRRZ';
     //$parentName = 'folderfolder33';
-    //$itemName = '123.txt';
+    //$itemName = 'folder.txt';
     // $itemname='folderfolder55';
 
 
     //$itemname='test.txt';
-    //$itemId = '01FJOJ76HVOEY4F75Z4RHZRVXGKDCPEOZW';
+    //$itemId = '01FJOJ76GSXOZS4SXMURB2TEQQ6NDPK3H6';
 
     //delta($client, $driveId);
     //deltaByToken($client, $driveId, $tokendelta);
@@ -846,7 +872,7 @@
     //uploadItem($client, $driveId, $itemName,$parentId);
     //uploadItemtoPath($client, $driveId, $itemName,$parentName);
     //deleteItem($client, $driveId, $itemid,$localDirectory);
-    //listItemById($client, $driveId, $itemId);
+    ///listItemById($client, $driveId, $itemId);
     //listItemByPath($client, $driveId, $itemPath);
     //listItems($client, $driveId);
     //updateItem($client, $driveId, $itemId, $itemname);
@@ -854,6 +880,7 @@
     //getItems($client, $driveId);
     //updateItem($client, $driveId, $itemId, $itemname, $localPath);
     //copyItem($client, $driveId, $itemId, $parentId, $localDirectory);
+    //deleteItemlocally($client, $driveId, $itemId, $itemName, $localDirectory);
 
     function downloadFolder($client, $driveId, $itemname, $localDirectory)
     {
@@ -905,7 +932,55 @@
         }
     }
 
+    // function downloadItemById($client, $driveId, $itemname, $itemId)
+    // {
+    //     // Define the local directory where you want to save the item
+    //     $localDirectory = __DIR__ . '/../src/LocalDrive';
 
+    //     // Define the local file/folder path
+    //     $localFilePath = $localDirectory . DIRECTORY_SEPARATOR . $itemname;
+
+    //     // Check if the item (file or folder) already exists locally
+    //     if (file_exists($localFilePath)) {
+    //         echo "Item already exists at: $localFilePath\n";
+    //     } else {
+    //         // Download the item from SharePoint
+    //         $response = $client->drive($driveId)->downloadItemById($itemId);
+
+    //         if ($response !== false) {
+    //             // Save the item to the local directory
+    //             if (file_put_contents($localFilePath, $response) !== false) {
+    //                 echo "Item saved successfully to $localFilePath\n";
+    //             } else {
+    //                 echo "Failed to save the item.\n";
+    //             }
+    //         } else {
+    //             echo "Failed to download the item.\n";
+    //         }
+    //     }
+    // }
+
+
+    //Download Item By Id
+    // function downloadItemById($client, $driveId, $itemname, $itemId)
+    // {
+    //     $response = $client
+    //         ->drive($driveId)
+    //         ->downloadItemById($itemId);
+
+    //     //Define the local directory where you want to save the Item
+    //     $localDirectory = __DIR__ . '/../src/LocalDrive';
+
+    //     $imageContent = $response;
+    //     $localFilePath = $localDirectory . DIRECTORY_SEPARATOR . $itemname;
+    //     file_put_contents($localFilePath, $imageContent);
+
+    //     if (file_put_contents($localFilePath, $imageContent) !== false) {
+    //         echo 'Item saved successfully to ' . $localFilePath;
+    //     } else {
+    //         echo 'Failed to save the Item.';
+    //     }
+    // }
 
 
 
