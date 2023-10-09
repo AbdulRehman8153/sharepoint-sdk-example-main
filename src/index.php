@@ -7,9 +7,6 @@
 
 <body>
 
-
-
-
     <?php
 
 
@@ -17,6 +14,7 @@
     use TagMyDoc\SharePoint\SharePointClient;
 
     include('config.php');
+
 
     require __DIR__ . '/../vendor/autoload.php';
 
@@ -51,6 +49,25 @@
 
 
     $tokendelta =  @file_get_contents(__DIR__ . '/../storage/deltaToken') ?: null;
+    //$deltaResponse =  @file_get_contents(__DIR__ . '/../storage/deltaResponse.js') ?: null;
+
+
+    function store_log($messagelog)
+    {
+        $logFilePath = __DIR__ . '/../src/log.log';
+        $logFile = fopen($logFilePath, 'a');
+
+        if ($logFile) {
+            date_default_timezone_set('Asia/Karachi');
+            $message = $messagelog . date('Y-m-d H:i:s') . ".\n";
+
+            fwrite($logFile, $message);
+            fclose($logFile);
+        } else {
+            echo "Unable to open or create the log file.";
+        }
+    }
+
 
     if ($tokendelta === null) {
         delta($client, $driveId);
@@ -64,6 +81,7 @@
     {
         $response = $client->drive($driveId)->delta();
         echo $response;
+        file_put_contents(__DIR__ . '/../storage/deltaResponse', $response);
         $data = json_decode($response, true);
         $tokendelta = substr($data['@odata.deltaLink'], 124, 151); // Extract from position 3 to 38
         file_put_contents(__DIR__ . '/../storage/deltaToken', $tokendelta);
@@ -108,87 +126,115 @@
 
 
             //if item has changed
-            //   if (isset($data['value']) && is_array($data['value'])) {
-            //                 // Start iterating from the second element (index 1)
-            //                 for ($i = 1; $i < count($data['value']); $i++) {
-            //                     $item = $data['value'][$i];
+            if (isset($data['value']) && is_array($data['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($i = 1; $i <= count($data['value']); $i++) {
+                    $item = $data['value'][$i];
 
-            //                     // Check if 'id' and 'name' keys exist in the current item
-            //                     if (isset($item['createdDateTime']) && isset($item['lastModifiedDateTime'])) {
-            //                         $createdDateTime = $item['createdDateTime'];
-            //                         $lastModifiedDateTime = $item['lastModifiedDateTime'];
-            //                         $itemid = $item['id'];
-            //                         $itemname = $item['name'];
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($item['createdDateTime']) && isset($item['lastModifiedDateTime'])) {
+                        $createdDateTime = $item['createdDateTime'];
+                        $lastModifiedDateTime = $item['lastModifiedDateTime'];
+                        $itemid = $item['id'];
+                        $itemname = $item['name'];
 
-            //             // Convert the date and time to a string
-            //     $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
-            //     $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
+                        // Convert the date and time to a string
+                        $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
+                        $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
+                        if ($createdDateTimeString !== $lastModifiedDateTimeString) {
 
-            //     // Print the results
-            //     echo "Created DateTime: $createdDateTimeString\n";
-            //     echo "Last Modified DateTime: $lastModifiedDateTimeString\n";
+                            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                            $mappingDatabase = json_decode($mappingFile, true);
+                            $remoteItemId = $itemid;
+                            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                                // Start iterating from the second element (index 1)
+                                for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
+                                    $itemDatabase = $mappingDatabase['value'][$j];
+                                    $remoteItemIdNew = $remoteItemId;
 
-            //     if($createdDateTimeString !== $lastModifiedDateTimeString){
-            //         //echo "Not equal";
-            //         $localPath = __DIR__ . '\LocalDrive/4567.txt';
-            //         //updateItem($client, $driveId, $itemid, $itemname,$localPath);
-            //         downloadItemById($client, $driveId, $itemname, $itemid);
+                                    // Check if 'id' and 'name' keys exist in the current item
+                                    if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
 
-            //     }
+                                        $itemnameDatabase = $itemDatabase['name'];
+                                        $localPath = __DIR__ . '\LocalDrive/' . $itemnameDatabase;
+                                        updateItemLocally($client, $driveId, $itemid, $itemname, $localPath);
+                                        
+                                    } else {
+                                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                    }
+                                }
+                            } else {
+                                echo "Error: 'value' array not found in the JSON response.\n";
+                            }
+                        }
+                    } else {
+                        echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
 
-            //                         // If the operation was successful, display a success message
-            //                         //echo "Delta successfully for item: $createdDateTime (id: $itemid)\n";
-            //                         //echo "Delta successfully for item: $lastModifiedDateTime (id: $itemid)\n";
-            //                         $localDirectory = __DIR__ . '/../src/LocalDrive';
-            //                         // Call the downloadItemById function with extracted values
+            //if item has deleted   
+            if (isset($data['value']) && is_array($data['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($i = 1; $i <= count($data['value']); $i++) {
+                    //echo count($data['value']);
+                    $item = $data['value'][$i];
+                    if (isset($item['deleted']) && $item['deleted']['state'] === 'deleted') {
+                        // Check if 'id' and 'name' keys exist in the current item
+            //         //if (!(isset($item['createdDateTime']) && isset($item['lastModifiedDateTime']))) {
+                        $itemid = $item['id'];
+                        // echo "Previous Id:" . $itemid;
+                        //  //$itemname = $item['name'];
+            //             //$itemName='ftest2.txt';
 
-            //                        // downloadItemById($client, $driveId, $itemname, $itemid);
-            //                     } else {
-            //                         echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-            //                     }
-            //                 }
-            //             } else {
-            //                 echo "Error: 'value' array not found in the JSON response.\n";
-            //             }
+             //             // $ID= $item['id'];
+            //             // if ($item['folder']) {
+            //             //     $Folder='Folder';
+            //             //     echo "Item ID: $ID\n";
+            //             //     echo "Item Type: $Folder\n";
 
-            //if item has deleted
-            // if (isset($data['value']) && is_array($data['value'])) {
-            //     // Start iterating from the second element (index 1)
-            //     for ($i = 1; $i < count($data['value']); $i++) {
-            //         $item = $data['value'][$i];
+            //             // }
+            //             // else{
+            //             //     $File='File';
+            //             //     echo "Item ID: $ID\n";
+            //             //      echo "Item Type: $File\n";
 
-            //         // Check if 'id' and 'name' keys exist in the current item
-            //         if (!(isset($item['createdDateTime']) && isset($item['lastModifiedDateTime']))) {
-            //             $itemid = $item['id'];
-            //             //$itemname = $item['name'];
-            //             $itemName='123.txt';
+            //             // }
 
-            // $ID= $item['id'];
-            // if ($item['folder']) {
-            //     $Folder='Folder';
-            //     echo "Item ID: $ID\n";
-            //     echo "Item Type: $Folder\n";
-                
-            // }
-            // else{
-            //     $File='File';
-            //     echo "Item ID: $ID\n";
-            //      echo "Item Type: $File\n";
-                 
-            // }
-
-            //             $localDirectory = __DIR__ . '/../src/LocalDrive';
-            //            // deleteItemlocally($client, $driveId, $itemid, $itemName, $localDirectory);
-            //         } else {
-            //             echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-            //         }
-            //     }
-            // } else {
-            //     echo "Error: 'value' array not found in the JSON response.\n";
-            // }
-
-        } 
-        catch (Exception $e) {
+                        $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                        $mappingDatabase = json_decode($mappingFile, true);
+                        $remoteItemId = $itemid;
+                        if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                            // Start iterating from the second element (index 1)
+                            for ($j = 1; $j <= count($mappingDatabase['value']); $j++) { // Use $j for the inner loop
+                                $itemDatabase = $mappingDatabase['value'][$j];
+                                $remoteItemIdNew = $remoteItemId;
+            
+                                // Check if 'id' and 'name' keys exist in the current item
+                                if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
+                                    $itemnameDatabase = $itemDatabase['name'];
+                                     $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                     deleteItemlocally($client, $driveId, $remoteItemIdNew, $itemnameDatabase, $localDirectory);
+                                    
+                                } else {
+                                    //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                }
+                            }
+                        } else {
+                            echo "Error: 'value' array not found in the JSON response.\n";
+                        }
+                    } else {
+                        echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
+            
+           
+        } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
         }
@@ -305,38 +351,38 @@
     {
         // Define the local file/folder path
         $localFilePath = $localDirectory . '/' . $itemname;
-    
+
         //echo $localFilePath;
-    
+
         // Check if the item (file or folder) already exists locally
         if (file_exists($localFilePath)) {
             echo "Item already exists at: $localFilePath\n";
         } else {
             // Get information about the item
             $itemInfo = $client->drive($driveId)->getItemById($itemId);
-    
+            //echo $itemInfo;
             if ($itemInfo !== false) {
                 $data = json_decode($itemInfo, true);
                 $Name = $data['name'];
                 $ID = $data['id'];
-    
+
                 if ($data['folder']) {
                     // If the item is a folder, create the local folder
                     if (mkdir($localFilePath, 0777, true)) {
                         echo "Folder created successfully at: $localFilePath\n";
-    
+                        $messagelog =  "Folder created successfully at: $localFilePath\n";
+                        store_log($messagelog);
+                        
                         // Recursively download the contents of the folder
                         $children = $client->drive($driveId)->listById($itemId);
                         $data = json_decode($children, true);
-                         // echo $children;
+                        
                         if (isset($data['value']) && is_array($data['value'])) {
                             // Iterate through the children items
                             foreach ($data['value'] as $child) {
+                                
                                 downloadItemById($client, $driveId, $child['name'], $child['id'], $localFilePath);
-                                // Add a condition to check if the child's parent ID matches the current folder's ID
-                                // if ($child['parentReference']['id'] === $itemId) {
-                                //     downloadItemById($client, $driveId, $child['name'], $child['id'], $localFilePath);
-                                // }
+                               
                             }
                         } else {
                             echo "Error: 'value' array not found in the JSON response.\n";
@@ -350,6 +396,10 @@
                     if ($response !== false) {
                         if (file_put_contents($localFilePath, $response) !== false) {
                             echo "File saved successfully to $localFilePath\n";
+
+                            $messagelog =  "File created successfully at: $localFilePath\n";
+                            store_log($messagelog);
+                            
                         } else {
                             echo "Failed to save the file to $localFilePath\n";
                         }
@@ -362,14 +412,9 @@
             }
         }
     }
-    
 
 
 
-   
-    
-
-   
     //Original WIthout Recursively
     //Download Item on Local Directory By Id
     // function downloadItemById($client, $driveId, $itemname, $itemId)
@@ -406,7 +451,7 @@
     //              echo "Item Type: $File\n";
     //              echo "SharePoint ID: $ID\n";
     //         }
-          
+
 
 
     //         if ($data['folder']) {
@@ -607,17 +652,63 @@
         ///$itemName = basename($itemId);
         $localItemPath = $localDirectory . '/' . $itemName;
 
-        // Check if the local item exists and delete it
-        if (file_exists($localItemPath)) {
-            if (unlink($localItemPath)) {
-                echo "Local Item Deleted Successfully at $localItemPath\n";
-                
-            } else {
-                echo "Failed to delete Local Item\n";
+
+        if (is_dir($localItemPath) === true) {
+            $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($localItemPath), RecursiveIteratorIterator::CHILD_FIRST);
+
+            foreach ($files as $file) {
+                if (in_array($file->getBasename(), array('.', '..')) !== true) {
+                    if ($file->isDir() === true) {
+                        rmdir($file->getPathName());
+                    } else if (($file->isFile() === true) || ($file->isLink() === true)) {
+                        unlink($file->getPathname());
+                    }
+                }
             }
-        } else {
-            echo "Local Item does not exist at $localItemPath\n";
+            echo "Local Item Deleted Successfully at $localItemPath\n";
+            $messagelog =  "Local Item Deleted Successfully at: $localItemPath\n";
+            store_log($messagelog);
+
+            return rmdir($localItemPath);
+            
+        } else if ((is_file($localItemPath) === true) || (is_link($localItemPath) === true)) {
+            echo "Local Item Deleted Successfully at $localItemPath\n";
+            $messagelog =  "Local Item Deleted Successfully at: $localItemPath\n";
+            store_log($messagelog);
+
+            return unlink($localItemPath);
+            
+
         }
+
+        return false;
+
+
+
+
+        // creating a directory named gfg 
+        // $dirname = "gfg"; 
+
+        // // removing directory using rmdir() 
+        // if(rmdir($localItemPath)) 
+        // { 
+        //   echo ("$localItemPath successfully removed"); 
+        // } 
+        // else
+        // { 
+        //  echo ($localItemPath . "couldn't be removed");  
+        // } 
+
+        // Check if the local item exists and delete it
+        // if (file_exists($localItemPath)) {
+        //     if (unlink($localItemPath)) {
+        //         echo "Local Item Deleted Successfully at $localItemPath\n";
+        //     } else {
+        //         echo "Failed to delete Local Item\n";
+        //     }
+        // } else {
+        //     echo "Local Item does not exist at $localItemPath\n";
+        // }
     }
 
 
@@ -651,40 +742,69 @@
         }
     }
 
+     //Update Item on Local Directory
+     function updateItemLocally($client, $driveId, $itemId, $itemname, $localPath)
+     {
+         try {
+             
+             // Update the local directory
+             if (file_exists($localPath)) {
+                 $newLocalPath = dirname($localPath) . '/' . $itemname;
+                 //echo $newLocalPath;
+                 if (rename($localPath, $newLocalPath)) {
+                     echo "Local file/directory updated successfully.";
+                     $messagelog =  "Local file/directory updated successfully: $newLocalPath\n";
+                     store_log($messagelog);
+                     
+                 } else {
+                     echo "Failed to update local file/directory.";
+                 }
+             } else {
+                 echo "Local file/directory not found.";
+             }
+         } catch (Exception $e) {
+             // If there was an error, display an error message
+             echo "Error: " . $e->getMessage();
+         }
+     }
 
-    //Update Item on SharePoint and Local Directory
-    function updateItem($client, $driveId, $itemId, $itemname, $localPath)
-    {
-        try {
-            //echo $localPath;
-            // Update the item on SharePoint
-            $response = $client->drive($driveId)->updateItem(
-                $itemId,
-                [
-                    'name' => $itemname
-                ]
-            );
 
-            // If the operation was successful, display a success message
-            echo "Item Updated successfully on SharePoint: " . $response;
+    // //Update Item on SharePoint and Local Directory
+    // function updateItem($client, $driveId, $itemId, $itemname, $localPath)
+    // {
+    //     try {
+    //         //echo $localPath;
+    //         // Update the item on SharePoint
+    //         $response = $client->drive($driveId)->updateItem(
+    //             $itemId,
+    //             [
+    //                 'name' => $itemname
+    //             ]
+    //         );
 
-            // Update the local directory
-            if (file_exists($localPath)) {
-                $newLocalPath = dirname($localPath) . '/' . $itemname;
-                //echo $newLocalPath;
-                if (rename($localPath, $newLocalPath)) {
-                    echo "Local file/directory updated successfully.";
-                } else {
-                    echo "Failed to update local file/directory.";
-                }
-            } else {
-                echo "Local file/directory not found.";
-            }
-        } catch (Exception $e) {
-            // If there was an error, display an error message
-            echo "Error: " . $e->getMessage();
-        }
-    }
+    //         // If the operation was successful, display a success message
+    //         echo "Item Updated successfully on SharePoint: " . $response;
+
+    //         // Update the local directory
+    //         if (file_exists($localPath)) {
+    //             $newLocalPath = dirname($localPath) . '/' . $itemname;
+    //             //echo $newLocalPath;
+    //             if (rename($localPath, $newLocalPath)) {
+    //                 echo "Local file/directory updated successfully.";
+    //                 $messagelog =  "Local file/directory updated successfully: $newLocalPath\n";
+    //                 store_log($messagelog);
+                    
+    //             } else {
+    //                 echo "Failed to update local file/directory.";
+    //             }
+    //         } else {
+    //             echo "Local file/directory not found.";
+    //         }
+    //     } catch (Exception $e) {
+    //         // If there was an error, display an error message
+    //         echo "Error: " . $e->getMessage();
+    //     }
+    // }
 
 
     //Update Item on SHarePoint
@@ -782,7 +902,7 @@
 
 
     //Upload Item on SharePoint to Root and Download in Local Directory By Id
-    function uploadItem($client, $driveId, $itemName, $parentId,$localDirectory)
+    function uploadItem($client, $driveId, $itemName, $parentId, $localDirectory)
     {
         try {
             $response = $client->drive($driveId)->uploadItem($itemName, $itemName, $parentId);
@@ -805,7 +925,7 @@
     }
 
     //Upload Item to Specific Path on SharePoint By Path(Name) and Download in Local Directory by Id
-    function uploadItemtoPath($client, $driveId, $itemName, $parentName,$localDirectory)
+    function uploadItemtoPath($client, $driveId, $itemName, $parentName, $localDirectory)
     {
         try {
             $response = $client->drive($driveId)->uploadItemToPath($itemName, $itemName, $parentName);
@@ -833,13 +953,29 @@
         }
         // getItemById($client, $driveId, $itemid);
         //getItemByPath($client, $driveId, $itemname);
-        downloadItemById($client, $driveId, $itemname, $itemid,$localDirectory);
+        downloadItemById($client, $driveId, $itemname, $itemid, $localDirectory);
         //downloadItemByPath($client, $driveId, $itemname);
         //createFolder($client, $driveId, $itemname);
         //createFolder($client, $driveId, $itemName,$localDirectory);
         //moveItem($client, $driveId, $itemid,$parentId);
         //copyItem($client, $driveId, $itemid,$parentId);
     }
+
+
+
+
+
+    //    $logFilePath = 'logs/my_log_file.log';
+    //    $logFile = fopen($logFilePath, 'a'); // 'a' mode for appending to the file
+    //    $message = "Something happened at " . date('Y-m-d H:i:s') . ": This is a log message.\n";
+    //    fwrite($logFile, $message);
+    //    fclose($logFile);
+    // $localDirectory = __DIR__ . '/../src/LocalDrive';
+
+
+
+
+
 
 
     // $itemname='folderfolder33';
@@ -857,9 +993,9 @@
     //$parentId = '01FJOJ76F6Y2GOVW7725BZO354PWSELRRZ';
     //$parentName = 'folder789';
     //$itemName = 'upload123.txt';
-     $itemname='4000.txt';
+    $itemname = '4000.txt';
 
-     //01FJOJ76EIEB2ZRHWCNBCIFAZHAOSPHPTK
+    //01FJOJ76EIEB2ZRHWCNBCIFAZHAOSPHPTK
     //$itemname='test.txt';
     $itemId = '01FJOJ76EIEB2ZRHWCNBCIFAZHAOSPHPTK';
 
@@ -877,7 +1013,7 @@
     ///listItemById($client, $driveId, $itemId);
     //listItemByPath($client, $driveId, $itemPath);
     //listItems($client, $driveId);
-   // updateItem($client, $driveId, $itemId, $itemname,$localDirectory);
+    // updateItem($client, $driveId, $itemId, $itemname,$localDirectory);
     //getItemById($client, $driveId, $itemId);
     //getItems($client, $driveId);
     //updateItem($client, $driveId, $itemId, $itemname, $localPath);
