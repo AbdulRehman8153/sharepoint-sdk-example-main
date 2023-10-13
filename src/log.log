@@ -245,3 +245,249 @@ Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\
 2023-10-11 19:09:56.
 Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFile1234567.txt
 2023-10-11 19:11:37.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Demofolder12/DemoFolder45Rename
+2023-10-12 14:23:57.
+Item Updated successfully on SharePoint: {"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#drives('b%21A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches')/items/$entity","@microsoft.graph.downloadUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/download.aspx?UniqueId=bf1773ea-dfd4-4145-874e-bdc7bedd29ad&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvNWpkN3k2LnNoYXJlcG9pbnQuY29tQDFhMTdmYjkzLWI5ZTgtNDMzZC05NDE4LTU2NDU1ZWE1NTczYSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2OTcxMDQxNDkiLCJleHAiOiIxNjk3MTA3NzQ5IiwiZW5kcG9pbnR1cmwiOiJTeFN4YmZUOXpMRThWOVVHRnZlNTF1MERiNHFJbFZOcS9OSGJiOGk3akw4PSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTI5IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiJWWE5ZOHUyU3EwU1FDYnlZZXJNTXVnPT0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiWmpGallUVm1NRE10TXpBNU9TMDBPRFppTFdFME5HRXRaVGd3T0dRM1lUQmpOMlprIiwiYXBwX2Rpc3BsYXluYW1lIjoiVGFnTXlEb2MiLCJuYW1laWQiOiJhMWIyNTljYS0yMmJjLTRkODAtOTlmNS1hMzJiNmEzY2M0MGNAMWExN2ZiOTMtYjllOC00MzNkLTk0MTgtNTY0NTVlYTU1NzNhIiwicm9sZXMiOiJzZWxlY3RlZHNpdGVzIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLmZ1bGxjb250cm9sIiwidHQiOiIxIiwiaXBhZGRyIjoiMjAuMTkwLjE2My4yOSJ9.G9GakVu34r88ns40lA5I9AGTCTQRa4mdv12OXUuoS20&ApiVersion=2.0","createdDateTime":"2023-10-11T14:08:18Z","eTag":"\"{BF1773EA-DFD4-4145-874E-BDC7BEDD29AD},4\"","id":"01FJOJ76HKOML37VG7IVAYOTV5Y67N2KNN","lastModifiedDateTime":"2023-10-12T09:49:10Z","name":"DemoFileRenameAgain.txt","webUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/Library1/Demofolder12/DemoFolder45Rename/DemoFileRenameAgain.txt","cTag":"\"c:{BF1773EA-DFD4-4145-874E-BDC7BEDD29AD},1\"","size":21,"createdBy":{"user":{"email":"Muhammad.Hamza@5jd7y6.onmicrosoft.com","id":"bca9e92f-03f8-4a64-b004-33a938607261","displayName":"Muhammad Hamza"}},"lastModifiedBy":{"user":{"displayName":"SharePoint App"}},"parentReference":{"driveType":"documentLibrary","driveId":"b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches","id":"01FJOJ76EQJPDEO3U2RFGYNMBOMZIZH5OE","path":"/drives/b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches/root:/Demofolder12/DemoFolder45Rename","siteId":"f1ca5f03-3099-486b-a44a-e808d7a0c7fd"},"file":{"mimeType":"text/plain","hashes":{"quickXorHash":"B0YjO4gZWNHOoQxhtUMZyAACM7w="}},"fileSystemInfo":{"createdDateTime":"2023-10-11T14:08:18Z","lastModifiedDateTime":"2023-10-12T09:49:10Z"},"shared":{"scope":"users"}}
+2023-10-12 14:49:09.
+Item Deleted successfully on SharePoint: 
+2023-10-12 14:50:44.
+Item Deleted successfully on SharePoint: 
+2023-10-12 15:00:18.
+Item Deleted successfully on SharePoint: 01FJOJ76EHVARO536YANFIGY3L3CIP47GA
+2023-10-12 15:10:31.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/2 (1).txt
+2023-10-12 16:43:10.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12
+2023-10-12 16:49:26.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34
+2023-10-12 16:49:27.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34/testtest56
+2023-10-12 16:49:28.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34/testtest56/600.txt
+2023-10-12 16:49:32.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34/testtest56/700.txt
+2023-10-12 16:49:34.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34/testtest56/800.txt
+2023-10-12 16:49:36.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34/testtest67
+2023-10-12 16:49:36.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34/testtest67/500.txt
+2023-10-12 16:49:38.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34/testtest67/800.txt
+2023-10-12 16:49:40.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest34/testtest67/900.txt
+2023-10-12 16:49:41.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testtest12/testtest45
+2023-10-12 16:49:41.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/fff12
+2023-10-12 16:57:36.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/fff45
+2023-10-12 16:57:36.
+Item Upload successfully: {"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#drives('b%21A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches')/items/$entity","@microsoft.graph.downloadUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/download.aspx?UniqueId=f71b0729-60dc-43c1-8876-4f50bd30e381&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvNWpkN3k2LnNoYXJlcG9pbnQuY29tQDFhMTdmYjkzLWI5ZTgtNDMzZC05NDE4LTU2NDU1ZWE1NTczYSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2OTcxMTIxNTAiLCJleHAiOiIxNjk3MTE1NzUwIiwiZW5kcG9pbnR1cmwiOiJFSFZtOHViUDlrWHQ2aEcwalRXOGNGMVM3NDY1a0FabXp2Sm9HZ2g4SGtRPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTI5IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiIwK1ZEL0o1SWtVZU9aYzAxU0Q4eEZnPT0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiWmpGallUVm1NRE10TXpBNU9TMDBPRFppTFdFME5HRXRaVGd3T0dRM1lUQmpOMlprIiwiYXBwX2Rpc3BsYXluYW1lIjoiVGFnTXlEb2MiLCJuYW1laWQiOiJhMWIyNTljYS0yMmJjLTRkODAtOTlmNS1hMzJiNmEzY2M0MGNAMWExN2ZiOTMtYjllOC00MzNkLTk0MTgtNTY0NTVlYTU1NzNhIiwicm9sZXMiOiJzZWxlY3RlZHNpdGVzIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLmZ1bGxjb250cm9sIiwidHQiOiIxIiwiaXBhZGRyIjoiNDAuMTI2LjM1LjE1MyJ9.uXfvdxBpr_sjlkuRv3ZLRWON0EVWyk6UCthVq1UGCyI&ApiVersion=2.0","createdDateTime":"2023-10-12T12:02:30Z","eTag":"\"{F71B0729-60DC-43C1-8876-4F50BD30E381},1\"","id":"01FJOJ76BJA4N7PXDAYFBYQ5SPKC6TBY4B","lastModifiedDateTime":"2023-10-12T12:02:30Z","name":"text.docx","webUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/Doc.aspx?sourcedoc=%7BF71B0729-60DC-43C1-8876-4F50BD30E381%7D&file=text.docx&action=default&mobileredirect=true","cTag":"\"c:{F71B0729-60DC-43C1-8876-4F50BD30E381},1\"","size":9,"createdBy":{"application":{"id":"a1b259ca-22bc-4d80-99f5-a32b6a3cc40c","displayName":"TagMyDoc"},"user":{"displayName":"SharePoint App"}},"lastModifiedBy":{"application":{"id":"a1b259ca-22bc-4d80-99f5-a32b6a3cc40c","displayName":"TagMyDoc"},"user":{"displayName":"SharePoint App"}},"parentReference":{"driveType":"documentLibrary","driveId":"b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches","id":"01FJOJ76F6Y2GOVW7725BZO354PWSELRRZ","path":"/drives/b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches/root:","siteId":"f1ca5f03-3099-486b-a44a-e808d7a0c7fd"},"file":{"mimeType":"application/vnd.openxmlformats-officedocument.wordprocessingml.document","hashes":{"quickXorHash":"dCgDHujgAjK8YQx4CQAAAAAAAAA="}},"fileSystemInfo":{"createdDateTime":"2023-10-12T12:02:30Z","lastModifiedDateTime":"2023-10-12T12:02:30Z"},"shared":{"scope":"users"}}
+2023-10-12 17:02:29.
+Item Upload successfully: {"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#drives('b%21A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches')/items/$entity","@microsoft.graph.downloadUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/download.aspx?UniqueId=f5f0e3c1-a9e4-4492-b150-063b556ae040&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvNWpkN3k2LnNoYXJlcG9pbnQuY29tQDFhMTdmYjkzLWI5ZTgtNDMzZC05NDE4LTU2NDU1ZWE1NTczYSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2OTcxMTIyNDUiLCJleHAiOiIxNjk3MTE1ODQ1IiwiZW5kcG9pbnR1cmwiOiJoeSt4aUJ3NHpCbzR1ZlBvTm9lT1gyUU5yWFNab0dFUURFZXl6bkFnVW1rPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTI5IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiJRZ3hxUHYrbFVVUzJBc0V1WnFYczB3PT0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiWmpGallUVm1NRE10TXpBNU9TMDBPRFppTFdFME5HRXRaVGd3T0dRM1lUQmpOMlprIiwiYXBwX2Rpc3BsYXluYW1lIjoiVGFnTXlEb2MiLCJuYW1laWQiOiJhMWIyNTljYS0yMmJjLTRkODAtOTlmNS1hMzJiNmEzY2M0MGNAMWExN2ZiOTMtYjllOC00MzNkLTk0MTgtNTY0NTVlYTU1NzNhIiwicm9sZXMiOiJzZWxlY3RlZHNpdGVzIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLmZ1bGxjb250cm9sIiwidHQiOiIxIiwiaXBhZGRyIjoiNDAuMTI2LjM1Ljg4In0.7IpQyPacmhdzKnOWbzeZq3cuCDzB7_crWDmNx5JkqcM&ApiVersion=2.0","createdDateTime":"2023-10-12T12:04:06Z","eTag":"\"{F5F0E3C1-A9E4-4492-B150-063B556AE040},1\"","id":"01FJOJ76GB4PYPLZFJSJCLCUAGHNKWVYCA","lastModifiedDateTime":"2023-10-12T12:04:06Z","name":"text.pdf","webUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/Library1/text.pdf","cTag":"\"c:{F5F0E3C1-A9E4-4492-B150-063B556AE040},1\"","size":8,"createdBy":{"application":{"id":"a1b259ca-22bc-4d80-99f5-a32b6a3cc40c","displayName":"TagMyDoc"},"user":{"displayName":"SharePoint App"}},"lastModifiedBy":{"application":{"id":"a1b259ca-22bc-4d80-99f5-a32b6a3cc40c","displayName":"TagMyDoc"},"user":{"displayName":"SharePoint App"}},"parentReference":{"driveType":"documentLibrary","driveId":"b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches","id":"01FJOJ76F6Y2GOVW7725BZO354PWSELRRZ","path":"/drives/b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches/root:","siteId":"f1ca5f03-3099-486b-a44a-e808d7a0c7fd"},"file":{"mimeType":"application/pdf","hashes":{"quickXorHash":"dCgDHujgAjiQwQwACAAAAAAAAAA="}},"fileSystemInfo":{"createdDateTime":"2023-10-12T12:04:06Z","lastModifiedDateTime":"2023-10-12T12:04:06Z"},"shared":{"scope":"users"}}
+2023-10-12 17:04:05.
+Item Upload successfully: {"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#drives('b%21A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches')/items/$entity","@microsoft.graph.downloadUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/download.aspx?UniqueId=f5f0e3c1-a9e4-4492-b150-063b556ae040&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvNWpkN3k2LnNoYXJlcG9pbnQuY29tQDFhMTdmYjkzLWI5ZTgtNDMzZC05NDE4LTU2NDU1ZWE1NTczYSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2OTcxMTIzMjYiLCJleHAiOiIxNjk3MTE1OTI2IiwiZW5kcG9pbnR1cmwiOiJoeSt4aUJ3NHpCbzR1ZlBvTm9lT1gyUU5yWFNab0dFUURFZXl6bkFnVW1rPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTI5IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiJJWVVVcHVjakRFU21kbW1JQTBFWDJ3PT0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiWmpGallUVm1NRE10TXpBNU9TMDBPRFppTFdFME5HRXRaVGd3T0dRM1lUQmpOMlprIiwiYXBwX2Rpc3BsYXluYW1lIjoiVGFnTXlEb2MiLCJuYW1laWQiOiJhMWIyNTljYS0yMmJjLTRkODAtOTlmNS1hMzJiNmEzY2M0MGNAMWExN2ZiOTMtYjllOC00MzNkLTk0MTgtNTY0NTVlYTU1NzNhIiwicm9sZXMiOiJzZWxlY3RlZHNpdGVzIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLmZ1bGxjb250cm9sIiwidHQiOiIxIiwiaXBhZGRyIjoiNDAuMTI2LjM1Ljg4In0.m9SskzVGFi2OKw83yteRZ2ayENeV-BJUAy_y1WeMG2o&ApiVersion=2.0","createdDateTime":"2023-10-12T12:04:06Z","eTag":"\"{F5F0E3C1-A9E4-4492-B150-063B556AE040},2\"","id":"01FJOJ76GB4PYPLZFJSJCLCUAGHNKWVYCA","lastModifiedDateTime":"2023-10-12T12:05:27Z","name":"text.pdf","webUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/Library1/text.pdf","cTag":"\"c:{F5F0E3C1-A9E4-4492-B150-063B556AE040},2\"","size":8,"createdBy":{"application":{"id":"a1b259ca-22bc-4d80-99f5-a32b6a3cc40c","displayName":"TagMyDoc"},"user":{"displayName":"SharePoint App"}},"lastModifiedBy":{"application":{"id":"a1b259ca-22bc-4d80-99f5-a32b6a3cc40c","displayName":"TagMyDoc"},"user":{"displayName":"SharePoint App"}},"parentReference":{"driveType":"documentLibrary","driveId":"b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches","id":"01FJOJ76F6Y2GOVW7725BZO354PWSELRRZ","path":"/drives/b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches/root:","siteId":"f1ca5f03-3099-486b-a44a-e808d7a0c7fd"},"file":{"mimeType":"application/pdf","hashes":{"quickXorHash":"dCgDHujgAjiQwQwACAAAAAAAAAA="}},"fileSystemInfo":{"createdDateTime":"2023-10-12T12:04:06Z","lastModifiedDateTime":"2023-10-12T12:05:27Z"},"shared":{"scope":"users"}}
+2023-10-12 17:05:26.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder45RenameAgain
+2023-10-12 17:43:44.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Demofolder12/DemoFolder45RenameAgain
+2023-10-12 17:46:35.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New
+2023-10-12 17:47:28.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/1
+2023-10-12 17:47:29.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/1/2.txt
+2023-10-12 17:47:31.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/7
+2023-10-12 17:47:32.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/7/9.txt
+2023-10-12 17:47:34.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/folder_for_log_3
+2023-10-12 17:47:34.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/folder_for_log_3/2
+2023-10-12 17:47:35.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/folder_for_log_3/2/3.txt
+2023-10-12 17:47:37.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/folder_for_log_3/3 (1).txt
+2023-10-12 17:47:38.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/folder_for_log_3/3 (2).txt
+2023-10-12 17:47:39.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/folder_for_log_3/3.txt
+2023-10-12 17:47:40.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/4 (1).txt
+2023-10-12 17:47:41.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/4.txt
+2023-10-12 17:47:42.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/61.txt
+2023-10-12 17:47:44.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/aaaa1234.txt
+2023-10-12 17:47:45.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/ftest12234466666.txt
+2023-10-12 17:47:46.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/Function_Testing11.txt
+2023-10-12 17:47:47.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/Function_Testing8.txt
+2023-10-12 17:47:49.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/pic3.jpg
+2023-10-12 17:47:50.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000New/testing_rename.txt
+2023-10-12 17:47:51.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename
+2023-10-12 18:05:25.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/1
+2023-10-12 18:05:26.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/1/2.txt
+2023-10-12 18:05:29.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/7
+2023-10-12 18:05:29.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/7/9.txt
+2023-10-12 18:05:31.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/folder_for_log_3
+2023-10-12 18:05:31.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/folder_for_log_3/2
+2023-10-12 18:05:32.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/folder_for_log_3/2/3.txt
+2023-10-12 18:05:34.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/folder_for_log_3/3 (1).txt
+2023-10-12 18:05:35.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/folder_for_log_3/3 (2).txt
+2023-10-12 18:05:36.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/folder_for_log_3/3.txt
+2023-10-12 18:05:37.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/4 (1).txt
+2023-10-12 18:05:39.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/4.txt
+2023-10-12 18:05:40.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/61.txt
+2023-10-12 18:05:41.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/aaaa1234.txt
+2023-10-12 18:05:42.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/ftest12234466666.txt
+2023-10-12 18:05:43.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/Function_Testing11.txt
+2023-10-12 18:05:45.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/Function_Testing8.txt
+2023-10-12 18:05:46.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/pic3.jpg
+2023-10-12 18:05:48.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000Rename/testing_rename.txt
+2023-10-12 18:05:49.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename/111111
+2023-10-12 18:23:25.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename/1111112222
+2023-10-12 18:27:30.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123
+2023-10-12 18:40:46.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123
+2023-10-12 18:43:14.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123/11111122223333
+2023-10-12 18:43:14.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123
+2023-10-12 18:44:29.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123/11111122223333
+2023-10-12 18:44:29.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123/11111122223333/2Rename.txt
+2023-10-12 18:44:29.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123
+2023-10-12 18:45:03.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123/11111122223333
+2023-10-12 18:45:03.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123
+2023-10-12 18:46:11.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000OldMewRename123/111111222233334444
+2023-10-12 18:46:11.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456
+2023-10-12 18:47:02.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/111111222233334444
+2023-10-12 18:47:03.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/111111222233334444/2Rename.txt
+2023-10-12 18:47:07.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/7
+2023-10-12 18:47:07.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/7/9.txt
+2023-10-12 18:47:09.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/folder_for_log_3
+2023-10-12 18:47:09.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/folder_for_log_3/2
+2023-10-12 18:47:10.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/folder_for_log_3/2/3.txt
+2023-10-12 18:47:11.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/folder_for_log_3/3 (1).txt
+2023-10-12 18:47:13.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/folder_for_log_3/3 (2).txt
+2023-10-12 18:47:14.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/folder_for_log_3/3.txt
+2023-10-12 18:47:15.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/4 (1).txt
+2023-10-12 18:47:16.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/4.txt
+2023-10-12 18:47:17.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/61.txt
+2023-10-12 18:47:18.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/aaaa1234.txt
+2023-10-12 18:47:20.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/ftest12234466666.txt
+2023-10-12 18:47:21.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/Function_Testing11.txt
+2023-10-12 18:47:22.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/Function_Testing8.txt
+2023-10-12 18:47:23.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/pic3.jpg
+2023-10-12 18:47:24.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456/testing_rename.txt
+2023-10-12 18:47:26.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789
+2023-10-12 18:48:59.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/111111222233334444
+2023-10-12 18:49:00.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/111111222233334444/2Rename.txt
+2023-10-12 18:49:03.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/7
+2023-10-12 18:49:04.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/7/9.txt
+2023-10-12 18:49:05.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/folder_for_log_3
+2023-10-12 18:49:06.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/folder_for_log_3/2
+2023-10-12 18:49:07.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/folder_for_log_3/2/3.txt
+2023-10-12 18:49:08.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/folder_for_log_3/3 (1).txt
+2023-10-12 18:49:09.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/folder_for_log_3/3 (2).txt
+2023-10-12 18:49:11.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/folder_for_log_3/3.txt
+2023-10-12 18:49:12.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/4 (1).txt
+2023-10-12 18:49:13.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/4.txt
+2023-10-12 18:49:14.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/61.txt
+2023-10-12 18:49:15.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/aaaa1234.txt
+2023-10-12 18:49:16.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/ftest12234466666.txt
+2023-10-12 18:49:18.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/Function_Testing11.txt
+2023-10-12 18:49:19.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/Function_Testing8.txt
+2023-10-12 18:49:20.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/pic3.jpg
+2023-10-12 18:49:21.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000OldMewRename123456789/testing_rename.txt
+2023-10-12 18:49:22.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/4000test
+2023-10-12 19:01:54.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/6
+2023-10-12 19:28:20.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/7
+2023-10-12 19:36:49.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/1
+2023-10-13 11:23:15.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000test/7
+2023-10-13 11:25:20.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4000test/folder_for_log_3/2
+2023-10-13 11:27:41.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+2023-10-13 11:34:37.
