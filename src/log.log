@@ -491,3 +491,257 @@ Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\
 2023-10-13 11:27:41.
 Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
 2023-10-13 11:34:37.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder
+2023-10-13 11:53:20.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12
+2023-10-13 11:53:21.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder23
+2023-10-13 11:53:22.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder23/DemoFile.txt
+2023-10-13 11:53:26.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder23/DemoFile123.txt
+2023-10-13 11:53:27.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder45
+2023-10-13 11:53:27.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder12
+2023-10-13 11:53:28.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder12/DemoFolder23
+2023-10-13 11:53:29.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder12/DemoFolder23/DemoFile.txt
+2023-10-13 11:53:30.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder12/DemoFolder23/DemoFile123.txt
+2023-10-13 11:53:32.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder12/DemoFolder45
+2023-10-13 11:53:32.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder23
+2023-10-13 11:53:33.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder23/DemoFile.txt
+2023-10-13 11:53:34.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder23/DemoFile123.txt
+2023-10-13 11:53:35.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFile.txt
+2023-10-13 11:53:37.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFile123.txt
+2023-10-13 11:53:38.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder45
+2023-10-13 11:53:38.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder
+2023-10-13 11:57:46.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23
+2023-10-13 11:57:47.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23/TestingFolder2323
+2023-10-13 11:57:48.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23/TestingFolder2323/500.txt
+2023-10-13 11:57:52.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23/TestingFolder2323/600.txt
+2023-10-13 11:57:53.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23/TestingFolder2323/700.txt
+2023-10-13 11:57:54.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23/TestingFolder2323/800.txt
+2023-10-13 11:57:56.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23/5.txt
+2023-10-13 11:57:57.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23/6.txt
+2023-10-13 11:57:58.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder45
+2023-10-13 11:57:59.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder45/TestingFolder4545
+2023-10-13 11:57:59.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder45/TestingFolder4545/3.txt
+2023-10-13 11:58:01.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder45/TestingFolder4545/4.txt
+2023-10-13 11:58:02.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder45/300.txt
+2023-10-13 11:58:04.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder45/400.txt
+2023-10-13 11:58:05.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder56
+2023-10-13 11:58:05.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder56/TestingFolder5656
+2023-10-13 11:58:06.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder56/TestingFolder5656/1.txt
+2023-10-13 11:58:08.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder56/TestingFolder5656/2.txt
+2023-10-13 11:58:09.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder56/100.txt
+2023-10-13 11:58:10.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder56/200.txt
+2023-10-13 11:58:12.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/f123456.txt
+2023-10-13 11:59:40.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/f789.txt
+2023-10-13 12:02:41.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/f2345.txt
+2023-10-13 12:02:42.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/fcreate12345.txt
+2023-10-13 12:02:43.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/ffcre2345.txt
+2023-10-13 12:02:45.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/fff2345.txt
+2023-10-13 12:02:46.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/file_for_log_1.txt
+2023-10-13 12:02:47.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/frecursive.txt
+2023-10-13 12:02:48.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/ftest.txt
+2023-10-13 12:02:50.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/ftest122344.txt
+2023-10-13 12:02:51.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/Function_Testing8.txt
+2023-10-13 12:02:52.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/Function_Testing9.txt
+2023-10-13 12:02:53.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/Function_Testing11.txt
+2023-10-13 12:02:54.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/pic3.jpg
+2023-10-13 12:02:55.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testing.txt
+2023-10-13 12:02:57.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/text3.txt
+2023-10-13 12:02:58.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/text4.txt
+2023-10-13 12:02:59.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/f123456 (1).txt
+2023-10-13 12:03:00.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/pic1 (1).jpg
+2023-10-13 12:03:01.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder23/TestingFolder2323
+2023-10-13 12:07:41.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive
+2023-10-13 12:10:35.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder
+2023-10-13 12:22:31.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12
+2023-10-13 12:22:32.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder1212
+2023-10-13 12:22:33.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder1212/100.txt
+2023-10-13 12:22:37.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder1212/200.txt
+2023-10-13 12:22:38.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder1212/300.txt
+2023-10-13 12:22:40.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder12/DemoFolder1212/400.txt
+2023-10-13 12:22:41.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder23
+2023-10-13 12:22:41.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323
+2023-10-13 12:22:42.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/500.txt
+2023-10-13 12:22:44.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/600.txt
+2023-10-13 12:22:45.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/700.txt
+2023-10-13 12:22:46.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/800.txt
+2023-10-13 12:22:48.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder/DemoFolder12/DemoFolder1212/20000.txt
+2023-10-13 12:25:44.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder/DemoFolder12/DemoFolder1212/20000.txt
+2023-10-13 12:52:51.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder/DemoFolder12/DemoFolder1212/300.txt
+2023-10-13 12:53:41.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/800.txt
+2023-10-13 12:54:16.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/3.txt
+2023-10-13 12:58:22.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/1.txt
+2023-10-13 12:58:24.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/2.txt
+2023-10-13 12:58:25.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/4.txt
+2023-10-13 12:58:26.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/5.txt
+2023-10-13 12:58:27.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/6.txt
+2023-10-13 12:58:28.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/100.txt
+2023-10-13 12:58:29.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/200.txt
+2023-10-13 12:58:31.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/300.txt
+2023-10-13 12:58:32.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/456.txt
+2023-10-13 12:58:33.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/500.txt
+2023-10-13 12:58:34.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/400.txt
+2023-10-13 12:58:36.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/700.txt
+2023-10-13 12:58:37.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/800.txt
+2023-10-13 12:58:38.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/600.txt
+2023-10-13 12:58:40.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/1000.txt
+2023-10-13 12:58:41.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/900.txt
+2023-10-13 12:58:42.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFile.txt
+2023-10-13 12:58:43.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFile123.txt
+2023-10-13 12:58:44.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/f789.txt
+2023-10-13 12:58:46.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFile_For_Delete.txt
+2023-10-13 12:58:47.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/f2345.txt
+2023-10-13 12:58:48.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/fcreate12345.txt
+2023-10-13 12:58:50.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/f123456.txt
+2023-10-13 12:58:51.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/fff2345.txt
+2023-10-13 12:58:53.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/ffcre2345.txt
+2023-10-13 12:58:54.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/file_for_log_1.txt
+2023-10-13 12:58:55.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/frecursive.txt
+2023-10-13 12:58:56.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/ftest.txt
+2023-10-13 12:58:57.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/1.txt
+2023-10-13 13:00:11.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/2.txt
+2023-10-13 13:01:38.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder
+2023-10-13 13:10:56.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder12
+2023-10-13 13:10:57.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder/TestingFolder12/testing.txt
+2023-10-13 13:11:00.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder12
+2023-10-13 13:11:00.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/TestingFolder12/testing.txt
+2023-10-13 13:11:02.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/testing.txt
+2023-10-13 13:11:03.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder23
+2023-10-13 13:11:03.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder23/DemoFolder2323
+2023-10-13 13:11:04.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder23/DemoFolder2323/500.txt
+2023-10-13 13:11:06.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder23/DemoFolder2323/6000000.txt
+2023-10-13 13:11:07.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder2323
+2023-10-13 13:11:08.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder2323/500.txt
+2023-10-13 13:11:09.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/DemoFolder2323/6000000.txt
+2023-10-13 13:11:11.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/6000000.txt
+2023-10-13 13:11:11.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/700.txt
+2023-10-13 13:11:11.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/FolderTest
+2023-10-13 13:16:37.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/FolderTest/FolderTest12
+2023-10-13 13:16:38.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/FolderTest/FolderTest12/FoldderTeest1234.txt
+2023-10-13 13:16:41.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/5000000.txt
+2023-10-13 13:16:41.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DemoFolder/DemoFolder23/DemoFolder2323/6000000.txt
+2023-10-13 13:16:41.
