@@ -105,7 +105,7 @@
             // Check if the 'value' array exists in the JSON data
             if (isset($data['value']) && is_array($data['value'])) {
                 // Start iterating from the second element (index 1)
-                for ($i = 1; $i <= 1; $i++) {
+                for ($i = 1; $i <= count($data['value']); $i++) {
                     $item = $data['value'][$i];
 
                     // Check if 'id' and 'name' keys exist in the current item
@@ -119,43 +119,52 @@
                         $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
                         $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
 
-                        $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
-                        $mappingDatabase = json_decode($mappingFile, true);
-                        $remoteItemId = $itemid;
-                        if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
-                            // Start iterating from the second element (index 1)
-                            for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
-                                $itemDatabase = $mappingDatabase['value'][$j];
-                                $remoteItemIdNew = $remoteItemId;
-                                //echo $remoteItemIdNew;
+                    //     if ($createdDateTimeString === $lastModifiedDateTimeString) {
+
+                    //         //$localDirectory = __DIR__ . '/../src/LocalDrive';
+
+                    //        // downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
+                    //         //delta($client, $driveId);
+                        
+                    //     $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                    //     $mappingDatabase = json_decode($mappingFile, true);
+                    //     $remoteItemId = $itemid;
+                    //     if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                    //         // Start iterating from the second element (index 1)
+                    //         for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
+                    //             $itemDatabase = $mappingDatabase['value'][$j];
+                    //             $remoteItemIdNew = $remoteItemId;
+                    //             //echo $remoteItemIdNew;
 
 
-                                // Check if 'id' and 'name' keys exist in the current item
-                                if (isset($itemDatabase['id']) && $itemDatabase['id'] !== $remoteItemIdNew) {
+                    //             // Check if 'id' and 'name' keys exist in the current item
+                    //             if (isset($itemDatabase['id']) && $itemDatabase['id'] != $remoteItemIdNew )  {
 
-                                    if ($createdDateTimeString === $lastModifiedDateTimeString) {
+                    //                 // if ($createdDateTimeString === $lastModifiedDateTimeString) {
 
-                                        $localDirectory = __DIR__ . '/../src/LocalDrive';
+                    //                      $localDirectory = __DIR__ . '/../src/LocalDrive';
 
-                                        downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
-                                        //delta($client, $driveId);
-                                    }
+                    //                      downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
+                    //                 //     //delta($client, $driveId);
+                    //                 // }
             
-                                } else {
-                                    //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-                                }
-                            }
-                        } else {
-                            echo "Error: 'value' array not found in the JSON response.\n";
+                    //             } else {
+                    //                 //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    //             }
+
+                    //         }
+                    //     } else {
+                    //         echo "Error: 'value' array not found in the JSON response.\n";
+                    //     }
+                    // }
+
+
+                        if ($createdDateTimeString === $lastModifiedDateTimeString) {
+
+                            $localDirectory = __DIR__ . '/../src/LocalDrive';
+                            downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
+                            //delta($client, $driveId);
                         }
-
-
-                        // if ($createdDateTimeString === $lastModifiedDateTimeString) {
-
-                        //     $localDirectory = __DIR__ . '/../src/LocalDrive';
-                        //     downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
-                        //     delta($client, $driveId);
-                        // }
 
 
                         // $localDirectory = __DIR__ . '/../src/LocalDrive';
@@ -172,171 +181,111 @@
 
 
             //if item has changed
-            if (isset($data['value']) && is_array($data['value'])) {
-                // Start iterating from the second element (index 1)
-                for ($i = 1; $i <= count($data['value']); $i++) {
-                    $item = $data['value'][$i];
-
-                    // Check if 'id' and 'name' keys exist in the current item
-                    if (isset($item['createdDateTime']) && isset($item['lastModifiedDateTime'])) {
-                        $createdDateTime = $item['createdDateTime'];
-                        $lastModifiedDateTime = $item['lastModifiedDateTime'];
-                        $itemid = $item['id'];
-                        $itemNewName = $item['name'];
-                        $itemParentId = $item['parentReference']['id'];
-
-
-
-                        // Convert the date and time to a string
-                        $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
-                        $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
-                        if ($createdDateTimeString !== $lastModifiedDateTimeString) {
-
-                            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
-                            $mappingDatabase = json_decode($mappingFile, true);
-                            $remoteItemId = $itemid;
-                            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
-                                // Start iterating from the second element (index 1)
-                                for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
-                                    $itemDatabase = $mappingDatabase['value'][$j];
-                                    $remoteItemIdNew = $remoteItemId;
-                                    //echo $remoteItemIdNew;
-
-
-                                    // Check if 'id' and 'name' keys exist in the current item
-                                    if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
-
-                                        $itemOldName = $itemDatabase['name'];
-                                        //echo $itemnameDatabase;
-
-                                        //$localPath = __DIR__ . '\LocalDrive/'. $itemnameDatabase;
-                                        //updateItemLocally($client, $driveId, $itemid, $itemname, $localPath);
-                                    } else {
-                                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-                                    }
-                                }
-                            } else {
-                                echo "Error: 'value' array not found in the JSON response.\n";
-                            }
-
-                            $itemOldNameOld = $itemOldName;
-                            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
-                            $mappingDatabase = json_decode($mappingFile, true);
-                            $remoteItemParentId = $itemParentId;
-                            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
-                                // Start iterating from the second element (index 1)
-                                for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
-                                    $itemDatabase = $mappingDatabase['value'][$k];
-                                    $remoteItemParentIdNew = $remoteItemParentId;
-                                    //echo $remoteItemParentIdNew;
-
-
-                                    // Check if 'id' and 'name' keys exist in the current item
-                                    if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemParentIdNew) {
-
-                                        $itemParentnameDatabase = $itemDatabase['name'];
-                                        $itemParentWebUrl = $itemDatabase['webUrl'];
-                                        //echo $itemParentWebUrl;
-
-                                        // // Find the position of "Library1" in the URL
-                                        $libraryPosition = strpos($itemParentWebUrl, "Library1");
-
-                                        if ($libraryPosition !== false) {
-                                            // Extract the value after "Library1" and everything after it
-                                            $value = substr($itemParentWebUrl, $libraryPosition + strlen("Library1"));
-                                            echo "Extracted value: " . $value;
-                                        } else {
-                                            echo "Value not found in the URL.";
-                                        }
-
-                                        echo "Extracted value: " . $value;
-
-                                        if ($value === ' ') {
-                                            $itemOldNameOldOld = $itemOldNameOld;
-                                            //echo $itemnameDatabaseOriginalNew;
-                                            $localPath = __DIR__ . '\LocalDrive/' . $itemOldNameOldOld;
-                                            echo $localPath;
-                                            updateItemLocally($client, $driveId, $itemid, $itemNewName, $localPath);
-                                            //delta($client, $driveId);
-                                        } else {
-
-
-                                            $itemOldNameOldOld = $itemOldNameOld;
-                                            //echo $itemnameDatabaseOriginalNew;
-                                            $localPath = __DIR__ . '\LocalDrive' . $value . "/" . $itemOldNameOldOld;
-                                            echo $localPath;
-                                            updateItemLocally($client, $driveId, $itemid, $itemNewName, $localPath);
-                                            // delta($client, $driveId);
-                                        }
-                                    } else {
-                                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-                                    }
-                                }
-                            } else {
-                                echo "Error: 'value' array not found in the JSON response.\n";
-                            }
-                        }
-                       // delta($client, $driveId);
-                    } else {
-                        echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-                    }
-                }
-            } else {
-                echo "Error: 'value' array not found in the JSON response.\n";
-            }
-
-
-            //if item has deleted 
             // if (isset($data['value']) && is_array($data['value'])) {
             //     // Start iterating from the second element (index 1)
             //     for ($i = 1; $i <= count($data['value']); $i++) {
             //         $item = $data['value'][$i];
 
             //         // Check if 'id' and 'name' keys exist in the current item
-            //         if (isset($item['deleted']) && $item['deleted']['state'] === 'deleted') {
-
+            //         if (isset($item['createdDateTime']) && isset($item['lastModifiedDateTime'])) {
+            //             $createdDateTime = $item['createdDateTime'];
+            //             $lastModifiedDateTime = $item['lastModifiedDateTime'];
             //             $itemid = $item['id'];
-            //             //$itemname = $item['name'];
+            //             $itemNewName = $item['name'];
+            //             $itemParentId = $item['parentReference']['id'];
 
-            //             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
-            //             $mappingDatabase = json_decode($mappingFile, true);
-            //             $remoteItemId = $itemid;
-            //             if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
-            //                 // Start iterating from the second element (index 1)
-            //                 for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
-            //                     $itemDatabase = $mappingDatabase['value'][$j];
-            //                     $remoteItemIdNew = $remoteItemId;
-            //                     //echo $remoteItemIdNew;
-            //                     // Check if 'id' and 'name' keys exist in the current item
-            //                     if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
 
-            //                         $itemnameDatabase = $itemDatabase['name'];
-            //                         $itemWebUrl = $itemDatabase['webUrl'];
 
-            //                         // // Find the position of "Library1" in the URL
-            //                         $libraryPosition = strpos($itemWebUrl, "Library1");
+            //             // Convert the date and time to a string
+            //             $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
+            //             $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
+            //             if ($createdDateTimeString !== $lastModifiedDateTimeString) {
 
-            //                         if ($libraryPosition !== false) {
-            //                             // Extract the value after "Library1" and everything after it
-            //                             $value = substr($itemWebUrl, $libraryPosition + strlen("Library1"));
-            //                             echo "Extracted value: " . $value;
+            //                 $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            //                 $mappingDatabase = json_decode($mappingFile, true);
+            //                 $remoteItemId = $itemid;
+            //                 if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+            //                     // Start iterating from the second element (index 1)
+            //                     for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
+            //                         $itemDatabase = $mappingDatabase['value'][$j];
+            //                         $remoteItemIdNew = $remoteItemId;
+            //                         //echo $remoteItemIdNew;
+
+
+            //                         // Check if 'id' and 'name' keys exist in the current item
+            //                         if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
+
+            //                             $itemOldName = $itemDatabase['name'];
+            //                             //echo $itemnameDatabase;
+
+            //                             //$localPath = __DIR__ . '\LocalDrive/'. $itemnameDatabase;
+            //                             //updateItemLocally($client, $driveId, $itemid, $itemname, $localPath);
             //                         } else {
-            //                             echo "Value not found in the URL.";
+            //                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
             //                         }
-
-            //                         //echo "Extracted value: " . $value;
-
-            //                         $localDirectory = __DIR__ . '\LocalDrive' . $value;
-            //                         deleteItemlocally($client, $driveId, $remoteItemIdNew, $itemOldNameOld, $localDirectory);
-            //                     } else {
-            //                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
             //                     }
-            //                     //delta($client, $driveId);
+            //                 } else {
+            //                     echo "Error: 'value' array not found in the JSON response.\n";
             //                 }
-            //                 delta($client, $driveId);
-            //             } else {
-            //                 echo "Error: 'value' array not found in the JSON response.\n";
+
+            //                 $itemOldNameOld = $itemOldName;
+            //                 $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            //                 $mappingDatabase = json_decode($mappingFile, true);
+            //                 $remoteItemParentId = $itemParentId;
+            //                 if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+            //                     // Start iterating from the second element (index 1)
+            //                     for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+            //                         $itemDatabase = $mappingDatabase['value'][$k];
+            //                         $remoteItemParentIdNew = $remoteItemParentId;
+            //                         //echo $remoteItemParentIdNew;
+
+
+            //                         // Check if 'id' and 'name' keys exist in the current item
+            //                         if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemParentIdNew) {
+
+            //                             $itemParentnameDatabase = $itemDatabase['name'];
+            //                             $itemParentWebUrl = $itemDatabase['webUrl'];
+            //                             //echo $itemParentWebUrl;
+
+            //                             // // Find the position of "Library1" in the URL
+            //                             $libraryPosition = strpos($itemParentWebUrl, "Library1");
+
+            //                             if ($libraryPosition !== false) {
+            //                                 // Extract the value after "Library1" and everything after it
+            //                                 $value = substr($itemParentWebUrl, $libraryPosition + strlen("Library1"));
+            //                                 echo "Extracted value: " . $value;
+            //                             } else {
+            //                                 echo "Value not found in the URL.";
+            //                             }
+
+            //                             echo "Extracted value: " . $value;
+
+            //                             if ($value === ' ') {
+            //                                 $itemOldNameOldOld = $itemOldNameOld;
+            //                                 //echo $itemnameDatabaseOriginalNew;
+            //                                 $localPath = __DIR__ . '\LocalDrive/' . $itemOldNameOldOld;
+            //                                 echo $localPath;
+            //                                 updateItemLocally($client, $driveId, $itemid, $itemNewName, $localPath);
+            //                                 //delta($client, $driveId);
+            //                             } else {
+
+
+            //                                 $itemOldNameOldOld = $itemOldNameOld;
+            //                                 //echo $itemnameDatabaseOriginalNew;
+            //                                 $localPath = __DIR__ . '\LocalDrive' . $value . "/" . $itemOldNameOldOld;
+            //                                 echo $localPath;
+            //                                 updateItemLocally($client, $driveId, $itemid, $itemNewName, $localPath);
+            //                                 // delta($client, $driveId);
+            //                             }
+            //                         } else {
+            //                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+            //                         }
+            //                     }
+            //                 } else {
+            //                     echo "Error: 'value' array not found in the JSON response.\n";
+            //                 }
             //             }
+            //            // delta($client, $driveId);
             //         } else {
             //             echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
             //         }
@@ -344,6 +293,66 @@
             // } else {
             //     echo "Error: 'value' array not found in the JSON response.\n";
             // }
+
+
+            //if item has deleted 
+            if (isset($data['value']) && is_array($data['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($i = 1; $i <= count($data['value']); $i++) {
+                    $item = $data['value'][$i];
+
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($item['deleted']) && $item['deleted']['state'] === 'deleted') {
+
+                        $itemid = $item['id'];
+                        //$itemname = $item['name'];
+
+                        $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                        $mappingDatabase = json_decode($mappingFile, true);
+                        $remoteItemId = $itemid;
+                        if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                            // Start iterating from the second element (index 1)
+                            for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
+                                $itemDatabase = $mappingDatabase['value'][$j];
+                                $remoteItemIdNew = $remoteItemId;
+                                //echo $remoteItemIdNew;
+                                // Check if 'id' and 'name' keys exist in the current item
+                                if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
+
+                                    $itemnameDatabase = $itemDatabase['name'];
+                                    $itemWebUrl = $itemDatabase['webUrl'];
+
+                                    // // Find the position of "Library1" in the URL
+                                    $libraryPosition = strpos($itemWebUrl, "Library1");
+
+                                    if ($libraryPosition !== false) {
+                                        // Extract the value after "Library1" and everything after it
+                                        $value = substr($itemWebUrl, $libraryPosition + strlen("Library1"));
+                                        echo "Extracted value: " . $value;
+                                    } else {
+                                        echo "Value not found in the URL.";
+                                    }
+
+                                    //echo "Extracted value: " . $value;
+
+                                    $localDirectory = __DIR__ . '\LocalDrive' . $value;
+                                    deleteItemlocally($client, $driveId, $remoteItemIdNew, $itemOldNameOld, $localDirectory);
+                                } else {
+                                    //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                }
+                                //delta($client, $driveId);
+                            }
+                            delta($client, $driveId);
+                        } else {
+                            echo "Error: 'value' array not found in the JSON response.\n";
+                        }
+                    } else {
+                        echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
 
             //if item has Moved
             //   if (isset($data['value']) && is_array($data['value'])) {
