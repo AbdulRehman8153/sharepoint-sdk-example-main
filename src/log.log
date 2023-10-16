@@ -902,3 +902,51 @@ Item Upload successfully: {"@odata.context":"https://graph.microsoft.com/v1.0/$m
 2023-10-16 15:04:08.
 Item Upload successfully: {"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#drives('b%21A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches')/items/$entity","@microsoft.graph.downloadUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/download.aspx?UniqueId=847bf189-a83b-4b19-8ba4-9831fd35b7ae&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvNWpkN3k2LnNoYXJlcG9pbnQuY29tQDFhMTdmYjkzLWI5ZTgtNDMzZC05NDE4LTU2NDU1ZWE1NTczYSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2OTc0NTA3OTAiLCJleHAiOiIxNjk3NDU0MzkwIiwiZW5kcG9pbnR1cmwiOiJFbGQyQzFCZ2x3QzdqZjRiTnZCalhVOEVLWXV6MG04dTRsN1lxdG9MVExjPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTI5IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiI4RWdRM2wrT2prcVdWdEZ0MVRiSzZRPT0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiWmpGallUVm1NRE10TXpBNU9TMDBPRFppTFdFME5HRXRaVGd3T0dRM1lUQmpOMlprIiwiYXBwX2Rpc3BsYXluYW1lIjoiVGFnTXlEb2MiLCJuYW1laWQiOiJhMWIyNTljYS0yMmJjLTRkODAtOTlmNS1hMzJiNmEzY2M0MGNAMWExN2ZiOTMtYjllOC00MzNkLTk0MTgtNTY0NTVlYTU1NzNhIiwicm9sZXMiOiJzZWxlY3RlZHNpdGVzIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLmZ1bGxjb250cm9sIiwidHQiOiIxIiwiaXBhZGRyIjoiNDAuMTI2LjM1Ljg4In0.2miA-vYB4eSw8hZGCFKhsLAgwrg1iNf3GCAVg0LTcDg&ApiVersion=2.0","createdDateTime":"2023-10-16T10:02:37Z","eTag":"\"{847BF189-A83B-4B19-8BA4-9831FD35B7AE},5\"","id":"01FJOJ76EJ6F5YIO5IDFFYXJEYGH6TLN5O","lastModifiedDateTime":"2023-10-16T10:06:30Z","name":"Conflict.txt","webUrl":"https://5jd7y6.sharepoint.com/sites/SPFX3/Library1/Conflict.txt","cTag":"\"c:{847BF189-A83B-4B19-8BA4-9831FD35B7AE},5\"","size":12,"createdBy":{"application":{"id":"a1b259ca-22bc-4d80-99f5-a32b6a3cc40c","displayName":"TagMyDoc"},"user":{"displayName":"SharePoint App"}},"lastModifiedBy":{"application":{"id":"a1b259ca-22bc-4d80-99f5-a32b6a3cc40c","displayName":"TagMyDoc"},"user":{"displayName":"SharePoint App"}},"parentReference":{"driveType":"documentLibrary","driveId":"b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches","id":"01FJOJ76F6Y2GOVW7725BZO354PWSELRRZ","name":"Library1","path":"/drives/b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches/root:","siteId":"f1ca5f03-3099-486b-a44a-e808d7a0c7fd"},"file":{"mimeType":"text/plain","hashes":{"quickXorHash":"Q3iDG8zAhjSMgQ4urAMe6AAAAAA="}},"fileSystemInfo":{"createdDateTime":"2023-10-16T10:02:37Z","lastModifiedDateTime":"2023-10-16T10:06:30Z"},"shared":{"scope":"users"}}
 2023-10-16 15:06:30.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/vvvvvvvv
+2023-10-16 19:22:01.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/nnnnnn
+2023-10-16 19:24:57.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/cccccvvvv
+2023-10-16 19:29:00.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/bvbvbvbb
+2023-10-16 19:30:16.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/zaq
+2023-10-16 19:52:35.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/wer
+2023-10-16 19:52:58.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/rtrtrt12
+2023-10-16 20:03:18.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/rtrtrt12/trtrtrtrtrtr345
+2023-10-16 20:03:19.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/trtrtrtrtrtr345
+2023-10-16 20:03:20.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/bvbvbvbb456
+2023-10-16 20:03:20.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/cccccvvvv
+2023-10-16 20:03:20.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/popopo123
+2023-10-16 20:10:43.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/popopo123/popopo456
+2023-10-16 20:10:44.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/popopo456
+2023-10-16 20:10:45.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/rtrtrt12987
+2023-10-16 20:10:45.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/bvbvbvbb456
+2023-10-16 20:10:45.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/TestingFolder
+2023-10-16 20:10:45.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//rtrtrt12987 Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//rtrtrt12987
+2023-10-16 20:10:47.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//popopo123 Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//popopo123
+2023-10-16 20:10:47.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//popopo123/popopo456 Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//popopo123/popopo456
+2023-10-16 20:10:47.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//bvbvbvbb456 Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//bvbvbvbb456
+2023-10-16 20:10:47.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/bvbvbvbb456
+2023-10-16 20:15:16.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//bvbvbvbb456 Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//bvbvbvbb456
+2023-10-16 20:15:16.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//popopo123 Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//bvbvbvbb456/popopo123
+2023-10-16 20:15:16.

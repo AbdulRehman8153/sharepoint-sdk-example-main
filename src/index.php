@@ -5,6 +5,7 @@
     use Saloon\Http\Auth\AccessTokenAuthenticator;
     use TagMyDoc\SharePoint\SharePointClient;
 
+
     include('config.php');
 
 
@@ -25,13 +26,20 @@
 
     $client = new SharePointClient($clientId, $clientSecret, $tenantId);
 
-
     $token = get_token();
 
     if ($token === null) {
         $token = $client->getAccessToken()->serialize();
         store_token($token);
     }
+
+    // if ($token === null) {
+    //     $token = $client->getRefreshToken()->serialize();
+    //     store_token($token);
+    // }
+
+
+    //refreshAccessToken();
 
     $auth = AccessTokenAuthenticator::unserialize($token);
     $client->authenticate($auth);
@@ -89,8 +97,9 @@
         $tokenFilePath = __DIR__ . '/../storage/deltaToken';
         file_put_contents($tokenFilePath, $tokendelta);
 
-        echo $response; // Optional: Display the new response
+        //echo $response; // Optional: Display the new response
     }
+
 
     function for_Create_Item($client, $driveId, $data)
     {
@@ -465,7 +474,7 @@
                                 }
 
 
-                                $file = __DIR__ . '\LocalDrive/' . $valueItem;
+                                $file = __DIR__ . '\LocalDrive/' . $valueItemnew;
                                 $to = __DIR__ . '\LocalDrive/' . $valueParent;
                                 echo $file;
                                 echo $to;
@@ -513,86 +522,93 @@
         try {
             $response = $client->drive($driveId)->delta($tokendelta);
             $data = json_decode($response, true);
-
+            $deltaLink = $data['@odata.deltaLink'];
+            $startIndex = strpos($deltaLink, "token='") + 7; // starting position of the token
+            $endIndex = strpos($deltaLink, "')", $startIndex); // ending position of the token
+            $tokendelta = substr($deltaLink, $startIndex, $endIndex - $startIndex);    
+            // Save the token to another file
+            $tokenFilePath = __DIR__ . '/../storage/deltaToken';
+            file_put_contents($tokenFilePath, $tokendelta);
+            
             echo $response;
             //if new item has created/uploaded
             //count($data['value'])
             // Check if the 'value' array exists in the JSON data
-            if (isset($data['value']) && is_array($data['value'])) {
-                // Start iterating from the second element (index 1)
-                for ($i = 1; $i <= count($data['value']); $i++) {
-                    $item = $data['value'][$i];
+            // if (isset($data['value']) && is_array($data['value'])) {
+            //     // Start iterating from the second element (index 1)
+            //     for ($i = 1; $i <= count($data['value']); $i++) {
+            //         $item = $data['value'][$i];
 
-                    // Check if 'id' and 'name' keys exist in the current item
-                    if (isset($item['id']) && isset($item['name'])) {
-                        $itemid = $item['id'];
-                        $itemname = $item['name'];
-                        $createdDateTime = $item['createdDateTime'];
-                        $lastModifiedDateTime = $item['lastModifiedDateTime'];
+            //         // Check if 'id' and 'name' keys exist in the current item
+            //         if (isset($item['id']) && isset($item['name'])) {
+            //             $itemid = $item['id'];
+            //             $itemname = $item['name'];
+            //             $createdDateTime = $item['createdDateTime'];
+            //             $lastModifiedDateTime = $item['lastModifiedDateTime'];
 
-                        // Convert the date and time to a string
-                        $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
-                        $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
+            //             // Convert the date and time to a string
+            //             $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
+            //             $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
 
-                    //     if ($createdDateTimeString === $lastModifiedDateTimeString) {
+            //         //     if ($createdDateTimeString === $lastModifiedDateTimeString) {
 
-                    //         //$localDirectory = __DIR__ . '/../src/LocalDrive';
+            //         //         //$localDirectory = __DIR__ . '/../src/LocalDrive';
 
-                    //        // downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
-                    //         //delta($client, $driveId);
+            //         //        // downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
+            //         //         //delta($client, $driveId);
 
-                    //     $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
-                    //     $mappingDatabase = json_decode($mappingFile, true);
-                    //     $remoteItemId = $itemid;
-                    //     if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
-                    //         // Start iterating from the second element (index 1)
-                    //         for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
-                    //             $itemDatabase = $mappingDatabase['value'][$j];
-                    //             $remoteItemIdNew = $remoteItemId;
-                    //             //echo $remoteItemIdNew;
-
-
-                    //             // Check if 'id' and 'name' keys exist in the current item
-                    //             if (isset($itemDatabase['id']) && $itemDatabase['id'] != $remoteItemIdNew )  {
-
-                    //                 // if ($createdDateTimeString === $lastModifiedDateTimeString) {
-
-                    //                      $localDirectory = __DIR__ . '/../src/LocalDrive';
-
-                    //                      downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
-                    //                 //     //delta($client, $driveId);
-                    //                 // }
-
-                    //             } else {
-                    //                 //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-                    //             }
-
-                    //         }
-                    //     } else {
-                    //         echo "Error: 'value' array not found in the JSON response.\n";
-                    //     }
-                    // }
+            //         //     $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            //         //     $mappingDatabase = json_decode($mappingFile, true);
+            //         //     $remoteItemId = $itemid;
+            //         //     if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+            //         //         // Start iterating from the second element (index 1)
+            //         //         for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
+            //         //             $itemDatabase = $mappingDatabase['value'][$j];
+            //         //             $remoteItemIdNew = $remoteItemId;
+            //         //             //echo $remoteItemIdNew;
 
 
-                        if ($createdDateTimeString === $lastModifiedDateTimeString) {
+            //         //             // Check if 'id' and 'name' keys exist in the current item
+            //         //             if (isset($itemDatabase['id']) && $itemDatabase['id'] != $remoteItemIdNew )  {
 
-                            $localDirectory = __DIR__ . '/../src/LocalDrive';
-                            downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
-                            //delta($client, $driveId);
-                        }
+            //         //                 // if ($createdDateTimeString === $lastModifiedDateTimeString) {
+
+            //         //                      $localDirectory = __DIR__ . '/../src/LocalDrive';
+
+            //         //                      downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
+            //         //                 //     //delta($client, $driveId);
+            //         //                 // }
+
+            //         //             } else {
+            //         //                 //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+            //         //             }
+
+            //         //         }
+            //         //     } else {
+            //         //         echo "Error: 'value' array not found in the JSON response.\n";
+            //         //     }
+            //         // }
 
 
-                        // $localDirectory = __DIR__ . '/../src/LocalDrive';
-                        // downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
-                    } else {
-                        echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
-                    }
-                }
-            } else {
-                echo "Error: 'value' array not found in the JSON response.\n";
-            }
+            //             if ($createdDateTimeString === $lastModifiedDateTimeString) {
 
-            //for_Create_Item($client, $driveId, $data);
+            //                 $localDirectory = __DIR__ . '/../src/LocalDrive';
+            //                 downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
+            //                 //delta($client, $driveId);
+            //             }
+
+
+            //             // $localDirectory = __DIR__ . '/../src/LocalDrive';
+            //             // downloadItemByIdLocally($client, $driveId, $itemname, $itemid, $localDirectory);
+            //         } else {
+            //             echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+            //         }
+            //     }
+            // } else {
+            //     echo "Error: 'value' array not found in the JSON response.\n";
+            // }
+
+            for_Create_Item($client, $driveId, $data);
 
             //if item has changed
             // if (isset($data['value']) && is_array($data['value'])) {
@@ -708,7 +724,7 @@
             //     echo "Error: 'value' array not found in the JSON response.\n";
             // }
 
-            //for_Rename_Item($client, $driveId, $data);
+            for_Rename_Item($client, $driveId, $data);
 
             //if item has deleted 
             // if (isset($data['value']) && is_array($data['value'])) {
@@ -769,7 +785,7 @@
             //     echo "Error: 'value' array not found in the JSON response.\n";
             // }
 
-            //for_delete_Item($client, $driveId, $data);
+            for_delete_Item($client, $driveId, $data);
 
             //if item has Moved
             //   if (isset($data['value']) && is_array($data['value'])) {
@@ -926,7 +942,7 @@
             //     echo "Error: 'value' array not found in the JSON response.\n";
             // }
 
-           // for_moving_Item($client, $driveId, $data);
+            for_moving_Item($client, $driveId, $data);
 
         } catch (Exception $e) {
             // If there was an error, display an error message
