@@ -21,26 +21,10 @@ global $tenantId;
 
 $client = new SharePointClient($clientId, $clientSecret, $tenantId);
 
-// function get_token(): false|string|null
-// {
-//     return @file_get_contents(__DIR__ . '/../storage/token') ?: null;
-// }
-// function store_token(string $token): void
-// {
-//     file_put_contents(__DIR__ . '/../storage/token', $token);
-// }
-
-// $token = get_token();
-
-// if ($token === null) {
-//     $token = $client->getAccessToken()->serialize();
-//     store_token($token);
-// }
-
 $token = $client->getAccessToken()->serialize();
 $auth = AccessTokenAuthenticator::unserialize($token);
 $client->authenticate($auth);
-echo $token;
+
 
 
 //Store Logs
@@ -63,8 +47,10 @@ function store_log($messagelog)
 
 //First Time Delta Call
 //Give Information of All Files/Folders in JSON
-function delta($client, $driveId)
+function delta()
 {
+    global $client;
+    global $driveId;
     $response = $client->drive($driveId)->delta();
 
     // Save the new response to the file
@@ -86,15 +72,6 @@ function delta($client, $driveId)
 
     // echo $response; // Optional: Display the new response
 }
-
-
-
-//   $itemName='vvvvvvvvRa';
-//   ClsHelper::deleteItemSharePoint($itemName);
-
-//  $itemOldName='vvvvvvvvR';
-//  $itemUpdatedName='vvvvvvvvRa';
-//  ClsHelper::updateItemSharePoint($itemOldName, $itemUpdatedName);
 
 
 class ClsHelper
@@ -180,7 +157,7 @@ class ClsHelper
             //echo $response;
             $messagelog =  "Item Deleted successfully on SharePoint: $itemName\n";
             store_log($messagelog);
-            delta($client, $driveId);
+            delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
@@ -223,7 +200,7 @@ class ClsHelper
             echo "Item Updated successfully on SharePoint: " . $itemUpdatedName;
             $messagelog =  "Item Updated successfully on SharePoint: $response\n";
             store_log($messagelog);
-            delta($client, $driveId);
+            delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
@@ -232,7 +209,11 @@ class ClsHelper
 
 
     //Upload File/Folder on SharePoint in Specific Folder by File/Folder Name and
-    // its Content(if it is a file) and Specific Folder Name 
+    // its Content(if it is a file) and Specific Folder Name/Path
+    //itemName (Name of file you want to upload) 
+    //itemContent (Content if it is file)
+    //parentName (where to upload File, if you want to upload on Root Path then parentName
+    //is Empty otherwise give path of specific Folder where to upload)
     function uploadItemtoPathSharePoint($itemName,$itemContent, $parentName)
     {
         global $client;
@@ -244,6 +225,7 @@ class ClsHelper
             echo "Item Upload successfully on SharePoint: " . $itemName;
             $messagelog =  "Item Upload successfully on SharePoint: $response\n";
             store_log($messagelog);
+            delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
@@ -251,7 +233,7 @@ class ClsHelper
         
     }
 
-    //Create Folder on SharePoint directory By Folder Name
+    //Create Folder on SharePoint directory By Folder Name at Root Path
     function createFolderSharePoint($itemName)
     {
         global $client;
@@ -264,12 +246,15 @@ class ClsHelper
             echo "Folder Created Successfully on SharePoint! . $itemName\n";
             $messagelog =  "Folder Created Successfully on SharePoint: $response\n";
             store_log($messagelog);
+            delta();
         } else {
             echo "Failed to create SharePoint Folder\n";
         }
     }
 
-
+    //Move File/Folder on SharePoint 
+    //itemName(Which File/Folder you want to move)
+    //parentName (where to move that File/Folder)
     function moveItemSharePoint($itemName, $parentName)
     {
         global $client;
@@ -321,13 +306,17 @@ class ClsHelper
             echo "Item Moved successfully on SharePoint: " . $itemName;
             $messagelog =  "Item Moved successfully on SharePoint:  $response\n";
             store_log($messagelog);
-            delta($client,$driveId);
+            delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
         }
     }
 
+
+    //Copy File/Folder on SharePoint 
+    //itemName(Which File/Folder you want to copy)
+    //parentName (where to Copy that File/Folder )
     function copyItemSharePoint($itemName, $parentName)
     {
         global $client;
@@ -381,7 +370,7 @@ class ClsHelper
             echo "Item Copied successfully on SharePoint: " . $itemName;
             $messagelog =  "Item Copied successfully on SharePoint:  $response\n";
             store_log($messagelog);
-            delta($client,$driveId);
+            delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
