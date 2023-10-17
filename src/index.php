@@ -4,21 +4,20 @@
 
     use Saloon\Http\Auth\AccessTokenAuthenticator;
     use TagMyDoc\SharePoint\SharePointClient;
-
-
+   
     include('config.php');
-
-
     require __DIR__ . '/../vendor/autoload.php';
 
-    function get_token(): false|string|null
-    {
-        return @file_get_contents(__DIR__ . '/../storage/token') ?: null;
-    }
-    function store_token(string $token): void
-    {
-        file_put_contents(__DIR__ . '/../storage/token', $token);
-    }
+    
+
+    // function get_token(): false|string|null
+    // {
+    //     return @file_get_contents(__DIR__ . '/../storage/token') ?: null;
+    // }
+    // function store_token(string $token): void
+    // {
+    //     file_put_contents(__DIR__ . '/../storage/token', $token);
+    // }
 
     //$client = new SharePointClient  ('a1b259ca-22bc-4d80-99f5-a32b6a3cc40c', '7bn8Q~VOIR5eTr.3_YrTZdBFUKbUSV9h~H13Xb77','1a17fb93-b9e8-433d-9418-56455ea5573a');
     // technupur
@@ -26,21 +25,14 @@
 
     $client = new SharePointClient($clientId, $clientSecret, $tenantId);
 
-    $token = get_token();
-
-    if ($token === null) {
-        $token = $client->getAccessToken()->serialize();
-        store_token($token);
-    }
+    // $token = get_token();
 
     // if ($token === null) {
-    //     $token = $client->getRefreshToken()->serialize();
+    //     $token = $client->getAccessToken()->serialize();
     //     store_token($token);
     // }
 
-
-    //refreshAccessToken();
-
+    $token = $client->getAccessToken()->serialize();
     $auth = AccessTokenAuthenticator::unserialize($token);
     $client->authenticate($auth);
     echo $token;
@@ -50,9 +42,7 @@
 
     //Get Token of Delta Response
     $tokendelta =  @file_get_contents(__DIR__ . '/../storage/deltaToken') ?: null;
-    //$deltaResponse =  @file_get_contents(__DIR__ . '/../storage/deltaResponse.js') ?: null;
-
-
+    
     //Store Logs
     function store_log($messagelog)
     {
@@ -70,15 +60,15 @@
         }
     }
 
-
+    //
     if ($tokendelta === null) {
-        delta($client, $driveId);
+        //delta($client, $driveId);
     } else {
-        deltaByToken($client, $driveId, $tokendelta);  
+        //deltaByToken($client, $driveId, $tokendelta);
     }
 
 
-    // delta($client, $driveId);
+    
 
     //First Time Delta Call
     //Give Information of All Files/Folders in JSON
@@ -91,17 +81,23 @@
         file_put_contents($filePath, $response);
 
         $data = json_decode($response, true);
-        $tokendelta = substr($data['@odata.deltaLink'], 124, 151); // Extract from position 3 to 38
 
+        $deltaLink = $data['@odata.deltaLink'];
+        $parts = explode("token=", $deltaLink); // Split the URL based on "token="
+        if (count($parts) > 1) {
+            $tokendelta = $parts[1]; // Get the second part, which is the token value
+        } else {
+            $tokendelta = ""; // Handle the case where "token=" is not found in the URL
+        }
         // Save the token to another file
         $tokenFilePath = __DIR__ . '/../storage/deltaToken';
         file_put_contents($tokenFilePath, $tokendelta);
 
-        //echo $response; // Optional: Display the new response
+        // echo $response; // Optional: Display the new response
     }
 
 
-    function for_Create_Item($client, $driveId, $data)
+    function function_for_Create_Item($client, $driveId, $data)
     {
 
         //if new item has created/uploaded
@@ -182,7 +178,7 @@
         }
     }
 
-    function for_Rename_Item($client, $driveId, $data)
+    function function_for_Rename_Item($client, $driveId, $data)
     {
         if (isset($data['value']) && is_array($data['value'])) {
             // Start iterating from the second element (index 1)
@@ -298,7 +294,7 @@
         }
     }
 
-    function for_delete_Item($client, $driveId, $data)
+    function function_for_delete_Item($client, $driveId, $data)
     {
         if (isset($data['value']) && is_array($data['value'])) {
             // Start iterating from the second element (index 1)
@@ -360,7 +356,7 @@
     }
 
 
-    function for_moving_Item($client, $driveId, $data)
+    function function_for_moving_Item($client, $driveId, $data)
     {
         if (isset($data['value']) && is_array($data['value'])) {
             // Start iterating from the second element (index 1)
@@ -515,6 +511,161 @@
         }
     }
 
+    function function_for_copy_Item($client, $driveId, $data)
+    {
+        if (isset($data['value']) && is_array($data['value'])) {
+            // Start iterating from the second element (index 1)
+            for ($i = 1; $i <= count($data['value']); $i++) {
+                $item = $data['value'][$i];
+
+                // Check if 'id' and 'name' keys exist in the current item
+                if (isset($item['id']) && isset($item['name'])) {
+                    //$webUrl = $item['webUrl'];
+                    // $lastModifiedDateTime = $item['lastModifiedDateTime'];
+                    $itemid = $item['id'];
+                    $itemname = $item['name'];
+                    $parentReferencecId = $item['parentReference']['id'];
+                    //echo $webUrl;
+                    //echo $itemid;
+                    //echo $itemname;
+
+
+
+                    $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                    $mappingDatabase = json_decode($mappingFile, true);
+                    //$remoteItemWebUrl = $webUrl;
+                    $remoteItemId = $itemid;
+                    if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                        // Start iterating from the second element (index 1)
+                        for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
+                            $itemDatabase = $mappingDatabase['value'][$j];
+                            //$remoteItemWebUrlNew = $remoteItemWebUrl;
+                            $remoteItemIdNew = $remoteItemId;
+                            //echo $remoteItemIdNew;
+                            //echo $remoteItemWebUrlNew;
+
+                            // Check if 'id' and 'name' keys exist in the current item
+                            if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
+
+                                $itemUrlDatabase = $itemDatabase['webUrl'];
+
+                                // // Find the position of "Library1" in the URL
+                                $libraryPosition = strpos($itemUrlDatabase, "Library1");
+
+                                if ($libraryPosition !== false) {
+                                    // Extract the value after "Library1" and everything after it
+                                    $valueItem = substr($itemUrlDatabase, $libraryPosition + strlen("Library1"));
+                                    echo "Extracted value: " . $valueItem;
+                                } else {
+                                    echo "Value not found in the URL.";
+                                }
+
+                                //echo $itemNameDatabase;
+                                // $file=__DIR__ . '\LocalDrive/' . $itemname;
+                                // $to = __DIR__ . '\LocalDrive/'. $itemNameDatabase;
+                                // echo $file;
+                                // echo $to;
+                                // move_file($file, $to);
+
+                                // if($itemNameDatabase === 'root'){
+                                //     $file=__DIR__ . '\LocalDrive/' . $itemname;
+                                //     $to = __DIR__ . '\LocalDrive/';
+                                //     echo $file;
+                                //     echo $to;
+                                //     move_file($file, $to);
+                                //     //recursive_files_copy($file, $to); 
+                                // }
+                                // else{
+                                //     $file=__DIR__ . '\LocalDrive/' . $itemname;
+                                //     $to = __DIR__ . '\LocalDrive/'. $itemNameDatabase;
+
+                                //     echo $file;
+                                //     echo $to;
+                                //     //recursive_files_copy($file, $to); 
+                                //     move_file($file, $to);
+                                // }
+                                //$itemnameDatabaseParent = '4000';
+
+                            } else {
+                                //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                            }
+                        }
+                    } else {
+                        echo "Error: 'value' array not found in the JSON response.\n";
+                    }
+
+                    $valueItemnew = $valueItem;
+                    $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                    $mappingDatabase = json_decode($mappingFile, true);
+                    //$remoteItemWebUrl = $webUrl;
+                    $remoteparentReferencecId = $parentReferencecId;
+                    if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                        // Start iterating from the second element (index 1)
+                        for ($j = 0; $j <= count($mappingDatabase['value']); $j++) {
+                            $itemDatabase = $mappingDatabase['value'][$j];
+                            //$remoteItemWebUrlNew = $remoteItemWebUrl;
+                            $remoteremoteparentReferencecIdNew = $remoteparentReferencecId;
+                            //echo $remoteItemIdNew;
+                            //echo $remoteItemWebUrlNew;
+
+                            // Check if 'id' and 'name' keys exist in the current item
+                            if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteremoteparentReferencecIdNew) {
+
+                                $itemUrlDatabaseParent = $itemDatabase['webUrl'];
+
+                                // // Find the position of "Library1" in the URL
+                                $libraryPosition = strpos($itemUrlDatabaseParent, "Library1");
+
+                                if ($libraryPosition !== false) {
+                                    // Extract the value after "Library1" and everything after it
+                                    $valueParent = substr($itemUrlDatabaseParent, $libraryPosition + strlen("Library1"));
+                                    echo "Extracted value: " . $valueParent;
+                                } else {
+                                    echo "Value not found in the URL.";
+                                }
+
+
+                                $source_dir = __DIR__ . '\LocalDrive/' . $valueItemnew;
+                                $destination_dir = __DIR__ . '\LocalDrive/' . $valueParent;
+                                
+                                copyFilesLocally($source_dir, $destination_dir);
+
+                                // if($itemNameDatabase === 'root'){
+                                //     $file=__DIR__ . '\LocalDrive/' . $itemname;
+                                //     $to = __DIR__ . '\LocalDrive/';
+                                //     echo $file;
+                                //     echo $to;
+                                //     move_file($file, $to);
+                                //     //recursive_files_copy($file, $to); 
+                                // }
+                                // else{
+                                //     $file=__DIR__ . '\LocalDrive/' . $itemname;
+                                //     $to = __DIR__ . '\LocalDrive/'. $itemNameDatabase;
+
+                                //     echo $file;
+                                //     echo $to;
+                                //     //recursive_files_copy($file, $to); 
+                                //     move_file($file, $to);
+                                // }
+                                //$itemnameDatabaseParent = '4000';
+
+                            } else {
+                                //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                            }
+                        }
+                    } else {
+                        echo "Error: 'value' array not found in the JSON response.\n";
+                    }
+                } else {
+                    echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                }
+            }
+        } else {
+            echo "Error: 'value' array not found in the JSON response.\n";
+        }
+    }
+
+
     //Delta By Token
     //Track Changes of Files/Folders on SharePoint
     function deltaByToken($client, $driveId, $tokendelta)
@@ -525,11 +676,11 @@
             $deltaLink = $data['@odata.deltaLink'];
             $startIndex = strpos($deltaLink, "token='") + 7; // starting position of the token
             $endIndex = strpos($deltaLink, "')", $startIndex); // ending position of the token
-            $tokendelta = substr($deltaLink, $startIndex, $endIndex - $startIndex);    
+            $tokendelta = substr($deltaLink, $startIndex, $endIndex - $startIndex);
             // Save the token to another file
             $tokenFilePath = __DIR__ . '/../storage/deltaToken';
             file_put_contents($tokenFilePath, $tokendelta);
-            
+
             echo $response;
             //if new item has created/uploaded
             //count($data['value'])
@@ -608,7 +759,7 @@
             //     echo "Error: 'value' array not found in the JSON response.\n";
             // }
 
-            for_Create_Item($client, $driveId, $data);
+            function_for_Create_Item($client, $driveId, $data);
 
             //if item has changed
             // if (isset($data['value']) && is_array($data['value'])) {
@@ -724,7 +875,7 @@
             //     echo "Error: 'value' array not found in the JSON response.\n";
             // }
 
-            for_Rename_Item($client, $driveId, $data);
+            function_for_Rename_Item($client, $driveId, $data);
 
             //if item has deleted 
             // if (isset($data['value']) && is_array($data['value'])) {
@@ -785,7 +936,7 @@
             //     echo "Error: 'value' array not found in the JSON response.\n";
             // }
 
-            for_delete_Item($client, $driveId, $data);
+            function_for_delete_Item($client, $driveId, $data);
 
             //if item has Moved
             //   if (isset($data['value']) && is_array($data['value'])) {
@@ -942,15 +1093,15 @@
             //     echo "Error: 'value' array not found in the JSON response.\n";
             // }
 
-            for_moving_Item($client, $driveId, $data);
+            function_for_moving_Item($client, $driveId, $data);
 
+            function_for_copy_Item($client, $driveId, $data);
+            
         } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
         }
     }
-
-
 
 
     //Download File/Folder on Local Directory By File/Folder Id and Name and Path (where to download)
@@ -1067,15 +1218,38 @@
     }
 
 
-    //Delete File/Folder on SharePoint Directory By File/Folder Id
-    function deleteItemSharePoint($client, $driveId, $itemId)
+    
+    //Delete File/Folder on SharePoint Directory By File/Folder Name
+    function deleteItemSharePoint($client,$driveId, $itemName)
     {
+        //$client=Config.
         try {
+
+            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            $mappingDatabase = json_decode($mappingFile, true);
+
+            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    $itemDatabase = $mappingDatabase['value'][$k];
+                    $itemNameNew = $itemName;
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($itemDatabase['name']) && $itemDatabase['name'] === $itemNameNew) {
+                        $itemId = $itemDatabase['id'];
+                    } else {
+                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
+ 
             $response = $client->drive($driveId)->deleteItem($itemId);
-            // If the operation was successful, display a success message
-            echo "Item Deleted successfully on SharePoint: " . $itemId;
             //echo $response;
-            $messagelog =  "Item Deleted successfully on SharePoint: $itemId\n";
+            // If the operation was successful, display a success message
+            echo "Item Deleted successfully on SharePoint: " . $itemName;
+            
+            $messagelog =  "Item Deleted successfully on SharePoint: $itemName\n";
             store_log($messagelog);
         } catch (Exception $e) {
             // If there was an error, display an error message
@@ -1227,19 +1401,77 @@
     //Move File/Folder on SharePoint Directory by File/Folder Id and Parent Id
     //If we want to move in a specific folder then use its id (Parent Id) Otherwise
     //Parent Id is root id
-    function moveItemSharePoint($client, $driveId, $itemId, $parentId)
+    // function moveItemSharePoint($client, $driveId, $itemId, $parentId)
+    // {
+    //     try {
+    //         $response = $client->drive($driveId)->moveItem($itemId, $parentId);
+    //         // If the operation was successful, display a success message
+    //         echo "Item Moved successfully on SharePoint: " . $response;
+    //         $messagelog =  "Item Moved successfully on SharePoint:  $response\n";
+    //         store_log($messagelog);
+    //     } catch (Exception $e) {
+    //         // If there was an error, display an error message
+    //         echo "Error: " . $e->getMessage();
+    //     }
+    // }
+
+
+    function moveItemSharePoint($client, $driveId, $itemName, $parentName)
     {
         try {
+            $itemId='';
+            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            $mappingDatabase = json_decode($mappingFile, true);
+
+            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    $itemDatabase = $mappingDatabase['value'][$k];
+                    //$itemOldNameNew = $itemOldName;
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($itemDatabase['name']) && $itemDatabase['name'] === $itemName) {
+                        $itemId = $itemDatabase['id'];
+                    } else {
+                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
+
+
+            $parentId='';
+            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            $mappingDatabase = json_decode($mappingFile, true);
+
+            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    $itemDatabase = $mappingDatabase['value'][$k];
+                    //$itemOldNameNew = $itemOldName;
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($itemDatabase['name']) && $itemDatabase['name'] === $parentName) {
+                        $parentId = $itemDatabase['id'];
+                    } else {
+                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
+
             $response = $client->drive($driveId)->moveItem($itemId, $parentId);
             // If the operation was successful, display a success message
-            echo "Item Moved successfully on SharePoint: " . $response;
+            echo "Item Moved successfully on SharePoint: " . $itemName;
             $messagelog =  "Item Moved successfully on SharePoint:  $response\n";
             store_log($messagelog);
+            delta($client,$driveId);
         } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
         }
     }
+
 
 
     //Move File/Folder on Local Directory By Source File Name and Destination File Name
@@ -1261,12 +1493,70 @@
     //Copy File/Folder on SharePoint Directory by File/Folder Id and Parent Id
     //If we want to move in a specific folder then use its id (Parent Id) Otherwise
     //Parent Id is root id
-    function copyItemSharePoint($client, $driveId, $itemId, $parentId)
+    // function copyItemSharePoint($client, $driveId, $itemId, $parentId)
+    // {
+    //     try {
+    //         $response = $client->drive($driveId)->copyItem($itemId, $parentId);
+    //         // If the operation was successful, display a success message
+    //         echo "Item Copied successfully on SharePoint: " . $response;
+    //         $messagelog =  "Item Copied successfully on SharePoint:  $response\n";
+    //         store_log($messagelog);
+    //     } catch (Exception $e) {
+    //         // If there was an error, display an error message
+    //         echo "Error: " . $e->getMessage();
+    //     }
+    // }
+
+
+    function copyItemSharePoint($client, $driveId, $itemName, $parentName)
     {
         try {
+
+            $itemId='';
+            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            $mappingDatabase = json_decode($mappingFile, true);
+
+            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    $itemDatabase = $mappingDatabase['value'][$k];
+                    //$itemOldNameNew = $itemOldName;
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($itemDatabase['name']) && $itemDatabase['name'] === $itemName) {
+                        $itemId = $itemDatabase['id'];
+                    } else {
+                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
+
+
+            $parentId='';
+            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            $mappingDatabase = json_decode($mappingFile, true);
+
+            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    $itemDatabase = $mappingDatabase['value'][$k];
+                    //$itemOldNameNew = $itemOldName;
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($itemDatabase['name']) && $itemDatabase['name'] === $parentName) {
+                        $parentId = $itemDatabase['id'];
+                    } else {
+                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
+
+
             $response = $client->drive($driveId)->copyItem($itemId, $parentId);
             // If the operation was successful, display a success message
-            echo "Item Copied successfully on SharePoint: " . $response;
+            echo "Item Copied successfully on SharePoint: " . $itemName;
             $messagelog =  "Item Copied successfully on SharePoint:  $response\n";
             store_log($messagelog);
         } catch (Exception $e) {
@@ -1374,19 +1664,60 @@
     }
 
 
-    //Update(Rename) File/Folder on SharePoint By File/Folder Id and its New Name
-    function updateItemSharePoint($client, $driveId, $itemId, $itemname)
+    // //Update(Rename) File/Folder on SharePoint By File/Folder Id and its New Name
+    // function updateItemSharePoint($client, $driveId, $itemId, $itemUpdatedName)
+    // {
+    //     try {
+    //         $response = $client->drive($driveId)->updateItem(
+    //             $itemId,
+    //             [
+    //                 'name' => $itemUpdatedName
+    //             ]
+    //         );
+    //         // If the operation was successful, display a success message
+    //         echo "Item Updated successfully on SharePoint: " . $itemUpdatedName;
+    //         $messagelog =  "Item Updated successfully on SharePoint: $itemUpdatedName\n";
+    //         store_log($messagelog);
+    //     } catch (Exception $e) {
+    //         // If there was an error, display an error message
+    //         echo "Error: " . $e->getMessage();
+    //     }
+    // }
+
+    function updateItemSharePoint($client, $driveId, $itemOldName, $itemUpdatedName)
     {
         try {
+
+            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+            $mappingDatabase = json_decode($mappingFile, true);
+
+            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                // Start iterating from the second element (index 1)
+                for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    $itemDatabase = $mappingDatabase['value'][$k];
+                    $itemOldNameNew = $itemOldName;
+                    // Check if 'id' and 'name' keys exist in the current item
+                    if (isset($itemDatabase['name']) && $itemDatabase['name'] === $itemOldNameNew) {
+                        $itemIdNew = $itemDatabase['id'];
+                    } else {
+                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
+                }
+            } else {
+                echo "Error: 'value' array not found in the JSON response.\n";
+            }
+
+
+            $itemIdNewNew= $itemIdNew;
             $response = $client->drive($driveId)->updateItem(
-                $itemId,
+                $itemIdNewNew,
                 [
-                    'name' => $itemname
+                    'name' => $itemUpdatedName
                 ]
             );
             // If the operation was successful, display a success message
-            echo "Item Updated successfully on SharePoint: " . $response;
-            $messagelog =  "Item Updated successfully on SharePoint: $response\n";
+            echo "Item Updated successfully on SharePoint: " . $itemUpdatedName;
+            $messagelog =  "Item Updated successfully on SharePoint: $itemUpdatedName\n";
             store_log($messagelog);
         } catch (Exception $e) {
             // If there was an error, display an error message
@@ -1489,15 +1820,15 @@
     }
 
     //Create Folder on SharePoint directory By Folder Name
-    function createFolderSharePoint($client, $driveId, $itemPath, $localDirectory)
+    function createFolderSharePoint($client, $driveId, $itemName)
     {
         // Create the folder on SharePoint
-        $response = $client->drive($driveId)->createFolder($itemPath);
+        $response = $client->drive($driveId)->createFolder($itemName);
 
         // Check if the SharePoint folder was created successfully
         if ($response) {
-            echo "SharePoint Folder Created Successfully!\n";
-            $messagelog =  "SharePoint Folder Created Successfully: \n";
+            echo "Folder Created Successfully on SharePoint! . $itemName\n";
+            $messagelog =  "Folder Created Successfully on SharePoint: $response\n";
             store_log($messagelog);
         } else {
             echo "Failed to create SharePoint Folder\n";
@@ -1508,7 +1839,7 @@
     //Upload File/Folder on SharePoint to Root by File/Folder Name and
     // its Content(if it is a file) and Root Id (ParentId)
     //and Download in Local Directory By Id
-    function uploadItemSharePoint($client, $driveId, $itemName, $parentId, $localDirectory)
+    function uploadItemSharePoint($client, $driveId, $itemName, $parentId)
     {
         try {
             $response = $client->drive($driveId)->uploadItem($itemName, $itemName, $parentId);
@@ -1535,36 +1866,24 @@
 
     //Upload File/Folder on SharePoint in Specific Folder by File/Folder Name and
     // its Content(if it is a file) and Specific Folder Name 
-    //and Download in Local Directory By Id
-    function uploadItemtoPathSharePoint($client, $driveId, $itemName, $parentName, $localDirectory)
+    function uploadItemtoPathSharePoint($client, $driveId, $itemName,$itemContent, $parentName)
     {
         try {
-            $response = $client->drive($driveId)->uploadItemToPath($itemName, $itemName, $parentName);
+            $response = $client->drive($driveId)->uploadItemToPath($itemName, $itemContent, $parentName);
             $data = json_decode($response, true);
-
-            $itemid =  $data['id'];
-            $itemname = $data['name'];
-
             // If the operation was successful, display a success message
-            echo "Item Upload successfully: " . $response;
-            $messagelog =  "Item Upload successfully: $response\n";
+            echo "Item Upload successfully on SharePoint: " . $itemName;
+            $messagelog =  "Item Upload successfully on SharePoint: $response\n";
             store_log($messagelog);
         } catch (Exception $e) {
             // If there was an error, display an error message
             echo "Error: " . $e->getMessage();
         }
-        // getItemById($client, $driveId, $itemid);
-        //getItemByPath($client, $driveId, $itemname);
-        //downloadItemById($client, $driveId, $itemname, $itemid, $localDirectory);
-        //downloadItemByPath($client, $driveId, $itemname);
-        //createFolder($client, $driveId, $itemname);
-        //createFolder($client, $driveId, $itemName,$localDirectory);
-        //moveItem($client, $driveId, $itemid,$parentId);
-        //copyItem($client, $driveId, $itemid,$parentId);
+        
     }
 
-
-
+    
+    
 
     // $source_dir = __DIR__ . '/../src/LocalDrive/f234';    
     // $destination_dir = __DIR__ . '/../src/LocalDrive/4000';
@@ -1583,7 +1902,7 @@
     //    $message = "Something happened at " . date('Y-m-d H:i:s') . ": This is a log message.\n";
     //    fwrite($logFile, $message);
     //    fclose($logFile);
-    // $localDirectory = __DIR__ . '/../src/LocalDrive';
+    //    $localDirectory = __DIR__ . '/../src/LocalDrive';
 
 
     //  $itemname='f789New';
@@ -1594,41 +1913,47 @@
     // echo $localPath;
 
     //updateItem($client, $driveId, $itemId,$itemname, $localPath);
-
-
-
+   
     //$itemid = 'Newfolder(3)';
     //$parentId = '01FJOJ76F6Y2GOVW7725BZO354PWSELRRZ';
-    //$parentName = 'folder789';
-    //$itemName = 'Conflict.txt';
+    //$parentName = 'FileTestTestNew/FolderNameNew';
+    //$parentName = 'AppFolder12';
+    //$itemName = '200.txt';
+    //$itemName = 'NewTest98/NewTest100';
+    //$itemContent = 'File Created for testing';
     //$itemname = '4000';
     //$itemPath = '400000000';
     //01FJOJ76EIEB2ZRHWCNBCIFAZHAOSPHPTK
     //$itemname='DemoFileRenameAgain.txt';
-    // $itemId = '01FJOJ76EHVARO536YANFIGY3L3CIP47GA';
+    // $itemOldName = 'file_for_log_30';
+    // $itemUpdatedName='file_for_log_30.txt';
 
     //delta($client, $driveId);
     //deltaByToken($client, $driveId, $tokendelta);
     //copyItem($client, $driveId, $itemid, $parentId);
     //moveItem($client, $driveId, $itemid,$parentId);
+    //moveItemSharePoint($client, $driveId, $itemName, $parentName);
     //downloadFolderByPath($client, $driveId, $itemname);
     //downloadFolder($client, $driveId, $itemname,$localDirectory);
     //createFolder($client, $driveId, $itemname,$localDirectory);
     //createFolderBoth($client, $driveId, $itemPath, $localDirectory)
     //createFolderLocally($client, $driveId, $itemname,$localDirectory);
     //createFolderSharePoint($client, $driveId, $itemPath, $localDirectory);
+    //createFolderSharePoint($client, $driveId, $itemName)
     //downloadItemByPath($client, $driveId, $itemName);
     //uploadItem($client, $driveId, $itemName,$parentId);
     //uploadItemSharePoint($client, $driveId, $itemName, $parentId, $localDirectory);
     //uploadItemtoPath($client, $driveId, $itemName,$parentName,$localDirectory);
+    //uploadItemtoPathSharePoint($client, $driveId, $itemName,$itemContent, $parentName);
     //deleteItem($client, $driveId, $itemid,$localDirectory);
     //deleteItemBothByName($client, $driveId,$itemId,$itemName, $localDirectory)
-    //deleteItemSharePoint($client, $driveId, $itemId);
+    //deleteItemSharePoint($client, $driveId, $itemName);
     ///listItemById($client, $driveId, $itemId);
     //listItemByPath($client, $driveId, $itemPath);
     //listItems($client, $driveId);
     //updateItem($client, $driveId, $itemId, $itemname,$localDirectory);
-    //updateItemSharePoint($client, $driveId, $itemId, $itemname)
+    //updateItemSharePoint($client, $driveId, $itemId, $itemname);
+    //updateItemSharePoint($client, $driveId, $itemOldName, $itemUpdatedName);
     //getItemById($client, $driveId, $itemId);
     //getItems($client, $driveId);
     //updateItem($client, $driveId, $itemId, $itemname, $localPath);
