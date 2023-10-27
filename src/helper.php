@@ -45,6 +45,23 @@ function store_log($messagelog)
 }
 
 
+//Error Logs
+function error_log($messagelog)
+{
+    $logFilePath = __DIR__ . '/../src/error.log';
+    $logFile = fopen($logFilePath, 'a');
+
+    if ($logFile) {
+        date_default_timezone_set('Asia/Karachi');
+        $message = $messagelog . date('Y-m-d H:i:s') . ".\n";
+
+        fwrite($logFile, $message);
+        fclose($logFile);
+    } else {
+        echo "Unable to open or create the log file.";
+    }
+}
+
 //First Time Delta Call
 //Give Information of All Files/Folders in JSON
 function delta()
@@ -70,7 +87,7 @@ function delta()
     $tokenFilePath = __DIR__ . '/../storage/deltaToken';
     file_put_contents($tokenFilePath, $tokendelta);
 
-    // echo $response; // Optional: Display the new response
+   
 }
 
 
