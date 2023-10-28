@@ -35,31 +35,43 @@ function store_log($messagelog)
 
     if ($logFile) {
         date_default_timezone_set('Asia/Karachi');
-        $message = $messagelog . date('Y-m-d H:i:s') . ".\n";
+        $message = $messagelog . date('d-m-Y h:i:s A') . ".\n";
 
         fwrite($logFile, $message);
         fclose($logFile);
     } else {
-        echo "Unable to open or create the log file.";
+        //echo "Unable to open or create the log file.";
     }
 }
 
 
 //Error Logs
-function error_log($messagelog)
+function store_error_log($messagelog)
 {
     $logFilePath = __DIR__ . '/../src/error.log';
     $logFile = fopen($logFilePath, 'a');
 
     if ($logFile) {
+        
         date_default_timezone_set('Asia/Karachi');
-        $message = $messagelog . date('Y-m-d H:i:s') . ".\n";
+        $message = $messagelog . date('d-m-Y h:i:s A') . ".\n";
 
         fwrite($logFile, $message);
         fclose($logFile);
     } else {
-        echo "Unable to open or create the log file.";
+        //echo "Unable to open or create the log file.";
     }
+}
+
+
+function disable_Warnings(){
+     // Save the current error reporting level
+     $previousErrorReporting = error_reporting();
+
+     // Disable warnings
+     error_reporting($previousErrorReporting & ~E_WARNING);  
+     // Restore the previous error reporting level
+    error_reporting($previousErrorReporting);
 }
 
 //First Time Delta Call
@@ -146,8 +158,9 @@ class ClsHelper
     {
         global $client;
         global $driveId;
+        
         try {
-
+            disable_Warnings();
             $itemIdNew = '';
             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
             $mappingDatabase = json_decode($mappingFile, true);
@@ -155,6 +168,7 @@ class ClsHelper
             if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
                 // Start iterating from the second element (index 1)
                 for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    if (isset($mappingDatabase['value'][$k])) {
                     $itemDatabase = $mappingDatabase['value'][$k];
                     $itemNameNew = $itemName;
                     // Check if 'id' and 'name' keys exist in the current item
@@ -164,20 +178,23 @@ class ClsHelper
                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
                 }
+                }
             } else {
-                echo "Error: 'value' array not found in the JSON response.\n";
+                //echo "Error: 'value' array not found in the JSON response.\n";
             }
 
             $response = $client->drive($driveId)->deleteItem($itemIdNew);
             // If the operation was successful, display a success message
-            echo "Item Deleted successfully on SharePoint: " . $itemName;
+            //echo "Item Deleted successfully on SharePoint: " . $itemName;
             //echo $response;
             $messagelog =  "Item Deleted successfully on SharePoint: $itemName\n";
             store_log($messagelog);
             delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
-            echo "Error: " . $e->getMessage();
+            $errorlog = "Error: " . $e->getMessage();
+            store_error_log($errorlog);
+
         }
     }
 
@@ -187,6 +204,7 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
+            disable_Warnings(); 
             $itemId = '';
             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
             $mappingDatabase = json_decode($mappingFile, true);
@@ -194,6 +212,7 @@ class ClsHelper
             if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
                 // Start iterating from the second element (index 1)
                 for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    if (isset($mappingDatabase['value'][$k])) {
                     $itemDatabase = $mappingDatabase['value'][$k];
 
                     // Check if 'id' and 'name' keys exist in the current item
@@ -203,8 +222,9 @@ class ClsHelper
                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
                 }
+                }
             } else {
-                echo "Error: 'value' array not found in the JSON response.\n";
+                //echo "Error: 'value' array not found in the JSON response.\n";
             }
             $response = $client->drive($driveId)->updateItem(
                 $itemId,
@@ -214,13 +234,14 @@ class ClsHelper
             );
            // echo $response;
             // If the operation was successful, display a success message
-            echo "Item Updated successfully on SharePoint: " . $itemUpdatedName;
+            //echo "Item Updated successfully on SharePoint: " . $itemUpdatedName;
             $messagelog =  "Item Updated successfully on SharePoint: $response\n";
             store_log($messagelog);
             delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
-            echo "Error: " . $e->getMessage();
+            $errorlog = "Error: " . $e->getMessage();
+            store_error_log($errorlog);
         }
     }
 
@@ -236,16 +257,18 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
+            disable_Warnings();
             $response = $client->drive($driveId)->uploadItemToPath($itemName, $itemContent, $parentName);
             $data = json_decode($response, true);
             // If the operation was successful, display a success message
-            echo "Item Upload successfully on SharePoint: " . $itemName;
+            //echo "Item Upload successfully on SharePoint: " . $itemName;
             $messagelog =  "Item Upload successfully on SharePoint: $response\n";
             store_log($messagelog);
             delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
-            echo "Error: " . $e->getMessage();
+            $errorlog = "Error: " . $e->getMessage();
+            store_error_log($errorlog);
         }
         
     }
@@ -253,20 +276,30 @@ class ClsHelper
     //Create Folder on SharePoint directory By Folder Name at Root Path
     function createFolderSharePoint($itemName)
     {
+
         global $client;
         global $driveId;
+        try {
+         disable_Warnings();
         // Create the folder on SharePoint
         $response = $client->drive($driveId)->createFolder($itemName);
 
         // Check if the SharePoint folder was created successfully
         if ($response) {
-            echo "Folder Created Successfully on SharePoint! . $itemName\n";
+            //echo "Folder Created Successfully on SharePoint! . $itemName\n";
             $messagelog =  "Folder Created Successfully on SharePoint: $response\n";
             store_log($messagelog);
             delta();
         } else {
-            echo "Failed to create SharePoint Folder\n";
+            //echo "Failed to create SharePoint Folder\n";
+            $messagelog = "Failed to create folder on SharePoint at: $response\n";
+            store_error_log($messagelog);
         }
+    } catch (Exception $e) {
+        // If there was an error, display an error message
+        $errorlog = "Error: " . $e->getMessage();
+        store_error_log($errorlog);
+    }
     }
 
     //Move File/Folder on SharePoint 
@@ -277,6 +310,7 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
+            disable_Warnings();
             $itemId='';
             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
             $mappingDatabase = json_decode($mappingFile, true);
@@ -284,6 +318,7 @@ class ClsHelper
             if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
                 // Start iterating from the second element (index 1)
                 for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    if (isset($mappingDatabase['value'][$k])) {
                     $itemDatabase = $mappingDatabase['value'][$k];
                     
                     // Check if 'id' and 'name' keys exist in the current item
@@ -293,8 +328,9 @@ class ClsHelper
                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
                 }
+                }
             } else {
-                echo "Error: 'value' array not found in the JSON response.\n";
+                //echo "Error: 'value' array not found in the JSON response.\n";
             }
 
 
@@ -305,6 +341,7 @@ class ClsHelper
             if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
                 // Start iterating from the second element (index 1)
                 for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    if (isset($mappingDatabase['value'][$k])) {
                     $itemDatabase = $mappingDatabase['value'][$k];
                    
                     // Check if 'id' and 'name' keys exist in the current item
@@ -314,19 +351,22 @@ class ClsHelper
                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
                 }
+                }
             } else {
-                echo "Error: 'value' array not found in the JSON response.\n";
+               // echo "Error: 'value' array not found in the JSON response.\n";
             }
 
             $response = $client->drive($driveId)->moveItem($itemId, $parentId);
             // If the operation was successful, display a success message
-            echo "Item Moved successfully on SharePoint: " . $itemName;
+            //echo "Item Moved successfully on SharePoint: " . $itemName;
             $messagelog =  "Item Moved successfully on SharePoint:  $response\n";
             store_log($messagelog);
             delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
-            echo "Error: " . $e->getMessage();
+            $errorlog = "Error: " . $e->getMessage();
+            store_error_log($errorlog);
+
         }
     }
 
@@ -339,7 +379,7 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
-
+            disable_Warnings(); 
             $itemId='';
             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
             $mappingDatabase = json_decode($mappingFile, true);
@@ -347,6 +387,7 @@ class ClsHelper
             if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
                 // Start iterating from the second element (index 1)
                 for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    if (isset($mappingDatabase['value'][$k])) {
                     $itemDatabase = $mappingDatabase['value'][$k];
                     
                     // Check if 'id' and 'name' keys exist in the current item
@@ -356,8 +397,9 @@ class ClsHelper
                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
                 }
+                }
             } else {
-                echo "Error: 'value' array not found in the JSON response.\n";
+                //echo "Error: 'value' array not found in the JSON response.\n";
             }
 
 
@@ -368,6 +410,7 @@ class ClsHelper
             if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
                 // Start iterating from the second element (index 1)
                 for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                    if (isset($mappingDatabase['value'][$k])) {
                     $itemDatabase = $mappingDatabase['value'][$k];
                    
                     // Check if 'id' and 'name' keys exist in the current item
@@ -377,20 +420,22 @@ class ClsHelper
                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
                 }
+                }
             } else {
-                echo "Error: 'value' array not found in the JSON response.\n";
+                //echo "Error: 'value' array not found in the JSON response.\n";
             }
 
 
             $response = $client->drive($driveId)->copyItem($itemId, $parentId);
             // If the operation was successful, display a success message
-            echo "Item Copied successfully on SharePoint: " . $itemName;
+            //echo "Item Copied successfully on SharePoint: " . $itemName;
             $messagelog =  "Item Copied successfully on SharePoint:  $response\n";
             store_log($messagelog);
             delta();
         } catch (Exception $e) {
             // If there was an error, display an error message
-            echo "Error: " . $e->getMessage();
+            $errorlog = "Error: " . $e->getMessage();
+            store_error_log($errorlog);
         }
     }
 

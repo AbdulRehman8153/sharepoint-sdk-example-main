@@ -1,0 +1,279 @@
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ Moved Failed on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+2023-10-28 12:31:27.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ Moved Failed on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+2023-10-28 12:35:01.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 01:35:01 PM.
+Error: cURL error 28: Connection timed out after 10002 milliseconds (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://graph.microsoft.com/v1.0/drives/b!A1_K8Zkwa0ikSugI16DH_QsyIfJNq29CitDnlep5wSHMwdDaHNGUT4EBC7A1ches/root/delta(token='NDslMjM0OyUyMzE7MztkYWQwYzFjYy1kMTFjLTRmOTQtODEwMS0wYmIwMzU3MjE3YWM7NjM4MzQwNzg5NjA2MDAwMDAwOzIxMjI5OTIxNDslMjM7JTIzOyUyMzA7JTIz')28-10-2023 01:37:38 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 01:40:39 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 01:43:07 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 01:46:11 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 01:48:35 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 01:51:36 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 01:59:24 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 02:01:29 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 02:03:39 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 02:06:39 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 08:54:18 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/aaqaq/csxcd
+28-10-2023 08:54:18 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:06:00 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/aaqaq/ccccc
+28-10-2023 09:06:00 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 09:06:00 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:10:11 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/aaqaq/ddd
+28-10-2023 09:10:11 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 09:10:11 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ddd
+28-10-2023 09:19:18 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/csxcd
+28-10-2023 09:36:59 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:38:57 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/aaqaq/iei
+28-10-2023 09:38:57 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/iei
+28-10-2023 09:41:15 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//ffmoving4098
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 09:53:58 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/aaqaq/ddd
+28-10-2023 09:53:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 10:03:46 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/aaqaq/csxcd
+28-10-2023 10:03:46 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//ffmoving4098 on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//ffmoving4098
+28-10-2023 10:03:46 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 10:14:30 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+28-10-2023 10:17:17 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:19:21 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 10:19:21 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:22:18 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 10:22:18 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:24:31 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 10:24:31 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:26:27 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+28-10-2023 10:26:27 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:31:30 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:32:57 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:33:58 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:34:01 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:36:07 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:39:17 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:39:17 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:48:51 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:48:51 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:49:27 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+28-10-2023 10:51:37 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//New%20Text%20Documentewewe.txt
+28-10-2023 10:54:25 PM.
