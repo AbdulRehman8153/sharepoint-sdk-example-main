@@ -277,3 +277,66 @@ Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/L
 28-10-2023 10:51:37 PM.
 Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//New%20Text%20Documentewewe.txt
 28-10-2023 10:54:25 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:47:53 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:48:34 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:50:45 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:52:10 AM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:52:13 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 12:10:22 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 12:16:06 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 12:16:45 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 12:17:28 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 12:17:31 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 12:25:20 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Folder_Test_123
+30-10-2023 12:55:37 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Folder_Test_123
+30-10-2023 12:56:45 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Folder_Test_123
+30-10-2023 12:57:14 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Folder_Test_123
+30-10-2023 12:57:46 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Folder_Test_123
+30-10-2023 01:01:21 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Folder_Test_123
+30-10-2023 01:13:54 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Folder_Test_123/Date%20Sheet.png
+30-10-2023 01:13:54 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 01:14:43 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 01:16:25 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 01:16:58 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 01:22:05 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 01:56:29 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 01:57:43 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+30-10-2023 02:40:19 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+30-10-2023 05:13:57 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq
+30-10-2023 05:13:57 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 05:13:57 PM.
+Error: Unauthorized (401) Response: {"error":{"code":"InvalidAuthenticationToken","message":"Access token has expired or is not yet valid.","innerError":{"date":"2023-10-30T14:57:51","request-id":"f3280f9e-f830-4e91-97e2-c8445717478f","30-10-2023 07:57:52 PM.
+Error: Unauthorized (401) Response: {"error":{"code":"InvalidAuthenticationToken","message":"Access token has expired or is not yet valid.","innerError":{"date":"2023-10-30T14:58:36","request-id":"4637f2cd-51bc-437b-88cb-af0da37b85fc","30-10-2023 07:58:36 PM.
+Error: Unauthorized (401) Response: {"error":{"code":"InvalidAuthenticationToken","message":"Access token has expired or is not yet valid.","innerError":{"date":"2023-10-30T14:58:53","request-id":"ef9a775b-4100-441b-880c-d6e71b4bd6c7","30-10-2023 07:58:53 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document9.docx
+30-10-2023 08:33:08 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq/Document1.docx
+30-10-2023 08:36:11 PM.

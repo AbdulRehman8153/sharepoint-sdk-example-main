@@ -10,14 +10,14 @@
 
 
 
-    // function get_token(): false|string|null
-    // {
-    //     return @file_get_contents(__DIR__ . '/../storage/token') ?: null;
-    // }
-    // function store_token(string $token): void
-    // {
-    //     file_put_contents(__DIR__ . '/../storage/token', $token);
-    // }
+    function get_token(): false|string|null
+    {
+        return @file_get_contents(__DIR__ . '/../storage/token') ?: null;
+    }
+    function store_token(string $token): void
+    {
+        file_put_contents(__DIR__ . '/../storage/token', $token);
+    }
 
     //$client = new SharePointClient  ('a1b259ca-22bc-4d80-99f5-a32b6a3cc40c', '7bn8Q~VOIR5eTr.3_YrTZdBFUKbUSV9h~H13Xb77','1a17fb93-b9e8-433d-9418-56455ea5573a');
     // technupur
@@ -27,9 +27,11 @@
 
     // $token = get_token();
 
+
     // if ($token === null) {
     //     $token = $client->getAccessToken()->serialize();
     //     store_token($token);
+    //     echo $token;
     // }
 
     $token = $client->getAccessToken()->serialize();
@@ -96,6 +98,14 @@
         deltaByToken($tokendelta);
     }
 
+
+
+    //$itemId='01FJOJ76G5X5GSX2TE4ZB2FZYVPYPOOM5E';
+    //$fileInfo = $client->drive($driveId)->getItemById($itemId);
+    //echo $fileInfo;
+
+
+
     //First Time Delta Call
     //Give Information of All Files/Folders in JSON
     function delta()
@@ -154,12 +164,17 @@
                     // Check if 'id' and 'name' keys exist in the current item
                     if (isset($item['id']) && isset($item['name'])) {
                         $itemid = $item['id'];
-                        $itemname = $item['name'];
                         $createdDateTime = $item['createdDateTime'];
                         $lastModifiedDateTime = $item['lastModifiedDateTime'];
                         $itemPath = $item['webUrl'];
+                        $parentReferencecId = $item['parentReference']['id'];
+                        $itemname = $item['name'];
+                        echo $itemname;
 
-                        // Convert the date and time to a string
+                        $fileExtension = pathinfo($itemname, PATHINFO_EXTENSION);
+
+                        if ($fileExtension === 'txt') {
+                             // Convert the date and time to a string
                         $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
                         $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
 
@@ -176,10 +191,142 @@
                         disable_Warnings();
                         if ($createdDateTimeString === $lastModifiedDateTimeString) {
 
+
                             $localDirectory = __DIR__ . '/../src/LocalDrive';
                             downloadItemByIdLocally($itemname, $itemid, $localDirectory, $value);
                             //delta();
                         }
+                        } elseif ($fileExtension === 'docx' || $fileExtension === 'pdf' || $fileExtension === 'xlsx' || $fileExtension === 'pptx') {
+
+                             // Convert the date and time to a string
+                        $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
+                        $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
+
+                        
+
+                        disable_Warnings();
+                        if ($createdDateTimeString === $lastModifiedDateTimeString) {
+
+                            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                            $mappingDatabase = json_decode($mappingFile, true);
+
+                            $remoteparentReferencecId = $parentReferencecId;
+                            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                                // Start iterating from the second element (index 1)
+                                for ($j = 0; $j <= count($mappingDatabase['value']); $j++) {
+                                    if (isset($mappingDatabase['value'][$j])) {
+                                        $itemDatabase = $mappingDatabase['value'][$j];
+
+                                        $remoteremoteparentReferencecIdNew = $remoteparentReferencecId;
+
+
+                                        // Check if 'id' and 'name' keys exist in the current item
+                                        if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteremoteparentReferencecIdNew) {
+
+                                            $itemUrlDatabaseParent = $itemDatabase['webUrl'];
+
+                                            // // Find the position of "Library1" in the URL
+                                            $libraryPosition = strpos($itemUrlDatabaseParent, "Library1");
+
+                                            if ($libraryPosition !== false) {
+                                                // Extract the value after "Library1" and everything after it
+                                                $valueParent = substr($itemUrlDatabaseParent, $libraryPosition + strlen("Library1"));
+                                            } else {
+                                                // echo "Value not found in the URL.";
+                                            }
+
+                                            if ($valueParent === ' ') {
+                                                $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                                downloadItemByIdLocally($itemname, $itemid, $localDirectory, $itemname);
+
+                                                // delta();
+                                            } else {
+
+                                                $valueParent =  $valueParent . "/" . $itemname;
+                           
+                                                $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                                downloadItemByIdLocally($itemname, $itemid, $localDirectory, $valueParent);
+
+                                                //delta();
+                                            }
+
+                                           
+                                            
+                                            
+                                            //delta();
+                                        } else {
+                                            //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                        }
+                                    }
+                                }
+                            } else {
+                                // echo "Error: 'value' array not found in the JSON response.\n";
+                            }
+
+
+                                                        //delta();
+                        }
+                        else if($createdDateTimeString !== $lastModifiedDateTimeString){
+                            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                            $mappingDatabase = json_decode($mappingFile, true);
+
+                            $remoteparentReferencecId = $parentReferencecId;
+                            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                                // Start iterating from the second element (index 1)
+                                for ($j = 0; $j <= count($mappingDatabase['value']); $j++) {
+                                    if (isset($mappingDatabase['value'][$j])) {
+                                        $itemDatabase = $mappingDatabase['value'][$j];
+
+                                        $remoteremoteparentReferencecIdNew = $remoteparentReferencecId;
+
+
+                                        // Check if 'id' and 'name' keys exist in the current item
+                                        if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteremoteparentReferencecIdNew) {
+
+                                            $itemUrlDatabaseParent = $itemDatabase['webUrl'];
+
+                                            // // Find the position of "Library1" in the URL
+                                            $libraryPosition = strpos($itemUrlDatabaseParent, "Library1");
+
+                                            if ($libraryPosition !== false) {
+                                                // Extract the value after "Library1" and everything after it
+                                                $valueParent = substr($itemUrlDatabaseParent, $libraryPosition + strlen("Library1"));
+                                            } else {
+                                                // echo "Value not found in the URL.";
+                                            }
+
+                                            if ($valueParent === ' ') {
+                                                $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                                downloadItemByIdLocally($itemname, $itemid, $localDirectory, $itemname);
+
+                                                // delta();
+                                            } else {
+
+                                                $valueParent =  $valueParent . "/" . $itemname;
+                           
+                                                $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                                downloadItemByIdLocally($itemname, $itemid, $localDirectory, $valueParent);
+
+                                                //delta();
+                                            }
+
+                                           
+                                            
+                                            
+                                            //delta();
+                                        } else {
+                                            //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                        }
+                                    }
+                                }
+                            } else {
+                                // echo "Error: 'value' array not found in the JSON response.\n";
+                            }
+                        }
+                        } else {
+                            echo "Not a .txt or .docx file";
+                        }
+
                     } else {
                         // echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
@@ -213,9 +360,6 @@
                         $itemid = $item['id'];
                         $itemNewName = $item['name'];
                         $itemParentId = $item['parentReference']['id'];
-
-
-
                         // Convert the date and time to a string
                         $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
                         $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
@@ -230,9 +374,6 @@
                                     if (isset($mappingDatabase['value'][$j])) {
                                         $itemDatabase = $mappingDatabase['value'][$j];
                                         $remoteItemIdNew = $remoteItemId;
-
-
-
                                         // Check if 'id' and 'name' keys exist in the current item
                                         if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
 
@@ -257,18 +398,13 @@
                                         $itemDatabase = $mappingDatabase['value'][$k];
                                         $remoteItemParentIdNew = $remoteItemParentId;
 
-
-
                                         // Check if 'id' and 'name' keys exist in the current item
                                         if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemParentIdNew) {
 
                                             $itemParentnameDatabase = $itemDatabase['name'];
                                             $itemParentWebUrl = $itemDatabase['webUrl'];
-
-
                                             // // Find the position of "Library1" in the URL
                                             $libraryPosition = strpos($itemParentWebUrl, "Library1");
-
                                             if ($libraryPosition !== false) {
                                                 // Extract the value after "Library1" and everything after it
                                                 $value = substr($itemParentWebUrl, $libraryPosition + strlen("Library1"));
@@ -395,24 +531,14 @@
 
                                             if ($value === ' ') {
                                                 $itemOldNameOldOld = $itemOldNameOld;
-
                                                 $localPath = __DIR__ . '\LocalDrive/' . $itemOldNameOldOld;
-
-
                                                 $localDirectory = __DIR__ . '/../src/LocalDrive';
                                                 deleteItemlocally($localPath);
                                                 downloadItemByIdLocally($itemNewName, $itemid, $localDirectory, $valueitemPath);
-
                                                 //delta();
                                             } else {
-
-
                                                 $itemOldNameOldOld = $itemOldNameOld;
-
                                                 $localPath = __DIR__ . '\LocalDrive' . $value . "/" . $itemOldNameOldOld;
-
-
-
                                                 $localDirectory = __DIR__ . '/../src/LocalDrive';
                                                 deleteItemlocally($localPath);
                                                 downloadItemByIdLocally($itemNewName, $itemid, $localDirectory, $valueitemPath);
@@ -764,7 +890,6 @@
     function deltaByToken($tokendelta)
     {
 
-
         global $client;
         global $driveId;
 
@@ -792,14 +917,14 @@
             function_for_Create_Item($data);
 
             //if item has renamed
-            function_for_Rename_Item($data);
+            //function_for_Rename_Item($data);
 
 
             //if item has deleted
-            function_for_delete_Item($data);
+            //function_for_delete_Item($data);
 
             //if item has moved
-            function_for_moving_Item($data);
+            //function_for_moving_Item($data);
 
             //if item has copy
             //function_for_copy_Item($data);
@@ -872,7 +997,48 @@
                             store_error_log($messagelog);
                         }
                     } else {
+
                         // If the item is a file, download and save it
+                        // $response = $client->drive($driveId)->downloadItemById($itemId);
+                        // if ($response !== false) {
+                        //     // Check the MIME type of the file
+                        //     $fileInfo = $client->drive($driveId)->getItemById($itemId);
+                        //     $mimeType = $fileInfo['file']['mimeType'];
+
+                        //     // Specify the file extension based on the MIME type
+                        //     $fileExtension = '';
+                        //     switch ($mimeType) {
+                        //         case 'application/pdf':
+                        //             $fileExtension = 'pdf';
+                        //             break;
+                        //         case 'application/msword':
+                        //             $fileExtension = 'doc';
+                        //             break;
+                        //         case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+                        //             $fileExtension = 'docx';
+                        //             break;
+                        //             // Add more cases for other document types as needed
+                        //         default:
+                        //             $fileExtension = 'txt'; // Default to .txt for unknown types
+                        //     }
+                        //     //$localFilePath = $localDirectory ;
+                        //     // Generate the local file path with the appropriate extension
+                        //     $localFilePath = $localDirectory . '/' . $fileExtension;
+
+                        //     if (file_put_contents($localFilePath, $response) !== false) {
+                        //         $messagelog = "File created successfully at: $localFilePath\n";
+                        //         store_log($messagelog);
+                        //     } else {
+                        //         $messagelog = "Failed to create the file at: $localFilePath\n";
+                        //         store_error_log($messagelog);
+                        //     }
+                        // } else {
+                        //     $messagelog = "Failed to download the file.\n";
+                        //     store_error_log($messagelog);
+                        // }
+
+                        //If the item is a file, download and save it
+
                         $response = $client->drive($driveId)->downloadItemById($itemId);
                         if ($response !== false) {
                             if (file_put_contents($localFilePath, $response) !== false) {
