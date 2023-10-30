@@ -1,1 +1,0 @@
-https://hpc.llnl.gov/training/tutorials/introduction-parallel-computing-tutorial

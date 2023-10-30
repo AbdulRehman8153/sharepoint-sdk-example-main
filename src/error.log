@@ -340,3 +340,39 @@ Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/L
 30-10-2023 08:33:08 PM.
 Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//aaqaq/Document1.docx
 30-10-2023 08:36:11 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book1.xlsx
+30-10-2023 11:11:11 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Presentation.pptx
+30-10-2023 11:11:11 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:11:11 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:11:11 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:13:54 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:13:56 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:13:58 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+30-10-2023 11:26:27 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document12.docx
+30-10-2023 11:28:56 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+30-10-2023 11:29:53 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document11.docx
+30-10-2023 11:30:50 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:48:54 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+30-10-2023 11:50:24 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+31-10-2023 12:05:39 AM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+31-10-2023 12:15:02 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document20.docx
+31-10-2023 12:17:01 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+31-10-2023 12:18:15 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+31-10-2023 12:20:56 AM.

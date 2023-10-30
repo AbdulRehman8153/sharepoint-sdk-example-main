@@ -169,11 +169,12 @@
                         $itemPath = $item['webUrl'];
                         $parentReferencecId = $item['parentReference']['id'];
                         $itemname = $item['name'];
-                        echo $itemname;
+                        //echo $itemname;
+                        
 
                         $fileExtension = pathinfo($itemname, PATHINFO_EXTENSION);
-
-                        if ($fileExtension === 'txt') {
+                        //echo $fileExtension;
+                        if ($fileExtension === 'txt' || $fileExtension === '') {
                              // Convert the date and time to a string
                         $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
                         $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
@@ -324,7 +325,7 @@
                             }
                         }
                         } else {
-                            echo "Not a .txt or .docx file";
+                           // echo "Not a .txt or .docx file";
                         }
 
                     } else {
@@ -456,12 +457,18 @@
                         $itemParentId = $item['parentReference']['id'];
                         $itemPath = $item['webUrl'];
 
+                        // // Find the position of "Library1" in the URL
+                        $libraryPosition = strpos($itemPath, "Library1");
 
+                        if ($libraryPosition !== false) {
+                            // Extract the value after "Library1" and everything after it
+                            //$valueParent = substr($itemPath, $libraryPosition + strlen("Library1"));
+                        
 
                         // Convert the date and time to a string
                         $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
                         $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
-                        if ($createdDateTimeString !== $lastModifiedDateTimeString) {
+                        if ($createdDateTimeString !== $lastModifiedDateTimeString && 1==1) {
 
                             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
                             $mappingDatabase = json_decode($mappingFile, true);
@@ -479,6 +486,11 @@
                                         if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
 
                                             $itemOldName = $itemDatabase['name'];
+                                            echo $itemOldName;
+                                            if (empty($itemOldName)) {
+                                                // $itemOldName is empty, so return or do something else
+                                               // return; // or perform another action
+                                            }
                                         } else {
                                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                                         }
@@ -489,6 +501,7 @@
                             }
 
                             $itemOldNameOld = $itemOldName;
+                            echo $itemOldNameOld;
                             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
                             $mappingDatabase = json_decode($mappingFile, true);
                             $remoteItemParentId = $itemParentId;
@@ -527,7 +540,8 @@
                                             } else {
                                                 //echo "Value not found in the URL.";
                                             }
-
+                                            echo $value;
+                                            echo $valueitemPath;
 
                                             if ($value === ' ') {
                                                 $itemOldNameOldOld = $itemOldNameOld;
@@ -556,6 +570,9 @@
                     } else {
                         //  echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
+                } else {
+                    // echo "Value not found in the URL.";
+                }
                 }
             }
         } else {
@@ -917,14 +934,14 @@
             function_for_Create_Item($data);
 
             //if item has renamed
-            //function_for_Rename_Item($data);
+            function_for_Rename_Item($data);
 
 
             //if item has deleted
-            //function_for_delete_Item($data);
+            function_for_delete_Item($data);
 
             //if item has moved
-            //function_for_moving_Item($data);
+            function_for_moving_Item($data);
 
             //if item has copy
             //function_for_copy_Item($data);
