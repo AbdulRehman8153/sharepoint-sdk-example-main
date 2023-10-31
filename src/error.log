@@ -376,3 +376,109 @@ Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\Local
 31-10-2023 12:18:15 AM.
 Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
 31-10-2023 12:20:56 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//12345 on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//12345
+31-10-2023 12:05:35 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document21.docx
+31-10-2023 12:08:14 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document21.docx
+31-10-2023 12:15:06 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book4.xlsx
+31-10-2023 12:21:03 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12
+31-10-2023 12:22:26 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12
+31-10-2023 12:24:20 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Presentation3.pptx
+31-10-2023 12:34:17 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//12345rename/Fnew12.txt on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//12345rename/Fnew12.txt
+31-10-2023 12:34:20 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document20.docx
+31-10-2023 01:02:17 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document22.docx
+31-10-2023 01:02:17 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document22.docx
+31-10-2023 01:02:57 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12
+31-10-2023 01:05:50 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12
+31-10-2023 01:12:58 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+31-10-2023 01:48:09 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+31-10-2023 02:51:34 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+31-10-2023 02:52:59 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document1.docx
+31-10-2023 02:53:00 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/
+31-10-2023 03:04:16 PM.
+Failed to Create the file at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book.xlsx
+31-10-2023 04:54:51 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book1re.xlsx
+31-10-2023 05:16:42 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book1.xlsx
+31-10-2023 05:23:50 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder12
+31-10-2023 05:25:14 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document3.docx
+31-10-2023 05:56:52 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document3ren.docx
+31-10-2023 05:57:21 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12
+31-10-2023 06:00:41 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12
+31-10-2023 06:01:34 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/Home Help System Final (191707).docx
+31-10-2023 06:01:34 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12
+31-10-2023 06:02:12 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/SharePoint.xlsx
+31-10-2023 06:02:12 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12
+31-10-2023 06:03:08 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/SharePointRen.xlsx
+31-10-2023 06:03:11 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12
+31-10-2023 06:03:34 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/Home Help System Final (191707)ree.docx
+31-10-2023 06:03:37 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.docx
+31-10-2023 06:07:30 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.xlsx
+31-10-2023 06:07:30 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.pptx
+31-10-2023 06:07:30 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Android Google Map 3Rename.docx
+31-10-2023 06:08:30 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//10-11_July_VernabiltiesRename.xlsx
+31-10-2023 06:08:30 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.docx
+31-10-2023 06:10:16 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.pptx
+31-10-2023 06:12:45 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/Test12.xlsx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/Test12.xlsx
+31-10-2023 06:51:23 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Document3ren.docx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//Document3ren.docx
+31-10-2023 06:54:59 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/SharePointRen.xlsx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//SharePointRen.xlsx
+31-10-2023 06:59:04 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Home Help System Final (191707)ree.docx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//Home Help System Final (191707)ree.docx
+31-10-2023 07:02:16 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/10-11_July_VernabiltiesRename.xlsx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//10-11_July_VernabiltiesRename.xlsx
+31-10-2023 07:04:15 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Book1.xlsx/LocalDrive
+31-10-2023 07:07:29 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//LocalDrive
+31-10-2023 07:20:27 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Book1re.xlsx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//Book1re.xlsx
+31-10-2023 07:27:53 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//f1 on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//f1
+31-10-2023 07:31:32 PM.
+Local file/directory not found at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/folddertest34
+31-10-2023 08:11:08 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//asdf12
+31-10-2023 08:27:03 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//CS 7th Lec 1.pptx
+31-10-2023 08:28:27 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//asdf12
+31-10-2023 08:28:27 PM.

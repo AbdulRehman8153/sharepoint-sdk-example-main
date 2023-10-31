@@ -100,12 +100,6 @@
 
 
 
-    //$itemId='01FJOJ76G5X5GSX2TE4ZB2FZYVPYPOOM5E';
-    //$fileInfo = $client->drive($driveId)->getItemById($itemId);
-    //echo $fileInfo;
-
-
-
     //First Time Delta Call
     //Give Information of All Files/Folders in JSON
     function delta()
@@ -113,12 +107,7 @@
         global $client;
         global $driveId;
 
-        // Set the timezone to Pakistani Standard Time (PKT)
-        //date_default_timezone_set('Asia/Karachi');
-
-        // Display a message when the job starts
-        // $startTime = date('d-m-Y h:i:s A'); // Use 'h:i A' format for time with AM/PM
-        //echo "Job started at $startTime (PKT)<br>";
+       
 
         $response = $client->drive($driveId)->delta();
 
@@ -139,9 +128,7 @@
         $tokenFilePath = __DIR__ . '/../storage/deltaToken';
         file_put_contents($tokenFilePath, $tokendelta);
 
-        // Display a message when the job is completed
-        //$endTime = date('d-m-Y h:i:s A'); // Use 'h:i A' format for time with AM/PM
-        //echo "Job completed at $endTime (PKT)<br>";
+       
 
     }
 
@@ -169,11 +156,11 @@
                         $itemPath = $item['webUrl'];
                         $parentReferencecId = $item['parentReference']['id'];
                         $itemname = $item['name'];
-                        //echo $itemname;
+                        
                         
 
                         $fileExtension = pathinfo($itemname, PATHINFO_EXTENSION);
-                        //echo $fileExtension;
+                       
                         if ($fileExtension === 'txt' || $fileExtension === '') {
                              // Convert the date and time to a string
                         $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
@@ -195,9 +182,9 @@
 
                             $localDirectory = __DIR__ . '/../src/LocalDrive';
                             downloadItemByIdLocally($itemname, $itemid, $localDirectory, $value);
-                            //delta();
+                            
                         }
-                        } elseif ($fileExtension === 'docx' || $fileExtension === 'pdf' || $fileExtension === 'xlsx' || $fileExtension === 'pptx') {
+                        } elseif ($fileExtension === 'docx' || $fileExtension === 'pdf' || $fileExtension === 'xlsx' || $fileExtension === 'pptx' || $fileExtension === 'ppt') {
 
                              // Convert the date and time to a string
                         $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
@@ -240,7 +227,7 @@
                                                 $localDirectory = __DIR__ . '/../src/LocalDrive';
                                                 downloadItemByIdLocally($itemname, $itemid, $localDirectory, $itemname);
 
-                                                // delta();
+                                                
                                             } else {
 
                                                 $valueParent =  $valueParent . "/" . $itemname;
@@ -248,13 +235,13 @@
                                                 $localDirectory = __DIR__ . '/../src/LocalDrive';
                                                 downloadItemByIdLocally($itemname, $itemid, $localDirectory, $valueParent);
 
-                                                //delta();
+                                                
                                             }
 
                                            
                                             
                                             
-                                            //delta();
+                                            
                                         } else {
                                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                                         }
@@ -265,7 +252,7 @@
                             }
 
 
-                                                        //delta();
+                                                        
                         }
                         else if($createdDateTimeString !== $lastModifiedDateTimeString){
                             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
@@ -300,7 +287,7 @@
                                                 $localDirectory = __DIR__ . '/../src/LocalDrive';
                                                 downloadItemByIdLocally($itemname, $itemid, $localDirectory, $itemname);
 
-                                                // delta();
+                                                
                                             } else {
 
                                                 $valueParent =  $valueParent . "/" . $itemname;
@@ -308,13 +295,13 @@
                                                 $localDirectory = __DIR__ . '/../src/LocalDrive';
                                                 downloadItemByIdLocally($itemname, $itemid, $localDirectory, $valueParent);
 
-                                                //delta();
+                                                
                                             }
 
                                            
                                             
                                             
-                                            //delta();
+                                            
                                         } else {
                                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                                         }
@@ -348,6 +335,7 @@
         disable_Warnings();
 
         $itemOldName = '';
+        $itemOldNameOld='';
         if (isset($data['value']) && is_array($data['value'])) {
             // Start iterating from the second element (index 1)
             for ($i = 1; $i <= count($data['value']); $i++) {
@@ -421,7 +409,7 @@
                                                 $localPath = __DIR__ . '\LocalDrive/' . $itemOldNameOldOld;
 
                                                 updateItemLocally($itemNewName, $localPath);
-                                                // delta();
+                                                
                                             } else {
 
 
@@ -430,7 +418,7 @@
                                                 $localPath = __DIR__ . '\LocalDrive' . $value . "/" . $itemOldNameOldOld;
 
                                                 updateItemLocally($itemNewName, $localPath);
-                                                //delta();
+                                                
                                             }
                                         } else {
                                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
@@ -464,11 +452,13 @@
                             // Extract the value after "Library1" and everything after it
                             //$valueParent = substr($itemPath, $libraryPosition + strlen("Library1"));
                         
+                        
+
 
                         // Convert the date and time to a string
                         $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
                         $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
-                        if ($createdDateTimeString !== $lastModifiedDateTimeString && 1==1) {
+                        if ($createdDateTimeString !== $lastModifiedDateTimeString) {
 
                             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
                             $mappingDatabase = json_decode($mappingFile, true);
@@ -486,10 +476,9 @@
                                         if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
 
                                             $itemOldName = $itemDatabase['name'];
-                                            echo $itemOldName;
+                                            
                                             if (empty($itemOldName)) {
-                                                // $itemOldName is empty, so return or do something else
-                                               // return; // or perform another action
+                                                
                                             }
                                         } else {
                                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
@@ -501,7 +490,7 @@
                             }
 
                             $itemOldNameOld = $itemOldName;
-                            echo $itemOldNameOld;
+                            
                             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
                             $mappingDatabase = json_decode($mappingFile, true);
                             $remoteItemParentId = $itemParentId;
@@ -540,8 +529,7 @@
                                             } else {
                                                 //echo "Value not found in the URL.";
                                             }
-                                            echo $value;
-                                            echo $valueitemPath;
+                                            
 
                                             if ($value === ' ') {
                                                 $itemOldNameOldOld = $itemOldNameOld;
@@ -549,14 +537,14 @@
                                                 $localDirectory = __DIR__ . '/../src/LocalDrive';
                                                 deleteItemlocally($localPath);
                                                 downloadItemByIdLocally($itemNewName, $itemid, $localDirectory, $valueitemPath);
-                                                //delta();
+                                                
                                             } else {
                                                 $itemOldNameOldOld = $itemOldNameOld;
                                                 $localPath = __DIR__ . '\LocalDrive' . $value . "/" . $itemOldNameOldOld;
                                                 $localDirectory = __DIR__ . '/../src/LocalDrive';
                                                 deleteItemlocally($localPath);
                                                 downloadItemByIdLocally($itemNewName, $itemid, $localDirectory, $valueitemPath);
-                                                //delta();
+                                                
                                             }
                                         } else {
                                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
@@ -567,8 +555,127 @@
                                 // echo "Error: 'value' array not found in the JSON response.\n";
                             }
                         }
-                    } else {
+                    } 
+                    else {
+
+
+                        $fileExtension = pathinfo($itemNewName, PATHINFO_EXTENSION);
+                        
+                        if ($fileExtension === 'docx' || $fileExtension === 'pdf' || $fileExtension === 'xlsx' || $fileExtension === 'pptx' || $fileExtension === 'ppt') {
+
+                        // Convert the date and time to a string
+                        $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
+                        $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
+                        if ($createdDateTimeString !== $lastModifiedDateTimeString) {
+
+                            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                            $mappingDatabase = json_decode($mappingFile, true);
+                            $remoteItemId = $itemid;
+                            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                                // Start iterating from the second element (index 1)
+                                for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
+                                    if (isset($mappingDatabase['value'][$j])) {
+                                        $itemDatabase = $mappingDatabase['value'][$j];
+                                        $remoteItemIdNew = $remoteItemId;
+
+
+
+                                        // Check if 'id' and 'name' keys exist in the current item
+                                        if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
+
+                                            $itemOldName = $itemDatabase['name'];
+                                            
+                                            if (empty($itemOldName)) {
+                                                
+                                            }
+                                        } else {
+                                            //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                        }
+                                    }
+                                }
+                            } else {
+                                //echo "Error: 'value' array not found in the JSON response.\n";
+                            }
+
+                            $itemOldNameOld = $itemOldName;
+                            
+                            $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                            $mappingDatabase = json_decode($mappingFile, true);
+                            $remoteItemParentId = $itemParentId;
+                            if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                                // Start iterating from the second element (index 1)
+                                for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                                    if (isset($mappingDatabase['value'][$k])) {
+                                        $itemDatabase = $mappingDatabase['value'][$k];
+                                        $remoteItemParentIdNew = $remoteItemParentId;
+
+
+
+                                        // Check if 'id' and 'name' keys exist in the current item
+                                        if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemParentIdNew) {
+
+                                            $itemParentnameDatabase = $itemDatabase['name'];
+                                            $itemParentWebUrl = $itemDatabase['webUrl'];
+
+
+                                            // // Find the position of "Library1" in the URL
+                                            $libraryPosition = strpos($itemParentWebUrl, "Library1");
+
+                                            if ($libraryPosition !== false) {
+                                                // Extract the value after "Library1" and everything after it
+                                                $value = substr($itemParentWebUrl, $libraryPosition + strlen("Library1"));
+                                            } else {
+                                                //echo "Value not found in the URL.";
+                                            }
+
+                                            
+
+                                            if ($value === ' ') {
+                                                $itemOldNameOldOld = $itemOldNameOld;
+                                                if(empty($itemOldNameOldOld)){
+                                                $localPath = __DIR__ . '\LocalDrive/' . $itemOldNameOldOld;
+                                                $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                                
+                                                downloadItemByIdLocally($itemNewName, $itemid, $localDirectory, $itemNewName);
+                                                
+                                                }
+                                                else{
+                                                $localPath = __DIR__ . '\LocalDrive/' . $itemOldNameOldOld;
+                                                $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                                deleteItemlocally($localPath);
+                                                downloadItemByIdLocally($itemNewName, $itemid, $localDirectory, $itemNewName);
+                                                }
+                                            } else {
+                                                $itemOldNameOldOld = $itemOldNameOld;
+                                                if(empty($itemOldNameOldOld)){
+                                                $localPath = __DIR__ . '\LocalDrive' . $value . "/" . $itemOldNameOldOld;
+                                                $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                                $valueParent =  $value . "/" . $itemNewName;
+                                              
+                                                downloadItemByIdLocally($itemNewName, $itemid, $localDirectory, $valueParent);
+                                                }
+                                                else{
+
+                                                
+                                                $localPath = __DIR__ . '\LocalDrive' . $value . "/" . $itemOldNameOldOld;
+                                                $localDirectory = __DIR__ . '/../src/LocalDrive';
+                                                $valueParent =  $value . "/" . $itemNewName;
+                                                deleteItemlocally($localPath);
+                                                downloadItemByIdLocally($itemNewName, $itemid, $localDirectory, $valueParent);
+                                                
+                                            }
+                                            }
+                                        } else {
+                                            //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                        }
+                                    }
+                                }
+                            } else {
+                                // echo "Error: 'value' array not found in the JSON response.\n";
+                            }
+                        }
                         //  echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                    }
                     }
                 } else {
                     // echo "Value not found in the URL.";
@@ -630,7 +737,7 @@
 
                                         $localDirectory = __DIR__ . '\LocalDrive' . $value;
                                         deleteItemlocally($localDirectory);
-                                        // delta();
+                                        
                                     } else {
                                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                                     }
@@ -673,7 +780,11 @@
                         $itemWebUrl = $item['webUrl'];
                         $parentReferencecId = $item['parentReference']['id'];
 
+                        $fileExtension = pathinfo($itemname, PATHINFO_EXTENSION);
+                        
+                        if ($fileExtension === 'txt' || $fileExtension === '') {
 
+                        
                         // // Find the position of "Library1" in the URL
                         $libraryPosition = strpos($itemWebUrl, "Library1");
 
@@ -765,9 +876,9 @@
 
                                             $file = __DIR__ . '\LocalDrive/' . $valueItemnew;
                                             $to = __DIR__ . '\LocalDrive/' . $valueParent;
-
+                                            
                                             move_file_Locally($file, $to);
-                                            //delta();
+                                            
                                         } else {
                                             //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                                         }
@@ -777,6 +888,118 @@
                                 // echo "Error: 'value' array not found in the JSON response.\n";
                             }
                         }
+
+
+                    }
+                 elseif ($fileExtension === 'docx' || $fileExtension === 'pdf' || $fileExtension === 'xlsx' || $fileExtension === 'pptx') {
+                    // Convert the date and time to a string
+                    $createdDateTimeString = date('Y-m-d H:i:s', strtotime($createdDateTime));
+                    $lastModifiedDateTimeString = date('Y-m-d H:i:s', strtotime($lastModifiedDateTime));
+                    if ($createdDateTimeString !== $lastModifiedDateTimeString) {
+
+                        $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                        $mappingDatabase = json_decode($mappingFile, true);
+                        $remoteItemId = $itemid;
+                        if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                            // Start iterating from the second element (index 1)
+                            for ($j = 1; $j <= count($mappingDatabase['value']); $j++) {
+                                if (isset($mappingDatabase['value'][$j])) {
+                                    $itemDatabase = $mappingDatabase['value'][$j];
+                                    $remoteItemIdNew = $remoteItemId;
+
+
+
+                                    // Check if 'id' and 'name' keys exist in the current item
+                                    if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemIdNew) {
+
+                                        $itemOldName = $itemDatabase['name'];
+                                        
+                                        if (empty($itemOldName)) {
+                                            
+                                        }
+                                    } else {
+                                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                    }
+                                }
+                            }
+                        } else {
+                            //echo "Error: 'value' array not found in the JSON response.\n";
+                        }
+
+                        $itemOldNameOld = $itemOldName;
+                        
+                        $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
+                        $mappingDatabase = json_decode($mappingFile, true);
+                        $remoteItemParentId = $parentReferencecId;
+                        if (isset($mappingDatabase['value']) && is_array($mappingDatabase['value'])) {
+                            // Start iterating from the second element (index 1)
+                            for ($k = 0; $k <= count($mappingDatabase['value']); $k++) {
+                                if (isset($mappingDatabase['value'][$k])) {
+                                    $itemDatabase = $mappingDatabase['value'][$k];
+                                    $remoteItemParentIdNew = $remoteItemParentId;
+
+
+
+                                    // Check if 'id' and 'name' keys exist in the current item
+                                    if (isset($itemDatabase['id']) && $itemDatabase['id'] === $remoteItemParentIdNew) {
+
+                                        $itemParentnameDatabase = $itemDatabase['name'];
+                                        $itemParentWebUrl = $itemDatabase['webUrl'];
+
+
+                                        // // Find the position of "Library1" in the URL
+                                        $libraryPosition = strpos($itemParentWebUrl, "Library1");
+
+                                        if ($libraryPosition !== false) {
+                                            // Extract the value after "Library1" and everything after it
+                                            $value = substr($itemParentWebUrl, $libraryPosition + strlen("Library1"));
+                                        } else {
+                                            //echo "Value not found in the URL.";
+                                        }
+
+                                        
+
+                                        if ($value === ' ') {
+                                            $itemOldNameOldOld = $itemOldNameOld;
+                                            if(empty($itemOldNameOldOld)){
+                                            
+                                            $file = __DIR__ . '\LocalDrive/'. $itemOldNameOldOld;
+                                            $to = __DIR__ . '\LocalDrive/';
+                                            move_file_Locally($file, $to);
+                                           
+                                            }
+                                            else{
+                                                
+                                                $file = __DIR__ . '\LocalDrive/'. $itemOldNameOldOld;
+                                                $to = __DIR__ . '\LocalDrive/';
+                                                move_file_Locally($file, $to);
+                                            }
+                                        } else {
+                                            $itemOldNameOldOld = $itemOldNameOld;
+                                            if(empty($itemOldNameOldOld)){
+                                            
+                                            $file = __DIR__ . '\LocalDrive/' . $itemOldNameOldOld;
+                                            $to = __DIR__ . '\LocalDrive/' . $value;
+                                             move_file_Locally($file, $to);
+                                            }
+                                            else{
+
+                                                
+                                                $file = __DIR__ . '\LocalDrive/' . $itemOldNameOldOld;
+                                                $to = __DIR__ . '\LocalDrive/' . $value;
+                                                move_file_Locally($file, $to);
+                                        }
+                                        }
+                                    } else {
+                                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                                    }
+                                }
+                            }
+                        } else {
+                            // echo "Error: 'value' array not found in the JSON response.\n";
+                        }
+                    }
+                }
                     } else {
                         //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
                     }
@@ -913,7 +1136,7 @@
         disable_Warnings();
         try {
             $response = $client->drive($driveId)->delta($tokendelta);
-            echo $response;
+            //echo $response;
             $data = json_decode($response, true);
             $deltaLink = $data['@odata.deltaLink'];
             $startIndex = strpos($deltaLink, "token='") + 7; // starting position of the token
@@ -933,9 +1156,12 @@
             //if item has created/uploaded
             function_for_Create_Item($data);
 
+            
+
             //if item has renamed
             function_for_Rename_Item($data);
 
+            
 
             //if item has deleted
             function_for_delete_Item($data);
@@ -974,7 +1200,7 @@
 
             // Check if the item (file or folder) already exists locally
             if (file_exists($localFilePath)) {
-                //echo "Item already exists at: $localFilePath\n";
+                
                 $messagelog = "Item already exists at: $localFilePath\n";
                 store_error_log($messagelog);
                 return;
@@ -989,100 +1215,51 @@
                     if (isset($data['folder']) && $data['folder']) {
                         // If the item is a folder, create the local folder
                         if (mkdir($localFilePath, 0777, true)) {
-                            //echo "Folder created successfully at: $localFilePath\n";
+                            
                             $messagelog =  "Folder created successfully at: $localFilePath\n";
                             store_log($messagelog);
 
-                            // // Recursively download the contents of the folder
-                            // $children = $client->drive($driveId)->listById($itemId);
-                            // $data = json_decode($children, true);
-
-                            // if (isset($data['value']) && is_array($data['value'])) {
-                            //     // Iterate through the children items
-                            //     foreach ($data['value'] as $child) {
-
-                            //         downloadItemByIdLocally($child['name'], $child['id'], $localFilePath);
-                            //     }
-                            // } else {
-                            //     //echo "Error: 'value' array not found in the JSON response.\n";
-                            // }
+                            
 
 
                         } else {
-                            //echo "Failed to create folder at: $localFilePath\n";
+                           
                             $messagelog = "Failed to create folder at: $localFilePath\n";
                             store_error_log($messagelog);
                         }
                     } else {
 
-                        // If the item is a file, download and save it
-                        // $response = $client->drive($driveId)->downloadItemById($itemId);
-                        // if ($response !== false) {
-                        //     // Check the MIME type of the file
-                        //     $fileInfo = $client->drive($driveId)->getItemById($itemId);
-                        //     $mimeType = $fileInfo['file']['mimeType'];
-
-                        //     // Specify the file extension based on the MIME type
-                        //     $fileExtension = '';
-                        //     switch ($mimeType) {
-                        //         case 'application/pdf':
-                        //             $fileExtension = 'pdf';
-                        //             break;
-                        //         case 'application/msword':
-                        //             $fileExtension = 'doc';
-                        //             break;
-                        //         case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-                        //             $fileExtension = 'docx';
-                        //             break;
-                        //             // Add more cases for other document types as needed
-                        //         default:
-                        //             $fileExtension = 'txt'; // Default to .txt for unknown types
-                        //     }
-                        //     //$localFilePath = $localDirectory ;
-                        //     // Generate the local file path with the appropriate extension
-                        //     $localFilePath = $localDirectory . '/' . $fileExtension;
-
-                        //     if (file_put_contents($localFilePath, $response) !== false) {
-                        //         $messagelog = "File created successfully at: $localFilePath\n";
-                        //         store_log($messagelog);
-                        //     } else {
-                        //         $messagelog = "Failed to create the file at: $localFilePath\n";
-                        //         store_error_log($messagelog);
-                        //     }
-                        // } else {
-                        //     $messagelog = "Failed to download the file.\n";
-                        //     store_error_log($messagelog);
-                        // }
+                        
 
                         //If the item is a file, download and save it
 
                         $response = $client->drive($driveId)->downloadItemById($itemId);
                         if ($response !== false) {
                             if (file_put_contents($localFilePath, $response) !== false) {
-                                // echo "File saved successfully to $localFilePath\n";
+                                
 
                                 $messagelog =  "File created successfully at: $localFilePath\n";
                                 store_log($messagelog);
                             } else {
-                                //echo "Failed to save the file to $localFilePath\n";
+                                
                                 $messagelog = "Failed to Create the file at: $localFilePath\n";
                                 store_error_log($messagelog);
                             }
                         } else {
-                            //echo "Failed to download the file.\n";
+                            
                             $messagelog = "Failed to download the file.\n";
                             store_error_log($messagelog);
                         }
                     }
                 } else {
-                    //echo "Failed to get item information.\n";
+                    
                     $messagelog = "Failed to get item information.\n";
                     store_error_log($messagelog);
                 }
             }
         } catch (Exception $e) {
             // If there was an error, display an error message
-            //echo "Error: " . $e->getMessage();
+           
             $errorlog = "Error: " . $e->getMessage();
             store_error_log($errorlog);
         }
@@ -1112,13 +1289,13 @@
                         }
                     }
                 }
-                //echo "Local Item Deleted Successfully at $localItemPath\n";
+                
                 $messagelog =  "Local Item Deleted Successfully at: $localItemPath\n";
                 store_log($messagelog);
 
                 return rmdir($localItemPath);
             } else if ((is_file($localItemPath) === true) || (is_link($localItemPath) === true)) {
-                //echo "Local Item Deleted Successfully at $localItemPath\n";
+                
                 $messagelog =  "Local Item Deleted Successfully at: $localItemPath\n";
                 store_log($messagelog);
 
@@ -1128,7 +1305,7 @@
             return false;
         } catch (Exception $e) {
             // If there was an error, display an error message
-            //echo "Error: " . $e->getMessage();
+           
             $errorlog = "Error: " . $e->getMessage();
             store_error_log($errorlog);
         }
@@ -1155,7 +1332,7 @@
             }
         } catch (Exception $e) {
             // If there was an error, display an error message
-            //echo "Error: " . $e->getMessage();
+           
             $error_message = "Error moving file: " . $e->getMessage();
             store_error_log($error_message);
             return null;
@@ -1197,7 +1374,7 @@
             closedir($dir);
         } catch (Exception $e) {
             // If there was an error, display an error message
-            //echo "Error: " . $e->getMessage();
+            
             $errorlog = "Error: " . $e->getMessage();
             store_error_log($errorlog);
         }
@@ -1216,23 +1393,23 @@
                 $newLocalPath = dirname($localPath) . '/' . $itemNewName;
 
                 if (rename($localPath, $newLocalPath)) {
-                    //echo "Local file/directory updated successfully.";
+                    
                     $messagelog =  "Local file/directory updated successfully: $newLocalPath\n";
                     store_log($messagelog);
                 } else {
-                    //echo "Failed to update local file/directory.";
+                    
                     $errorlog = "Failed to Update local file/directory at: $newLocalPath\n";
                     store_error_log($errorlog);
                 }
             } else {
-                //echo "Local file/directory not found.";
+                
                 $errorlog = "Local file/directory not found at: $localPath\n";
                 store_error_log($errorlog);
             }
         } catch (Exception $e) {
 
             // If there was an error, display an error message
-            // echo "Error: " . $e->getMessage();
+           
             $errorlog = "Error: " . $e->getMessage();
             store_error_log($errorlog);
         }
@@ -1247,17 +1424,17 @@
             $localFolder = $localDirectory . '/' . $itemPath;
 
             if (mkdir($localFolder)) {
-                //echo "Local Folder Created Successfully at $localFolder\n";
+                
                 $messagelog =  "Local Folder Created Successfully at: $localFolder\n";
                 store_log($messagelog);
             } else {
-                //echo "Failed to create Local Folder\n";
+                
                 $errorlog = "Failed to Create Local Folder at: $localFolder\n";
                 store_error_log($errorlog);
             }
         } catch (Exception $e) {
             // If there was an error, display an error message
-            //echo "Error: " . $e->getMessage();
+            
             $errorlog = "Error: " . $e->getMessage();
             store_error_log($errorlog);
         }
@@ -1273,12 +1450,12 @@
             disable_Warnings();
             $response = $client->drive($driveId)->getItemById($itemId);
             // If the operation was successful, display a success message
-            // echo "Item retrieved successfully: " . $response;
+            
             $messagelog =  "Item retrieved successfully:  $response\n";
             store_log($messagelog);
         } catch (Exception $e) {
             // If there was an error, display an error message
-            // echo "Error: " . $e->getMessage();
+            
             $errorlog = "Error: " . $e->getMessage();
             store_error_log($errorlog);
         }
@@ -1295,12 +1472,12 @@
             disable_Warnings();
             $response = $client->drive($driveId)->getItemByPath($itemPath);
             // If the operation was successful, display a success message
-            //echo "Item retrieved successfully: " . $response;
+           
             $messagelog =  "Item retrieved successfully:  $response\n";
             store_log($messagelog);
         } catch (Exception $e) {
             // If there was an error, display an error message
-            //echo "Error: " . $e->getMessage();
+            
             $errorlog = "Error: " . $e->getMessage();
             store_error_log($errorlog);
         }

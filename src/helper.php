@@ -286,12 +286,12 @@ class ClsHelper
 
         // Check if the SharePoint folder was created successfully
         if ($response) {
-            //echo "Folder Created Successfully on SharePoint! . $itemName\n";
+            
             $messagelog =  "Folder Created Successfully on SharePoint: $response\n";
             store_log($messagelog);
             delta();
         } else {
-            //echo "Failed to create SharePoint Folder\n";
+            
             $messagelog = "Failed to create folder on SharePoint at: $response\n";
             store_error_log($messagelog);
         }
@@ -358,7 +358,7 @@ class ClsHelper
 
             $response = $client->drive($driveId)->moveItem($itemId, $parentId);
             // If the operation was successful, display a success message
-            //echo "Item Moved successfully on SharePoint: " . $itemName;
+           
             $messagelog =  "Item Moved successfully on SharePoint:  $response\n";
             store_log($messagelog);
             delta();

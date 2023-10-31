@@ -1574,3 +1574,321 @@ File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/..
 31-10-2023 12:24:09 AM.
 File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//New%20folder/TestingForCreating.txt
 31-10-2023 12:24:10 AM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename
+31-10-2023 12:05:35 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//12345rename/Fnew12.txt
+31-10-2023 12:06:11 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename
+31-10-2023 12:06:11 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename
+31-10-2023 12:06:38 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename/Fnew12.txt
+31-10-2023 12:06:38 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//12345rename/Fnew12.txt
+31-10-2023 12:06:41 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename
+31-10-2023 12:15:06 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename/Fnew12.txt
+31-10-2023 12:15:06 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//12345rename/Fnew12.txt
+31-10-2023 12:15:10 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//FYP-LastYearTopicList.pdf
+31-10-2023 12:20:53 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12
+31-10-2023 12:20:54 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/f12test
+31-10-2023 12:20:54 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/f12test/f56test
+31-10-2023 12:20:55 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/f12test/Fnew1234.txt
+31-10-2023 12:20:56 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/f34test
+31-10-2023 12:20:56 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/f34test/Fnew12456.txt
+31-10-2023 12:20:58 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/f34test/Fnew91233.txt
+31-10-2023 12:20:59 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/fnew567.txt
+31-10-2023 12:21:00 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/Fnew0987.txt
+31-10-2023 12:21:01 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1234
+31-10-2023 12:21:02 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document22.docx
+31-10-2023 12:21:03 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Presentation3.pptx
+31-10-2023 12:21:04 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/FYP-LastYearTopicList.pdf
+31-10-2023 12:21:04 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//FYP-LastYearTopicList.pdf
+31-10-2023 12:21:06 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//FYP-LastYearTopicList.pdf Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//FYP-LastYearTopicList.pdf
+31-10-2023 12:21:06 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//FYP-LastYearTopicList.pdf Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//FYP-LastYearTopicList.pdf
+31-10-2023 12:21:06 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//FYP-LastYearTopicList.pdf Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//FYP-LastYearTopicList.pdf
+31-10-2023 12:21:06 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/Book4.xlsx
+31-10-2023 12:22:29 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/Document20.docx
+31-10-2023 12:24:23 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename
+31-10-2023 12:34:17 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename/Fnew12.txt
+31-10-2023 12:34:17 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//12345rename/Fnew12Rename.txt
+31-10-2023 12:34:20 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document22Rename.docx
+31-10-2023 12:40:06 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document23.docx
+31-10-2023 01:03:00 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document23re.docx
+31-10-2023 01:03:43 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/Document23re.docx
+31-10-2023 01:05:53 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestingDocument.docx
+31-10-2023 01:08:56 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//test.docx
+31-10-2023 01:11:38 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//testRename.docx
+31-10-2023 01:12:12 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f12/testRename.docx
+31-10-2023 01:13:01 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//WordFile.docx
+31-10-2023 01:27:04 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename
+31-10-2023 01:28:50 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/12345rename/Fnew12Rename.txt
+31-10-2023 01:28:50 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//12345rename/Fnew12Ren.txt
+31-10-2023 01:28:53 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/
+31-10-2023 01:48:07 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestWord.docx
+31-10-2023 01:49:12 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document1.docx
+31-10-2023 02:48:14 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document1rename.docx
+31-10-2023 02:48:36 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Document1ren.docx
+31-10-2023 02:51:34 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/
+31-10-2023 02:52:56 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document2.docx
+31-10-2023 03:03:44 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Document2.docx
+31-10-2023 03:04:16 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document2.docx
+31-10-2023 04:53:30 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Document2.docx
+31-10-2023 04:54:14 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document2Rena.docx
+31-10-2023 04:54:17 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/
+31-10-2023 04:54:48 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book1.xlsx
+31-10-2023 05:04:29 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Book1.xlsx
+31-10-2023 05:04:58 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book1re.xlsx
+31-10-2023 05:05:01 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document2.docx
+31-10-2023 05:16:45 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book1.xlsx
+31-10-2023 05:16:46 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder12
+31-10-2023 05:23:52 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder12/TestFolder34
+31-10-2023 05:23:52 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Book1.xlsx
+31-10-2023 05:23:52 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book1.xlsx
+31-10-2023 05:23:55 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder12/FYP-LastYearTopicList.pdf
+31-10-2023 05:25:22 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/TestFolder12/FYP-LastYearTopicList.pdf
+31-10-2023 05:26:27 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder12/FYP-LastYearTopicListRe.pdf
+31-10-2023 05:26:34 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document3.docx
+31-10-2023 05:56:52 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document3ren.docx
+31-10-2023 05:57:21 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Document3.docx
+31-10-2023 05:57:21 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12
+31-10-2023 05:58:15 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/folddertest34
+31-10-2023 05:58:16 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/Home Help System Final (191707).docx
+31-10-2023 06:00:44 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/SharePoint.xlsx
+31-10-2023 06:01:38 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/SharePoint TagMyDoc.pdf
+31-10-2023 06:02:15 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/SharePointRen.xlsx
+31-10-2023 06:03:11 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12/SharePoint.xlsx
+31-10-2023 06:03:11 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12/Home Help System Final (191707)ree.docx
+31-10-2023 06:03:37 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12/Home Help System Final (191707).docx
+31-10-2023 06:03:37 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.docx
+31-10-2023 06:07:20 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.xlsx
+31-10-2023 06:07:22 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.pptx
+31-10-2023 06:07:23 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//DeltaBYToken.txt
+31-10-2023 06:07:25 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Android Games Development.pdf
+31-10-2023 06:07:27 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Android Google Map 3.docx
+31-10-2023 06:07:29 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//10-11_July_Vernabilties.xlsx
+31-10-2023 06:07:30 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Android Google Map 3Rename.docx
+31-10-2023 06:08:28 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//10-11_July_VernabiltiesRename.xlsx
+31-10-2023 06:08:30 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Android Google Map 3.docx
+31-10-2023 06:08:30 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/10-11_July_Vernabilties.xlsx
+31-10-2023 06:08:30 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/DeltaBYToken.txt
+31-10-2023 06:09:01 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//DeltaBYTokenRename.txt
+31-10-2023 06:09:05 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam
+31-10-2023 06:09:30 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/10-11_July_VernabiltiesRename.xlsx
+31-10-2023 06:10:19 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Test12.docx
+31-10-2023 06:10:19 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.docx
+31-10-2023 06:10:21 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam
+31-10-2023 06:10:21 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam/10-11_July_VernabiltiesRename.xlsx
+31-10-2023 06:10:21 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/10-11_July_VernabiltiesRename.xlsx
+31-10-2023 06:10:23 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Test12.pptx
+31-10-2023 06:12:45 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.pptx
+31-10-2023 06:12:50 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/Book1.xlsx
+31-10-2023 06:13:37 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam
+31-10-2023 06:13:37 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam/Book1.xlsx
+31-10-2023 06:13:37 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/Book1.xlsx
+31-10-2023 06:13:38 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam
+31-10-2023 06:15:55 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/Book1re.xlsx
+31-10-2023 06:15:59 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//DeltaBYTokenRename.txt Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/DeltaBYTokenRename.txt
+31-10-2023 06:16:57 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/Document2.docx
+31-10-2023 06:20:40 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam
+31-10-2023 06:20:40 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam/Document2.docx
+31-10-2023 06:20:40 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/Document2.docx
+31-10-2023 06:20:42 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/Test12.docx
+31-10-2023 06:22:01 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam
+31-10-2023 06:22:01 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam/Test12.docx
+31-10-2023 06:22:01 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/Test12.docx
+31-10-2023 06:22:03 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//DeltaBYTokenRename.txt
+31-10-2023 06:25:13 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/DeltaBYTokenRename.txt Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//DeltaBYTokenRename.txt
+31-10-2023 06:25:13 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Document3ren.docx Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/Document3ren.docx
+31-10-2023 06:53:59 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Android Google Map 3Rename.docx Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/Android Google Map 3Rename.docx
+31-10-2023 07:15:51 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1
+31-10-2023 07:30:24 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/f2
+31-10-2023 07:30:25 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder
+31-10-2023 07:30:26 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew12%20-%20Copy%20(8).txt
+31-10-2023 07:30:28 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew09.txt
+31-10-2023 07:30:30 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew0987.txt
+31-10-2023 07:30:31 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew12%20-%20Copy%20(9).txt
+31-10-2023 07:30:33 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew12%20-%20Copy.txt
+31-10-2023 07:30:35 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew12.txt
+31-10-2023 07:30:36 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew12456.txt
+31-10-2023 07:30:38 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew1234.txt
+31-10-2023 07:30:39 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/Fnew91233.txt
+31-10-2023 07:30:41 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/fnew567.txt
+31-10-2023 07:30:42 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//f1/New%20folder/TestingForCreating.txt
+31-10-2023 07:30:45 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Handling Telephone Calls.pdf
+31-10-2023 07:30:54 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/TestFolder12
+31-10-2023 07:30:54 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/f1red
+31-10-2023 07:31:32 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//SharePoint TagMyDoc.pdf
+31-10-2023 08:03:22 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.docx
+31-10-2023 08:04:21 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Test12.docx
+31-10-2023 08:04:21 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Test12.docx
+31-10-2023 08:04:23 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//Test12.docx Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//Test12.docx
+31-10-2023 08:04:23 PM.
+Local file/directory updated successfully: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/foldertest12Reenam
+31-10-2023 08:08:39 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//foldertest12Reenam/DeltaBYTokenRename.txt
+31-10-2023 08:08:42 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//DeltaBYTokenRename.txt Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/DeltaBYTokenRename.txt
+31-10-2023 08:08:42 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/folddertest34 Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//folddertest34
+31-10-2023 08:11:09 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document2.docx
+31-10-2023 08:14:33 PM.
+Local Item Deleted Successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Document2.docx
+31-10-2023 08:14:33 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document2.docx
+31-10-2023 08:14:35 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive/Document2.docx Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//Document2.docx
+31-10-2023 08:14:35 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//DeltaBYTokenRename.txt
+31-10-2023 08:19:03 PM.
+File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//foldertest12Reenam/DeltaBYTokenRename.txt Moved successfully on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src\LocalDrive//DeltaBYTokenRename.txt
+31-10-2023 08:19:03 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Home Help System Final.pdf
+31-10-2023 08:20:07 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//asdf12
+31-10-2023 08:26:17 PM.
+Folder created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//asdf12/asdf34
+31-10-2023 08:26:18 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//CS 7th Lec 1.pptx
+31-10-2023 08:27:03 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//asdf12/CS 7th Lec 1.pptx
+31-10-2023 08:27:04 PM.
+File created successfully at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//asdf12/Lecture#1.pptx
+31-10-2023 08:28:32 PM.
