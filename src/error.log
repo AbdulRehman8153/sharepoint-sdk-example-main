@@ -653,3 +653,196 @@ Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../sr
 01-11-2023 08:23:28 PM.
 Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
 01-11-2023 08:23:28 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 10:28:41 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 10:28:41 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 10:28:41 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 10:28:41 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 10:28:41 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 10:28:41 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 10:28:41 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Android Google Map 3.docx
+01-11-2023 10:29:23 PM.
+Error: cURL error 28: Operation timed out after 30000 milliseconds with 12364142 out of 13231131 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/download.aspx?UniqueId=7d03b8b6-f9a9-47ea-b8d1-0b33d42a7c77&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvNWpkN3k2LnNoYXJlcG9pbnQuY29tQDFhMTdmYjkzLWI5ZTgtNDMzZC05NDE4LTU2NDU1ZWE1NTczYSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2OTg4NjMwMzAiLCJleHAiOiIxNjk4ODY2NjMwIiwiZW5kcG9pbnR1cmwiOiI3Zm0rQmMwSzg3Z2VibVM1UitzdkxSUlRicXpOQitGRW5mUGJDdUs4dWZZPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTI5IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiJHUWxHRzRKMmNrV3piSEQweUxxbHVRPT0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiWmpGallUVm1NRE10TXpBNU9TMDBPRFppTFdFME5HRXRaVGd3T0dRM1lUQmpOMlprIiwiYXBwX2Rpc3BsYXluYW1lIjoiVGFnTXlEb2MiLCJuYW1laWQiOiJhMWIyNTljYS0yMmJjLTRkODAtOTlmNS1hMzJiNmEzY2M0MGNAMWExN2ZiOTMtYjllOC00MzNkLTk0MTgtNTY0NTVlYTU1NzNhIiwicm9sZXMiOiJzZWxlY3RlZHNpdGVzIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLmZ1bGxjb250cm9sIiwidHQiOiIxIiwiaXBhZGRyIjoiMjAuMTkwLjE0NS4xNjkifQ.ZAox4yMPv8ENQm6cXboJIKsQjVJQjBJqZb9tI5KMMPg&ApiVersion=2.001-11-2023 11:24:21 PM.
+Error: cURL error 28: Operation timed out after 30003 milliseconds with 3418337 out of 12041364 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/download.aspx?UniqueId=1686161f-2be6-4f92-b941-4fd722beda5c&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvNWpkN3k2LnNoYXJlcG9pbnQuY29tQDFhMTdmYjkzLWI5ZTgtNDMzZC05NDE4LTU2NDU1ZWE1NTczYSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2OTg4NjMwOTEiLCJleHAiOiIxNjk4ODY2NjkxIiwiZW5kcG9pbnR1cmwiOiI4dFdHRVQ4OHJodFM4eUpsMHR6Q0hyQ2pObGk2TW9nVkdwYmRUUk5XRFpJPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTI5IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiJGNjJuRXQwMlNVT3ErckI3NnY2ODFnPT0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiWmpGallUVm1NRE10TXpBNU9TMDBPRFppTFdFME5HRXRaVGd3T0dRM1lUQmpOMlprIiwiYXBwX2Rpc3BsYXluYW1lIjoiVGFnTXlEb2MiLCJuYW1laWQiOiJhMWIyNTljYS0yMmJjLTRkODAtOTlmNS1hMzJiNmEzY2M0MGNAMWExN2ZiOTMtYjllOC00MzNkLTk0MTgtNTY0NTVlYTU1NzNhIiwicm9sZXMiOiJzZWxlY3RlZHNpdGVzIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLmZ1bGxjb250cm9sIiwidHQiOiIxIiwiaXBhZGRyIjoiMjAuMTkwLjE0NS4xNjkifQ.jHJuCa3cNYleUfYL4N4WlRCFdX60w2NuYgPU5xHwuGo&ApiVersion=2.001-11-2023 11:25:22 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document.docx
+01-11-2023 11:25:22 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book.xlsx
+01-11-2023 11:25:22 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Presentation.pptx
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive/ on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:25:22 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Presentation.pptx
+01-11-2023 11:29:42 PM.
+Error: cURL error 28: Connection timed out after 10003 milliseconds (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://5jd7y6.sharepoint.com/sites/SPFX3/_layouts/15/download.aspx?UniqueId=0ae08333-bbf3-4238-a985-42b13db59de8&Translate=false&tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvNWpkN3k2LnNoYXJlcG9pbnQuY29tQDFhMTdmYjkzLWI5ZTgtNDMzZC05NDE4LTU2NDU1ZWE1NTczYSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2OTg4NjMzODMiLCJleHAiOiIxNjk4ODY2OTgzIiwiZW5kcG9pbnR1cmwiOiIxaXlhanBXRUFDUGQvekppN3lyRmVPbHN1R1hDMFcyc1c0Z1EwNWI5K3hFPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTI5IiwiaXNsb29wYmFjayI6IlRydWUiLCJjaWQiOiJRUGlzNVRjWlNrUy9YVDZDMndCM1hBPT0iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiWmpGallUVm1NRE10TXpBNU9TMDBPRFppTFdFME5HRXRaVGd3T0dRM1lUQmpOMlprIiwiYXBwX2Rpc3BsYXluYW1lIjoiVGFnTXlEb2MiLCJuYW1laWQiOiJhMWIyNTljYS0yMmJjLTRkODAtOTlmNS1hMzJiNmEzY2M0MGNAMWExN2ZiOTMtYjllOC00MzNkLTk0MTgtNTY0NTVlYTU1NzNhIiwicm9sZXMiOiJzZWxlY3RlZHNpdGVzIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLmZ1bGxjb250cm9sIiwidHQiOiIxIiwiaXBhZGRyIjoiNDAuMTI2LjM1LjE1MyJ9.zmGdWglMXZ0NxKdHsTqEfpgPL8qZQUJC7em1O0GiUw4&ApiVersion=2.001-11-2023 11:29:54 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Presentation.pptx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Presentation.pptx
+01-11-2023 11:29:54 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder123
+01-11-2023 11:31:41 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//DocumentRename.docx
+01-11-2023 11:31:45 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//BookRename.xlsx
+01-11-2023 11:31:45 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document.docx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Document.docx
+01-11-2023 11:31:48 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book.xlsx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Book.xlsx
+01-11-2023 11:31:48 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Jazz%20Single%20Connect.txt on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Jazz%20Single%20Connect.txt
+01-11-2023 11:31:48 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Jazz Single Connect.txt on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Jazz Single Connect.txt
+01-11-2023 11:31:49 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder123 on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder123
+01-11-2023 11:31:49 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Presentation.pptx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder123/Presentation.pptx
+01-11-2023 11:31:49 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//react.png on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//TestFolder123/react.png
+01-11-2023 11:31:49 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:36:22 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:37:44 PM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Lecture_3 .pptx
+01-11-2023 11:38:21 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Lecture_3 Process Models 2.pptx on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Lecture_3 Process Models 2.pptx
+01-11-2023 11:38:21 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:44:58 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+01-11-2023 11:47:09 PM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+02-11-2023 12:04:50 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+02-11-2023 12:14:12 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+02-11-2023 12:14:12 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+02-11-2023 12:14:12 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+02-11-2023 12:14:12 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+02-11-2023 12:14:12 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+02-11-2023 12:14:12 AM.
+Failed to Move File/Folder C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive// on Local Directory at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//LocalDrive
+02-11-2023 12:14:12 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//qwer
+02-11-2023 12:39:56 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Foldder1
+02-11-2023 12:41:17 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Foldder1
+02-11-2023 12:42:53 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Foldder1
+02-11-2023 12:42:53 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Foldder1/react.png
+02-11-2023 12:42:57 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Foldder1/SharePoint%20TagMyDoc.pdf
+02-11-2023 12:43:02 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Foldder1/SharePoint.txt
+02-11-2023 12:43:04 AM.
+Item already exists at: C:\xampp\htdocs\sharepoint-sdk-example-main\src/../src/LocalDrive//Foldder1/SharePoint.txt
+02-11-2023 12:43:04 AM.

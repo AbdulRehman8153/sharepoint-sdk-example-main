@@ -64,14 +64,22 @@ function store_error_log($messagelog)
 }
 
 
-function disable_Warnings(){
-     // Save the current error reporting level
-     $previousErrorReporting = error_reporting();
+//Warning Logs
+function store_warning_log($warninglog)
+{
+    $logFilePath = __DIR__ . '/../src/warning.log';
+    $logFile = fopen($logFilePath, 'a');
 
-     // Disable warnings
-     error_reporting($previousErrorReporting & ~E_WARNING);  
-     // Restore the previous error reporting level
-    error_reporting($previousErrorReporting);
+    if ($logFile) {
+
+        date_default_timezone_set('Asia/Karachi');
+        $message = $warninglog . date('d-m-Y h:i:s A') . ".\n";
+
+        fwrite($logFile, $message);
+        fclose($logFile);
+    } else {
+        //echo "Unable to open or create the log file.";
+    }
 }
 
 //First Time Delta Call
@@ -160,7 +168,7 @@ class ClsHelper
         global $driveId;
         
         try {
-            disable_Warnings();
+           
             $itemIdNew = '';
             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
             $mappingDatabase = json_decode($mappingFile, true);
@@ -175,18 +183,22 @@ class ClsHelper
                     if (isset($itemDatabase['name']) && $itemDatabase['name'] === $itemNameNew) {
                         $itemIdNew = $itemDatabase['id'];
                     } else {
-                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                       
+                        $warninglog = "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                            store_warning_log($warninglog);
                     }
                 }
                 }
             } else {
-                //echo "Error: 'value' array not found in the JSON response.\n";
+                 
+                $warninglog = "Error: 'value' array not found in the JSON response.\n";
+                store_warning_log($warninglog);
             }
 
             $response = $client->drive($driveId)->deleteItem($itemIdNew);
             // If the operation was successful, display a success message
-            //echo "Item Deleted successfully on SharePoint: " . $itemName;
-            //echo $response;
+            
+           
             $messagelog =  "Item Deleted successfully on SharePoint: $itemName\n";
             store_log($messagelog);
             delta();
@@ -204,7 +216,7 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
-            disable_Warnings(); 
+           
             $itemId = '';
             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
             $mappingDatabase = json_decode($mappingFile, true);
@@ -219,12 +231,15 @@ class ClsHelper
                     if (isset($itemDatabase['name']) && $itemDatabase['name'] === $itemOldName) {
                         $itemId = $itemDatabase['id'];
                     } else {
-                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                        
+                        $warninglog = "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                store_warning_log($warninglog);
                     }
                 }
                 }
             } else {
-                //echo "Error: 'value' array not found in the JSON response.\n";
+                $warninglog = "Error: 'value' array not found in the JSON response.\n";
+                store_warning_log($warninglog);
             }
             $response = $client->drive($driveId)->updateItem(
                 $itemId,
@@ -232,9 +247,9 @@ class ClsHelper
                     'name' => $itemUpdatedName
                 ]
             );
-           // echo $response;
+          
             // If the operation was successful, display a success message
-            //echo "Item Updated successfully on SharePoint: " . $itemUpdatedName;
+            
             $messagelog =  "Item Updated successfully on SharePoint: $response\n";
             store_log($messagelog);
             delta();
@@ -257,11 +272,11 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
-            disable_Warnings();
+           
             $response = $client->drive($driveId)->uploadItemToPath($itemName, $itemContent, $parentName);
             $data = json_decode($response, true);
             // If the operation was successful, display a success message
-            //echo "Item Upload successfully on SharePoint: " . $itemName;
+            
             $messagelog =  "Item Upload successfully on SharePoint: $response\n";
             store_log($messagelog);
             delta();
@@ -280,7 +295,7 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
-         disable_Warnings();
+         
         // Create the folder on SharePoint
         $response = $client->drive($driveId)->createFolder($itemName);
 
@@ -310,7 +325,7 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
-            disable_Warnings();
+            
             $itemId='';
             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
             $mappingDatabase = json_decode($mappingFile, true);
@@ -325,12 +340,16 @@ class ClsHelper
                     if (isset($itemDatabase['name']) && $itemDatabase['name'] === $itemName) {
                         $itemId = $itemDatabase['id'];
                     } else {
-                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                       
+                        $warninglog = "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                store_warning_log($warninglog);
                     }
                 }
                 }
             } else {
-                //echo "Error: 'value' array not found in the JSON response.\n";
+               
+                $warninglog = "Error: 'value' array not found in the JSON response.\n";
+                store_warning_log($warninglog);
             }
 
 
@@ -348,12 +367,15 @@ class ClsHelper
                     if (isset($itemDatabase['name']) && $itemDatabase['name'] === $parentName) {
                         $parentId = $itemDatabase['id'];
                     } else {
-                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                        
+                        $warninglog = "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                store_warning_log($warninglog);
                     }
                 }
                 }
             } else {
-               // echo "Error: 'value' array not found in the JSON response.\n";
+                $warninglog = "Error: 'value' array not found in the JSON response.\n";
+                store_warning_log($warninglog);
             }
 
             $response = $client->drive($driveId)->moveItem($itemId, $parentId);
@@ -379,7 +401,7 @@ class ClsHelper
         global $client;
         global $driveId;
         try {
-            disable_Warnings(); 
+            
             $itemId='';
             $mappingFile = @file_get_contents(__DIR__ . '/../storage/deltaResponse') ?: null;
             $mappingDatabase = json_decode($mappingFile, true);
@@ -394,12 +416,15 @@ class ClsHelper
                     if (isset($itemDatabase['name']) && $itemDatabase['name'] === $itemName) {
                         $itemId = $itemDatabase['id'];
                     } else {
-                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                        
+                        $warninglog = "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                        store_warning_log($warninglog);
                     }
                 }
                 }
             } else {
-                //echo "Error: 'value' array not found in the JSON response.\n";
+                $warninglog = "Error: 'value' array not found in the JSON response.\n";
+                store_warning_log($warninglog);
             }
 
 
@@ -417,18 +442,21 @@ class ClsHelper
                     if (isset($itemDatabase['name']) && $itemDatabase['name'] === $parentName) {
                         $parentId = $itemDatabase['id'];
                     } else {
-                        //echo "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                        $warninglog = "Error: 'id' and/or 'name' not found in the item JSON.\n";
+                        store_warning_log($warninglog);
                     }
                 }
                 }
             } else {
-                //echo "Error: 'value' array not found in the JSON response.\n";
+                
+                $warninglog = "Error: 'value' array not found in the JSON response.\n";
+                        store_warning_log($warninglog);
             }
 
 
             $response = $client->drive($driveId)->copyItem($itemId, $parentId);
             // If the operation was successful, display a success message
-            //echo "Item Copied successfully on SharePoint: " . $itemName;
+           
             $messagelog =  "Item Copied successfully on SharePoint:  $response\n";
             store_log($messagelog);
             delta();
