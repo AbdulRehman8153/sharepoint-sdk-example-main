@@ -64,24 +64,22 @@ function store_error_log($messagelog)
 }
 
 
-//Warning Logs
 function store_warning_log($warninglog)
-    {
-        $logFilePath = __DIR__ . '/../src/warning.log';
-        $logFile = fopen($logFilePath, 'a');
+{
+    $logFilePath = __DIR__ . '/../src/warning.log';
+    $logFile = fopen($logFilePath, 'a');
 
-        if ($logFile) {
+    if ($logFile) {
 
-            date_default_timezone_set('Asia/Karachi');
-            $message = $warninglog . date('d-m-Y h:i:s A') . ".\n";
+        date_default_timezone_set('Asia/Karachi');
+        $message = $warninglog . date('d-m-Y h:i:s A') . ".\n";
 
-            fwrite($logFile, $message);
-            fclose($logFile);
-        } else {
-            //echo "Unable to open or create the log file.";
-        }
+        fwrite($logFile, $message);
+        fclose($logFile);
+    } else {
+        //echo "Unable to open or create the log file.";
     }
-
+}
 
 //First Time Delta Call
 //Give Information of All Files/Folders in JSON
@@ -111,8 +109,7 @@ function delta()
    
 }
 
-$itemName='FCreate2';
-ClsHelper::createFolderSharePoint($itemName);
+
 
 class ClsHelper
 {
